@@ -1,0 +1,77 @@
+{
+  "argv": [
+    "/usr/local/bin/python",
+    "/pkg/modal/_container_entrypoint.py"
+  ],
+  "command_shell_escaped": "/usr/local/bin/python /pkg/modal/_container_entrypoint.py",
+  "config": {
+    "experiment": {
+      "absolute_tolerance": 1e-05,
+      "action_counts": [
+        1,
+        8
+      ],
+      "agent_counts": [
+        256,
+        4096,
+        65536,
+        1048576
+      ],
+      "correctness_steps": 3,
+      "cpu_threads": [
+        1,
+        8
+      ],
+      "gpu_modes": [
+        "eager-resident",
+        "graph-resident",
+        "eager-host-visible"
+      ],
+      "id": "pilot-002-modal-l4-crossover",
+      "randomize_case_order": true,
+      "relative_tolerance": 1e-05,
+      "repetitions": 7,
+      "seed": 20260811,
+      "state_widths": [
+        8,
+        32
+      ],
+      "steps": 64,
+      "warmup_steps": 16
+    }
+  },
+  "config_path": "/opt/gpu-agent-crossover/configs/pilot-002-modal-l4.toml",
+  "created_at": "2026-08-11T15:22:58.645955+00:00",
+  "cuda_available": true,
+  "cuda_devices": [
+    {
+      "compute_capability": [
+        8,
+        9
+      ],
+      "index": 0,
+      "multiprocessor_count": 58,
+      "name": "NVIDIA L4",
+      "total_memory_bytes": 23659151360
+    }
+  ],
+  "execution_provider": "modal",
+  "git_revision": null,
+  "logical_cpu_count": 24,
+  "nvidia_smi": [
+    {
+      "driver_version": "580.95.05",
+      "memory.total": "23034",
+      "name": "NVIDIA L4",
+      "power.limit": "72.00",
+      "temperature.gpu": "63",
+      "uuid": "GPU-32739950-2989-a11d-8c2f-dd7cae1cc5d7"
+    }
+  ],
+  "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.36",
+  "python": "3.12.10 (main, May 21 2025, 23:34:56) [GCC 12.2.0]",
+  "requested_gpu": "L4",
+  "run_id": "20260811T152258Z",
+  "torch_cuda_version": "13.0",
+  "torch_version": "2.13.0+cu130"
+}

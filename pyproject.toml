@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpu-agent-crossover"
+version = "0.1.0"
+description = "Reproducible CPU/GPU crossover measurements for AI-agent control-plane kernels"
+requires-python = ">=3.11"
+dependencies = [
+  "ipykernel>=6.29",
+  "jupyter>=1.1",
+  "matplotlib>=3.9",
+  "nbclient>=0.10",
+  "nbformat>=5.10",
+  "numpy>=2.1",
+  "pandas>=2.2",
+  "pyarrow>=17",
+  "python-dotenv>=1.0",
+  "scipy>=1.14",
+  "seaborn>=0.13",
+  "torch>=2.7",
+  "wandb>=0.19",
+]
+
+[project.optional-dependencies]
+cloud = [
+  "modal>=1.1",
+  "runpod>=1.7",
+]
+dev = [
+  "pytest>=8.3",
+  "ruff>=0.9",
+]
+
+[project.scripts]
+gpu-agent-bench = "gpu_agent_crossover.benchmark:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+extend-exclude = ["*.ipynb"]

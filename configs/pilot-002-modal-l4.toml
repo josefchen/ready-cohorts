@@ -1,0 +1,16 @@
+[experiment]
+id = "pilot-002-modal-l4-crossover"
+seed = 20260811
+agent_counts = [256, 4096, 65536, 1048576]
+state_widths = [8, 32]
+action_counts = [1, 8]
+steps = 64
+warmup_steps = 16
+repetitions = 7
+cpu_threads = [1, 8]
+gpu_modes = ["eager-resident", "graph-resident", "eager-host-visible"]
+correctness_steps = 3
+absolute_tolerance = 1.0e-5
+relative_tolerance = 1.0e-5
+randomize_case_order = true
+

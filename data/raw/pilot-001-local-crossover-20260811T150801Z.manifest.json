@@ -1,0 +1,82 @@
+{
+  "argv": [
+    "/home/remy-simpc4/Projects/gpu-agent-crossover/.venv/bin/python",
+    "scripts/run_pilot.py",
+    "--config",
+    "configs/pilot-001.toml",
+    "--output-dir",
+    "data/raw"
+  ],
+  "command_shell_escaped": "/home/remy-simpc4/Projects/gpu-agent-crossover/.venv/bin/python scripts/run_pilot.py --config configs/pilot-001.toml --output-dir data/raw",
+  "config": {
+    "experiment": {
+      "absolute_tolerance": 1e-05,
+      "action_counts": [
+        1,
+        8
+      ],
+      "agent_counts": [
+        256,
+        1024,
+        4096,
+        16384,
+        65536,
+        262144,
+        1048576
+      ],
+      "correctness_steps": 3,
+      "cpu_threads": [
+        1,
+        8
+      ],
+      "gpu_modes": [
+        "eager-resident",
+        "graph-resident",
+        "eager-host-visible"
+      ],
+      "id": "pilot-001-local-crossover",
+      "randomize_case_order": true,
+      "relative_tolerance": 1e-05,
+      "repetitions": 10,
+      "seed": 20260811,
+      "state_widths": [
+        8,
+        32
+      ],
+      "steps": 64,
+      "warmup_steps": 16
+    }
+  },
+  "config_path": "/home/remy-simpc4/Projects/gpu-agent-crossover/configs/pilot-001.toml",
+  "created_at": "2026-08-11T15:08:01.509835+00:00",
+  "cuda_available": true,
+  "cuda_devices": [
+    {
+      "compute_capability": [
+        7,
+        5
+      ],
+      "index": 0,
+      "multiprocessor_count": 24,
+      "name": "NVIDIA GeForce GTX 1660 Ti",
+      "total_memory_bytes": 6025904128
+    }
+  ],
+  "git_revision": null,
+  "logical_cpu_count": 8,
+  "nvidia_smi": [
+    {
+      "driver_version": "595.71.05",
+      "memory.total": "6144",
+      "name": "NVIDIA GeForce GTX 1660 Ti",
+      "power.limit": "120.00",
+      "temperature.gpu": "39",
+      "uuid": "GPU-50798f90-11b9-a145-d023-7e476534cf0c"
+    }
+  ],
+  "platform": "Linux-6.8.0-134-generic-x86_64-with-glibc2.39",
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "run_id": "20260811T150801Z",
+  "torch_cuda_version": "13.0",
+  "torch_version": "2.13.0+cu130"
+}
