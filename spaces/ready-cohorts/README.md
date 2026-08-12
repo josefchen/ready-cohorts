@@ -9,7 +9,7 @@ app_file: app.py
 fullWidth: true
 header: mini
 pinned: false
-short_description: Explore when deterministic LLM-agent control can form GPU-ready cohorts.
+short_description: Explore GPU-ready cohorts for deterministic agent control.
 datasets:
   - josefchen/ready-cohorts
 tags:
