@@ -4,6 +4,7 @@ Code and evidence for **Ready Cohorts: Bounding GPU Opportunity and Avoiding
 Host Round Trips in LLM-Agent Control**.
 
 - Paper source and release bundle: <https://github.com/josefchen/ready-cohorts>
+- Interactive results explorer: <https://huggingface.co/spaces/josefchen/ready-cohorts>
 - Processed evidence mirror: <https://huggingface.co/datasets/josefchen/ready-cohorts>
 - Pinned input trace dataset:
   <https://huggingface.co/datasets/Exgentic/agent-llm-traces/tree/f7c94012d0bfbf66fe4d6ed627699508bbb555ff>

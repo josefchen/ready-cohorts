@@ -17,6 +17,7 @@ Opportunity and Avoiding Host Round Trips in LLM-Agent Control* by Josef Chen,
 Independent Researcher.
 
 - Code and arXiv source bundle: <https://github.com/josefchen/ready-cohorts>
+- Interactive results explorer: <https://huggingface.co/spaces/josefchen/ready-cohorts>
 - This mirror: <https://huggingface.co/datasets/josefchen/ready-cohorts>
 - Input trace dataset at the pinned conversion commit:
   <https://huggingface.co/datasets/Exgentic/agent-llm-traces/tree/f7c94012d0bfbf66fe4d6ed627699508bbb555ff>

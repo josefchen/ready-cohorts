@@ -1,0 +1,44 @@
+{
+  "schema_version": "ready-cohorts-space-data-v1",
+  "dataset_repo": "josefchen/ready-cohorts",
+  "dataset_commit": "41ff8d06578d4ec68934040a8fb925d3c8b01767",
+  "dataset_release_tag": "ready-cohorts-arxiv-v1",
+  "paper_release_tag": "ready-cohorts-arxiv-v1",
+  "files": [
+    {
+      "key": "trace",
+      "path": "trace-summary.csv",
+      "hub_path": "trace/summary.csv",
+      "rows": 180,
+      "sha256": "266d749f3f8a4d9ab172ae7eeaec3eb9d3afc9745cf1bda664b7fc39d2476e69"
+    },
+    {
+      "key": "resident_cells",
+      "path": "resident-cell-summary.csv",
+      "hub_path": "resident/cell-summary.csv",
+      "rows": 108,
+      "sha256": "07dfd68ec14dd26b163037d239c53fcbd66ef0d0ba080c5748b6f582c46c4038"
+    },
+    {
+      "key": "resident_contrasts",
+      "path": "resident-contrasts.csv",
+      "hub_path": "resident/contrasts.csv",
+      "rows": 36,
+      "sha256": "00fb518cef7b2eb935fddad6b890025fd6b4cb05368458bb317cc29a987ba851"
+    },
+    {
+      "key": "native_contrasts",
+      "path": "native-contrasts.csv",
+      "hub_path": "native/contrasts.csv",
+      "rows": 60,
+      "sha256": "799ed4fe36f96e8e7d7f63b4d180d679311491e4b835a48bcbf50264acd39e05"
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/trace-exact-opportunity-frontier.png",
+      "hub_path": "figures/trace-exact-opportunity-frontier.png",
+      "sha256": "7d0e55e3ddb3ee360c70fb5b07c32bb415c3b2003b611be1a18ec05847eda5ee"
+    }
+  ]
+}
