@@ -47,8 +47,8 @@ the generated preview, and submit.
 - [x] The complete staged public tree contains zero exact matches to configured
       secrets, zero high-confidence credential matches, and zero private-email
       matches.
-- [ ] The exact release commit reproduces from a clean checkout.
-- [ ] The public GitHub branch and annotated release tag point to that commit.
+- [x] The exact release commit reproduces from a clean checkout.
+- [x] The public GitHub branch and annotated release tag point to that commit.
 
 ## Public artifact gates
 

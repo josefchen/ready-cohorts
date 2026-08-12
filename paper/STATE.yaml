@@ -4,13 +4,7 @@ gate: arxiv_release
 status: release_candidate
 canonical_writer: /root
 canonical_commit: ready-cohorts-arxiv-v1
-active_lease:
-  owner: /root
-  scope:
-    - paper/arxiv
-    - paper/governance
-    - paper/STATE.yaml
-  purpose: initial governed manuscript
+active_lease: null
 completed_gates:
   - contract
   - coverage
