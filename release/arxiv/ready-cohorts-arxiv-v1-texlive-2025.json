@@ -1,0 +1,39 @@
+{
+  "archive_sha256": "14613c17f7774aee5ecd41bb49d964a84bfd5366c499cf77ed84b0b58fb354df",
+  "compile": {
+    "canonical_extracted_text_sha256": "70b7dfe12a801eaa96d96943ccae015bdb0685de7ee83a8a30fe0ee9c22af345",
+    "compiler": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025)",
+    "extracted_text_exact_match": true,
+    "extracted_text_sha256": "70b7dfe12a801eaa96d96943ccae015bdb0685de7ee83a8a30fe0ee9c22af345",
+    "fonts_embedded": 31,
+    "log_gates": {
+      "overfull_boxes": 0,
+      "undefined_citations": 0,
+      "undefined_references": 0
+    },
+    "network_enabled": false,
+    "pages": 14,
+    "pdf_bytes": 945300,
+    "pdf_sha256": "c757724856c052a501af3d10452c5a4056aed9017795075ceef1f2a35a82e3c5",
+    "runs": 3,
+    "shell_escape": false
+  },
+  "container": {
+    "created": "2026-08-01T07:34:41.515624665+02:00",
+    "digest": "sha256:5912d6a33798957f4cd6ff1673819209f59300c378033d25066feb93270b90ce",
+    "image": "docker.io/texlive/texlive:TL2025-historic"
+  },
+  "release_id": "ready-cohorts-arxiv-v1",
+  "schema_version": "ready-cohorts-texlive-compatibility-v1",
+  "status": "success",
+  "visual_review": {
+    "pages_reviewed": [
+      1,
+      4,
+      6,
+      8,
+      14
+    ],
+    "status": "passed"
+  }
+}

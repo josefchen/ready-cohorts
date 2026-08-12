@@ -1,0 +1,3 @@
+source_file,run_id,hardware,provider,rows,cases,execution_error_rows,duplicate_case_repetitions,shapes,invalid_shapes,median_cell_cv,p90_cell_cv,cells_cv_over_10pct
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,1152,128,0,0,32,9,0.02318808635527634,0.2603841859606298,28
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,1152,128,0,0,32,9,0.02587301137439827,0.12973486939396414,18

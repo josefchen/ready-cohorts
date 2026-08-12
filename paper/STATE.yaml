@@ -1,0 +1,53 @@
+schema_version: ready-cohort-paper-state-v1
+project_id: ready-cohort-boundary
+gate: arxiv_release
+status: release_candidate
+canonical_writer: /root
+canonical_commit: ready-cohorts-arxiv-v1
+active_lease:
+  owner: /root
+  scope:
+    - paper/arxiv
+    - paper/governance
+    - paper/STATE.yaml
+  purpose: initial governed manuscript
+completed_gates:
+  - contract
+  - coverage
+  - sources
+  - analysis
+  - claims
+  - draft_manuscript
+  - local_clean_build
+  - adversarial_review
+  - public_source_bundle
+  - official_arxiv_preflight
+  - tex_live_2025_build
+  - public_evidence_mirror
+blockers:
+  - id: BLK-001
+    severity: flagship_followup
+    statement: No finite-capacity online runtime has measured achieved share A.
+  - id: BLK-002
+    severity: flagship_followup
+    statement: No CPU core-seconds or real invocation-tail endpoint supports a datacenter claim.
+  - id: BLK-003
+    severity: flagship_followup
+    statement: No end-to-end agent or shared-vLLM experiment supports the flagship systems claim.
+  - id: BLK-007
+    severity: venue_followup
+    statement: A later peer-reviewed venue submission needs a fresh external review after the joined online experiment.
+  - id: ARXIV-ACCOUNT-001
+    severity: account_action
+    statement: The submitter must choose the irrevocable arXiv license and approve the generated preview in the arXiv account.
+last_verified_output: >-
+  Four named resident-policy placements produced 3,240 valid rows and 36 paired
+  placement-cells. All cells favored the resident mechanism descriptively; the
+  two admissible mechanisms contained 14,557,440 field-exact and decision-exact
+  tested batched invocations. The exact trace primary cell gave F=0.301902,
+  P*=0.430007, and U=0.458487. The reframed 14-page PDF has SHA-256
+  466f1a3687fc7de53c0579148e4c298744d3a6982fee2c698b8470480ebd02d0.
+next_safe_task: >-
+  Upload release/arxiv/ready-cohorts-arxiv-v1.tar.gz, paste the frozen metadata,
+  choose the distribution license, and inspect arXiv's generated preview. The
+  bounded online-route-runtime-001 qualification remains the next experiment.

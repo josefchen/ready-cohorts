@@ -1,0 +1,96 @@
+{
+  "figures": [
+    {
+      "notebook": "notebooks/09_exact_boundary_and_native_calibration.ipynb",
+      "notebook_builder": "scripts/build_exact_native_notebook.py",
+      "notebook_builder_sha256": "7bf5ca47912394819d16f31160142ed7e16b7ff0e2370a7e10643659e02b750a",
+      "notebook_sha256": "4b2de13cf31ff25584446ef42e378737b7d65c267b461e23f6091f0e651cf534",
+      "path": "results/figures/trace-exact-opportunity-frontier.png",
+      "sha256": "7d0e55e3ddb3ee360c70fb5b07c32bb415c3b2003b611be1a18ec05847eda5ee",
+      "source_table": "data/processed/trace-exact-packing-summary.csv",
+      "source_table_sha256": "266d749f3f8a4d9ab172ae7eeaec3eb9d3afc9745cf1bda664b7fc39d2476e69"
+    },
+    {
+      "notebook": "notebooks/10_resident_policy_pilot.ipynb",
+      "notebook_builder": "scripts/build_resident_policy_notebook.py",
+      "notebook_builder_sha256": "2377248a83fa6dd7fd8b40f2c8ac8491e32a0a44e3d638a239514b1dc4b50735",
+      "notebook_sha256": "237502f74e0c7b33ccb9c9c63ac285ce2391c07a3362beee6e3771ef813a24a3",
+      "path": "results/figures/resident-policy-speedup-by-horizon.png",
+      "sha256": "0736ad6580c33b8b50bc76a9c1b750d6f05ee03fee74a1ab2b90684a6d4713d8",
+      "source_table": "data/processed/resident-policy-pilot-contrasts.csv",
+      "source_table_sha256": "00fb518cef7b2eb935fddad6b890025fd6b4cb05368458bb317cc29a987ba851"
+    },
+    {
+      "notebook": "notebooks/10_resident_policy_pilot.ipynb",
+      "notebook_builder": "scripts/build_resident_policy_notebook.py",
+      "notebook_builder_sha256": "2377248a83fa6dd7fd8b40f2c8ac8491e32a0a44e3d638a239514b1dc4b50735",
+      "notebook_sha256": "237502f74e0c7b33ccb9c9c63ac285ce2391c07a3362beee6e3771ef813a24a3",
+      "path": "results/figures/resident-policy-primary-mechanisms.png",
+      "sha256": "2a72ce818ca13a4f317c4c491dc925995462c852c5a0f6b66f08ec3033bba844",
+      "source_table": "data/processed/resident-policy-pilot-cell-summary.csv",
+      "source_table_sha256": "07dfd68ec14dd26b163037d239c53fcbd66ef0d0ba080c5748b6f582c46c4038"
+    }
+  ],
+  "generator": {
+    "path": "scripts/build_paper_artifacts.py",
+    "sha256": "9978ede6a7d7aa6ae32d14e559405bfdb31bfdcbb065a11e817b87f6bccc511b"
+  },
+  "inputs": [
+    {
+      "path": "data/processed/trace-exact-packing-summary.csv",
+      "sha256": "266d749f3f8a4d9ab172ae7eeaec3eb9d3afc9745cf1bda664b7fc39d2476e69"
+    },
+    {
+      "path": "data/processed/trace-exact-packing-repetitions.csv",
+      "sha256": "a573e7e5b6e89d01f71a06eae04c265dc7801048bc33b6c85fbbf2db20e27230"
+    },
+    {
+      "path": "data/processed/trace-exact-packing-manifest.json",
+      "sha256": "8eb73518423972a5ce9d0328e4e575d1aed49efb1e9d4147e52c29f489c2085a"
+    },
+    {
+      "path": "data/processed/exgentic-tau2-source-manifest.json",
+      "sha256": "07f9069c11b5ec560d55baa8d1b531b60c1f8d23aaff5b190cf7d8cef9147868"
+    },
+    {
+      "path": "data/processed/resident-policy-pilot-contrasts.csv",
+      "sha256": "00fb518cef7b2eb935fddad6b890025fd6b4cb05368458bb317cc29a987ba851"
+    },
+    {
+      "path": "data/processed/resident-policy-pilot-cell-summary.csv",
+      "sha256": "07dfd68ec14dd26b163037d239c53fcbd66ef0d0ba080c5748b6f582c46c4038"
+    },
+    {
+      "path": "data/processed/resident-policy-pilot-manifest.json",
+      "sha256": "064eb8cb63ff73cd9d9c5a34c473916a4bc7d23cbb7191d650235c63fcb49be2"
+    },
+    {
+      "path": "data/processed/native-dispatch-pilot-contrasts.csv",
+      "sha256": "799ed4fe36f96e8e7d7f63b4d180d679311491e4b835a48bcbf50264acd39e05"
+    },
+    {
+      "path": "data/processed/native-dispatch-pilot-manifest.json",
+      "sha256": "d31b356a1fa238b1901841e3495961b39ab06f7a32de8344bfe06a2a440379d1"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "paper/arxiv/generated/results-macros.tex",
+      "sha256": "e4468e800517f4697513fd4033325cd09cbf9a68183d0997852f1f33a8854605"
+    },
+    {
+      "path": "paper/arxiv/generated/trace-primary-table.tex",
+      "sha256": "c6617cd3b06684c50b470dd8320479e4b962fae8a6224dafbb26b18b8d2cbd67"
+    },
+    {
+      "path": "paper/arxiv/generated/resident-primary-table.tex",
+      "sha256": "a2822cd1cf7823a134098fb35052c275ac23ad20dbcfab1525dd19478c615230"
+    }
+  ],
+  "sampling_units": {
+    "resident_performance": "named GPU placement",
+    "timing_rows": "technical repetitions",
+    "trace": "Monte Carlo seed conditional on one fixed trace panel"
+  },
+  "schema_version": "ready-cohort-paper-artifacts-v1"
+}

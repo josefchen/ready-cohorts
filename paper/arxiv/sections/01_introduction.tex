@@ -1,0 +1,99 @@
+\section{Introduction}
+\label{sec:introduction}
+
+An agent runtime performs deterministic control work between model and tool
+calls. It parses a typed outcome, advances a state machine, checks policy and
+budget state, selects a route, and emits the next effect. Each transition is
+small beside inference, but a service with many concurrent sessions executes
+them continuously.
+
+This control path is already a datacenter concern. A recent production and
+open-source characterization found that agentic workflows repeatedly cross the
+CPU--GPU boundary, place host orchestration on the critical path, and create
+bursty CPU demand \cite{yang2026agenticarchitecture}. That result establishes
+the pressure. It leaves a more specific systems question open: when can the
+deterministic transition itself be grouped and executed profitably on a GPU?
+
+Similarity across agents is not enough. A GPU route needs a cohort above its
+hardware and runtime crossover, all members must share executable semantics,
+and they must become ready before their launch deadlines. A decision returned
+to the host after every step also incurs copy, synchronization, branch, and
+redispatch overhead. We call the interface between cohort supply and
+observation placement the \emph{ready-cohort boundary}.
+
+For each route and hardware/runtime configuration, let $K$ begin a measured
+safe suffix: every tested cohort from $K$ through a declared maximum clears a
+chosen admissible baseline. A workload supplies events with release times,
+launch deadlines, and declared grouping keys. The central workload question is
+how much same-group work can be packed above $K$. The corresponding mechanism
+question is how much of the control chain can proceed without exposing an
+intermediate decision to the host.
+
+We answer these questions in two experiments. A public agent-trace replay
+compares fixed-window eligibility with an exact offline packing optimum and a
+local upper bound. A separate CUDA study holds the state transition and route
+bodies fixed while changing where one GPU-computed decision is observed. An
+earlier device-launch design provides a negative control. The experiments are
+kept numerically separate because the trace threshold $K=256$ is swept rather
+than measured for the resident-policy source, and the 32-epoch mechanism
+horizon is not inferred from the trace.
+
+The paper makes four contributions:
+
+\begin{enumerate}[label=\arabic*.]
+  \item \textbf{A ready-cohort formulation.} We separate the hardware
+  threshold $K$, fixed-partition share $F$, exact offline share $\pstar$, local
+  bound $U$, and online achieved share $A$. Each quantity has one source and a
+  defined inference boundary.
+  \item \textbf{An exact opportunity instrument.} Under zero service,
+  unlimited capacity, and equal relative launch deadlines, a specialized
+  dynamic program computes $\pstar$. This gives a reproducible workload
+  measurement without claiming algorithmic priority.
+  \item \textbf{Trace evidence for hidden cohort supply.} In the frozen
+  primary replay, exact packing raises eligible share from
+  \TraceFixedPct\% to \TraceExactPct\% and recovers
+  \TraceGapClosurePct\% of the fixed-window alignment gap. The full grid also
+  identifies regimes with no qualifying cohort.
+  \item \textbf{Cross-provider mechanism evidence.} Across four named GPU
+  placements and \ResidentCells{} cells, retaining the tested decision on
+  device is \ResidentRatioMin$\times$ to \ResidentRatioMax$\times$ faster
+  than the matched host-mediated GPU path. A fixed nested graph loses in all
+  \NativeCells{} cells across five placements, ruling out device launch alone
+  as the explanation.
+\end{enumerate}
+
+These experiments resolve two prerequisite questions for a GPU control plane:
+whether enough work can coexist under a declared grouping, and whether one
+device-side decision avoids measurable host-mediated overhead. The next system
+must join them with finite service and CPU fallback, then measure $A$, CPU use,
+raw tail latency, exact effects, task utility, and inference interference.
+
+\begin{figure*}[t]
+  \centering
+  \begin{tikzpicture}[
+    node distance=0.75cm and 0.50cm,
+    font=\sffamily\small,
+    evidence/.style={draw=RCBlue!85!black,rounded corners=3pt,fill=RCBlue!6,
+      text width=3.18cm,minimum height=1.12cm,align=center},
+    next/.style={draw=RCCharcoal!70,rounded corners=3pt,fill=RCPaper,
+      text width=3.18cm,minimum height=1.12cm,align=center,dashed},
+    arrow/.style={-{Latex[length=2.2mm]},thick,draw=RCCharcoal!65}
+  ]
+    \node[evidence] (k) {\textbf{Threshold input $K$}\\swept in the trace study};
+    \node[evidence,right=of k] (opp) {\textbf{Cohort supply}\\fixed $F$, exact $\pstar$, upper $U$};
+    \node[next,right=of opp] (a) {\textbf{Online realization $A$}\\finite queues, service, fallback};
+    \node[next,right=of a] (benefit) {\textbf{Service outcome}\\CPU, raw P99, utility, cost};
+    \draw[arrow] (k) -- (opp);
+    \draw[arrow] (opp) -- (a);
+    \draw[arrow] (a) -- (benefit);
+    \node[evidence,below=0.55cm of opp] (res)
+      {\textbf{Observation placement}\\host round trip versus device decision};
+    \draw[arrow] (res) -| (a);
+  \end{tikzpicture}
+  \caption{Evidence map. Solid boxes are the controlled or measured components
+  in this paper; dashed boxes define the joined online experiment and its
+  service-level outcomes. The shared notation connects the studies without
+  treating the swept trace threshold as the resident source's measured
+  crossover.}
+  \label{fig:claim-boundary}
+\end{figure*}

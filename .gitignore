@@ -11,4 +11,38 @@ wandb/
 dist/
 build/
 *.egg-info/
+data/external/
 
+# Fresh raw cloud runs and provider sidecars stay in the private evidence
+# ledger. The public release contains hash-bound processed evidence instead.
+data/raw/*.csv
+data/raw/*.manifest.json
+data/raw/*.provider-*.json
+data/raw/runpod-*/
+data/smoke/
+
+# Private, hash-bound RunPod controller receipts contain ephemeral artifact
+# server bearer tokens. Keep the mode-0600 originals local; publish only a
+# separately redacted and re-bound export.
+data/provider-runpod-launches/
+
+# Native binaries are local build products; the CUDA sources and Makefiles are
+# public.
+native/**/build/
+
+# PNG is the canonical public figure format. Matplotlib SVG exports contain
+# generated trailing whitespace and are not used by the manuscript.
+results/figures/*.svg
+
+# Local LaTeX build state. Keep manuscript sources, generated evidence files,
+# and the compiled main.pdf; rebuild the rest deterministically.
+paper/arxiv/*.aux
+paper/arxiv/*.blg
+paper/arxiv/*.fdb_latexmk
+paper/arxiv/*.fls
+paper/arxiv/*.log
+paper/arxiv/*.out
+
+# Submitter contact belongs in the private arXiv handoff, not the public paper
+# source or release archive.
+release/private/

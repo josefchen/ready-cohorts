@@ -1,0 +1,34 @@
+\claimid{RC-013}LLM-agent services repeatedly execute small deterministic
+transitions between model and tool calls: route an outcome, update state, and
+emit the next effect. We ask when this control path exposes enough concurrent
+work for GPU execution, and what changes when a GPU-computed route decision
+remains on device. We formalize the \emph{ready-cohort boundary} using
+fixed-partition share $F$, exact offline share $\pstar$, local upper bound $U$,
+and online achieved share $A$.
+
+\claimid{RC-001}\claimid{RC-003}\claimid{RC-004}For zero service time,
+unlimited capacity, and equal relative launch deadlines, a specialized dynamic
+program computes $\pstar$ exactly. \claimid{RC-005}\claimid{RC-006}In a
+prospectively frozen stationary Poisson replay of one pinned
+\TraceSessions-session public trace panel, the primary condition at 100{,}000
+target active sessions, $K=256$, and a 50 ms launch deadline gives
+$F=\TraceFixedPct\%$, $\pstar=\TraceExactPct\%$, and $U=\TraceUpperPct\%$.
+Exact packing recovers \TraceGapClosurePct\% of the opportunity lost at fixed
+window boundaries. \claimid{RC-015}The outcome-derived route key is a
+conditioning proxy, not proof of executable identity.
+
+\claimid{RC-008}\claimid{RC-009}A separate mechanism study keeps a
+GPU-computed binary decision on device instead of returning four bytes to the
+host and redispatching. Across four named GPU placements, the device-resident
+path is faster in all \ResidentCells{} configurations; within-placement
+row-median ratios range from \ResidentRatioMin$\times$ to
+\ResidentRatioMax$\times$. \claimid{RC-010}Across both admissible mechanisms,
+all \ResidentLegalInvocations{} tested batched invocations match a separately
+implemented host oracle. \claimid{RC-011}A fixed nested device graph that
+removes no host decision is slower in all \NativeCells{} configurations across
+five placements.
+
+Together, the studies establish two measurable gates for GPU agent control:
+deadline-feasible cohort supply and observation placement. They expose
+schedulable work missed by fixed windows. A joined finite online runtime is
+required to measure $A$, CPU displacement, and service-level benefit.

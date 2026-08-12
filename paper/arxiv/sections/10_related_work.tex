@@ -1,0 +1,75 @@
+\section{Related work}
+\label{sec:related}
+
+\paragraph{GPU state machines and device-side control.}
+FLAME GPU 2 maps agent memory, state transitions, population partitioning, and
+communication to GPUs \cite{richmond2023flamegpu2}. CUDA Graphs provide replay,
+conditional nodes, and device graph launch \cite{nvidia2026cudaprogrammingguide}.
+GPUOS uses a persistent GPU worker kernel and atomic queues fed from a
+host-managed work queue \cite{yang2026gpuos}; MPK and
+Event Tensor compile tensor task graphs into persistent megakernels
+\cite{cheng2026mpk,jin2026eventtensor}. These systems provide mechanisms for
+device-side control and launch amortization. Our measurements ask a different
+question: whether agent traces supply enough work under a declared grouping
+before launch deadlines, and what one matched host observation costs.
+
+\paragraph{Agent and compound-AI serving.}
+A production and open-source characterization by Yang et al. identifies
+repeated CPU--GPU crossings, host orchestration on the critical path, and
+bursty CPU demand in agentic workflows; its Agora prototype pools and schedules
+CPU resources while oversubscribing GPU memory
+\cite{yang2026agenticarchitecture}. ThunderAgent represents workflows as LLM
+Programs and jointly manages KV caches, system state, and tool environments
+with a program-aware scheduler \cite{kang2026thunderagent}.
+Parrot exposes semantic variables and application dataflow for cross-request
+optimization \cite{lin2024parrot}. Agentix schedules agent programs using
+execution progress \cite{luo2026agentix}; SAGA uses KV-cache-aware execution
+graphs and session-affinity batching \cite{guo2026saga}; and InferCept manages
+inference state across pauses for external interactions
+\cite{abhyankar2024infercept}. Murakkab jointly maps declarative workflow
+components to models and hardware under SLOs \cite{chaudhry2026murakkab}. The
+MARS preprint coordinates GPU inference and CPU tool execution through an
+external control plane \cite{wang2026mars}; the concurrent OpRAG preprint uses
+persistent workers, bounded queues, and batched GPU operators for multi-stage
+RAG \cite{sarker2026oprag}.
+AgentServe co-schedules multi-agent inference on one GPU
+\cite{zhang2026agentserve}. These systems operate at model-call, tool, or
+workflow granularity. Our unit is the deterministic transition after a model or
+tool event has completed.
+
+\paragraph{Non-model CPU and GPU placement.}
+Agentic CPU-GPU Scheduling profiles a complete AI tool and selects immediate
+GPU, queued GPU, or CPU execution \cite{lu2026agenticcpugpu}. TokTier moves
+stateful tokenization across CPU and GPU while enforcing exact token identity
+\cite{zhang2026toktier}. Measurements of CPU-induced LLM slowdowns show that
+CPU starvation can delay launches, communication, and tokenization even with
+CUDA Graphs, and that adding CPU cores can be the economical remedy
+\cite{chung2026cpuslowdowns}. These are the closest tool-level and methodological
+comparisons. They make a tuned CPU implementation and CPU provisioning
+mandatory baselines for the proposed online runtime.
+
+\paragraph{Batching and clustering.}
+Classical real-time scheduling studies job families, time windows, and
+compatible batching \cite{barnoy2009throughput}. Joint batching work addresses
+heterogeneous asynchronous arrivals and deadlines \cite{cang2024jointbatching},
+while serial-batch scheduling includes minimum batch size, job families, and
+release times \cite{huertas2025serialbatch}. One-dimensional $r$-gathering
+studies minimum-occupancy clusters, outliers, contiguous solutions, and exact
+line algorithms \cite{aggarwal2010anonymity,akagi2015rgather,
+nakano2019rgather,sarker2021rgather}. Univariate microaggregation with
+suppression supplies another dynamic-programming analogue
+\cite{laszlo2013microaggregation}. GPU dynamic batching has also been modeled
+with batch-dependent service, stochastic arrivals, latency, and power
+\cite{xu2023smdpbatching}. The recurrence in this paper is a restricted trace
+oracle inside that established territory, not an algorithmic-priority claim.
+
+\paragraph{Positioning.}
+\claimid{RC-012}
+Prior agent systems characterize serving, scheduling, state management, and
+tool execution, while batching theory characterizes which arrivals can be
+served together under timing and occupancy constraints. The supply of
+route-key-conditioned post-event transitions above a hardware crossover lies
+at their interface. Observation placement adds the second axis: a cohort may
+exist, yet a host round trip can still dominate a short control chain. This
+paper gives those axes common boundary quantities and measures each with a
+separate, auditable experiment.

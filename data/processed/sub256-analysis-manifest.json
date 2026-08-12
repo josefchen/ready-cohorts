@@ -1,0 +1,140 @@
+{
+  "bootstrap": {
+    "interval": "independent percentile bootstrap of median ratio",
+    "replicates": 5000,
+    "seed": 20260811
+  },
+  "created_at": "2026-08-11T17:27:08.748620+00:00",
+  "crossover_definition": "smallest tested population with GPU median wall time below tuned CPU median",
+  "hypotheses": {
+    "S1_resident_h64_crosses_by_n128_on_both_gpus": true,
+    "S2_l4_resident_h1_crosses_by_n256": true,
+    "S3_host_visible_crossover_is_never_smaller": true,
+    "S4_h64_proportional_fusion_advantage_gt_1_at_every_population": true,
+    "observed_gtx_resident_h1_crossover": null
+  },
+  "outputs": {
+    "sub256-cell-summary.csv": {
+      "path": "data/processed/sub256-cell-summary.csv",
+      "rows": 96,
+      "sha256": "af47af2d91ac44d5132e4b2d5ad36d61e942a7ef0ddfdb45cbfe3210d264abc0"
+    },
+    "sub256-crossovers.csv": {
+      "path": "data/processed/sub256-crossovers.csv",
+      "rows": 8,
+      "sha256": "75993786d2eeb26a283a6b0a529622385cbe088ee15c9c578970c51dc503d279"
+    },
+    "sub256-host-penalty.csv": {
+      "path": "data/processed/sub256-host-penalty.csv",
+      "rows": 24,
+      "sha256": "c3b4512f49cd305102b4a6c06e4a3a1eddf5d3ac05f1f99c3d98354ff2ebc833"
+    },
+    "sub256-run-quality.csv": {
+      "path": "data/processed/sub256-run-quality.csv",
+      "rows": 2,
+      "sha256": "dfce994058e5fea64b12779e47d57bafd51ec6678fa0a721789926c8d5e46423"
+    },
+    "sub256-shape-quality.csv": {
+      "path": "data/processed/sub256-shape-quality.csv",
+      "rows": 24,
+      "sha256": "2cf09cb13e35d8a08db12534a72a3900cf8a7175479766fcba390c6f1309ca6c"
+    },
+    "sub256-speedups.csv": {
+      "path": "data/processed/sub256-speedups.csv",
+      "rows": 48,
+      "sha256": "81f84fc9104b02c9b0989b00e28e5c322cc750f568ce91487eb96382f9895c3b"
+    },
+    "sub256-temporal-fusion.csv": {
+      "path": "data/processed/sub256-temporal-fusion.csv",
+      "rows": 24,
+      "sha256": "e9786a1a845d9dc28a540acf59ce2fe42335530b50e71e55225a334eea38913e"
+    }
+  },
+  "preregistration": "preregistration/pilot-005.md",
+  "primary_cpu_reference": "faster median compiled CPU cell among 1 and 8 threads",
+  "secondary_cpu_reference": "compiled CPU at 8 threads",
+  "sources": [
+    {
+      "cpu": {
+        "cpu_family": "6",
+        "frequency_governors": [
+          "powersave"
+        ],
+        "logical_cpu_count": 8,
+        "machine": "x86_64",
+        "microcode": "0x104",
+        "model": "158",
+        "model_name": "Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz",
+        "process_affinity_cpus": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "stepping": "13",
+        "torch_num_interop_threads_at_manifest": 8,
+        "torch_num_threads_at_manifest": 8,
+        "vendor_id": "GenuineIntel"
+      },
+      "csv_path": "data/raw/pilot-005-local-sub256-20260811T171204Z.csv",
+      "csv_sha256": "7e18b753c28b3bd97e7ead1992611c97a4fdea3ec66084e1d5d2b90c59d87d0d",
+      "experiment_id": "pilot-005-local-sub256",
+      "git_revision": "455f6251654234d32fb7274462b4c849a9e184cc",
+      "hardware": "NVIDIA GeForce GTX 1660 Ti",
+      "manifest_path": "data/raw/pilot-005-local-sub256-20260811T171204Z.manifest.json",
+      "manifest_sha256": "a6aeac7aa552aaec04b1ae20f199df8ce44ee4814e1c6beef6f104094328291e",
+      "provider": "local",
+      "run_id": "20260811T171204Z"
+    },
+    {
+      "cpu": {
+        "cpu_family": "6",
+        "frequency_governors": [],
+        "logical_cpu_count": 21,
+        "machine": "x86_64",
+        "model": "85",
+        "model_name": "unknown",
+        "process_affinity_cpus": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "stepping": "unknown",
+        "torch_num_interop_threads_at_manifest": 11,
+        "torch_num_threads_at_manifest": 8,
+        "vendor_id": "GenuineIntel"
+      },
+      "csv_path": "data/raw/pilot-006-modal-l4-sub256-20260811T171244Z.csv",
+      "csv_sha256": "b6ecb165e29475ed71824aaf0a55b6bbb22191f79898dd78e4bd2de59e228329",
+      "experiment_id": "pilot-006-modal-l4-sub256",
+      "git_revision": null,
+      "hardware": "NVIDIA L4",
+      "manifest_path": "data/raw/pilot-006-modal-l4-sub256-20260811T171244Z.manifest.json",
+      "manifest_sha256": "53735c69cf854d774c26942ab8cf6849ec2effeca263e0d85144670bb43fd531",
+      "provider": "modal",
+      "run_id": "20260811T171244Z"
+    }
+  ]
+}

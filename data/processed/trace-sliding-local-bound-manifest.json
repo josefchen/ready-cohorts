@@ -1,0 +1,61 @@
+{
+  "bound": "per-event maximum compatible interval overlap; valid upper bound, not necessarily jointly achievable",
+  "configuration": {
+    "active_sessions": [
+      1000,
+      10000,
+      100000
+    ],
+    "deadlines_ms": [
+      10,
+      25,
+      50,
+      100,
+      250
+    ],
+    "groupings": [
+      "pooled",
+      "event_class",
+      "route_key"
+    ],
+    "horizon_s": 60.0,
+    "repetitions": 3,
+    "seed": 20260811,
+    "thresholds": [
+      32,
+      64,
+      128,
+      256
+    ]
+  },
+  "created_at": "2026-08-11T18:13:58.166338+00:00",
+  "hypotheses": {
+    "B1_fixed_window_never_exceeds_local_upper": true,
+    "B2_grouping_hierarchy_checked": true,
+    "B3_positive_alignment_gap_exists": true,
+    "B4_exact_route_upper_exceeds_fixed_at_50_or_100ms": false
+  },
+  "outputs": {
+    "repetitions": {
+      "path": "data/processed/trace-sliding-local-bound-repetitions.csv",
+      "rows": 540,
+      "sha256": "7b32a295f8af8a04638a72f28923b9e9effdd3c4d44c505319b64db4d5b47eb3"
+    },
+    "summary": {
+      "path": "data/processed/trace-sliding-local-bound-summary.csv",
+      "rows": 180,
+      "sha256": "7d5ff47f1512b1b5b9b7b36ed8643bf51456bcce79c9d93226b56c469cf3acf9"
+    }
+  },
+  "preregistration": "preregistration/trace-replay-002.md",
+  "source_files": {
+    "session_summary": {
+      "path": "data/processed/exgentic-tau2-session-summary.csv",
+      "sha256": "389c4e700aad48f322f7e82560594f402b62f56123c6d39a27b3f18ffe409fc6"
+    },
+    "span_features": {
+      "path": "data/processed/exgentic-tau2-span-features.parquet",
+      "sha256": "da57b75db69916a4c1036909e453e41e470b7daef304e61bf2f8b2d8720d4dc2"
+    }
+  }
+}

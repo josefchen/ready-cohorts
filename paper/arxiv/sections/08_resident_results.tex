@@ -1,0 +1,64 @@
+\section{Mechanism results}
+\label{sec:resident-results}
+
+All \ResidentRows{} measured rows pass the frozen status, timing, duration,
+source, provider, and correctness gates. Across the two admissible mechanisms,
+\ResidentLegalInvocations{} tested batched invocations are field-exact and
+decision-exact against the host oracle.
+
+The device-resident path has a lower within-placement median than the host
+round trip in all \ResidentCells{} placement-cells. The ratios range from
+\ResidentRatioMin$\times$ to \ResidentRatioMax$\times$. At the primary
+$N=256,H=32$ cell, the named-placement ratios are 1.71$\times$ on the local
+GTX 1660 Ti, 2.39$\times$ on the Modal L4, 2.06$\times$ on the RunPod L4, and
+1.84$\times$ on the Lambda H100.
+
+\begin{table*}[t]
+  \centering
+  \footnotesize
+  \input{generated/resident-primary-table.tex}
+  \caption{Primary resident-policy cell, $N=256,H=32$. Times are medians of
+  batch-average cohort-horizon wall time. The floor omits runtime predicate and
+  selection work and is not a legal online policy.}
+  \label{tab:resident-primary}
+\end{table*}
+
+At that cell, the device path takes \ResidentPrimaryUsMin{} to
+\ResidentPrimaryUsMax{} $\mu$s across the four named placements, compared with
+\HostPrimaryUsMin{} to \HostPrimaryUsMax{} $\mu$s for the host round trip. The
+absolute difference is \PrimarySavedUsMin{} to \PrimarySavedUsMax{} $\mu$s per
+32-epoch cohort invocation. The device path is still
+\PrimaryFloorRatioMin$\times$ to \PrimaryFloorRatioMax$\times$ slower than the
+oracle floor.
+This undecomposed gap combines predicate, selector, and graph overhead, which
+remains large beside the synthetic route bodies.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.82\linewidth]{resident-policy-primary-mechanisms.png}
+  \caption{The three mechanisms at the primary cell. Device residency removes
+  a matched host observation and dispatch epoch. The oracle floor removes the
+  decision itself, so it is diagnostic rather than deployable.}
+  \label{fig:resident-primary}
+\end{figure*}
+
+\subsection{Negative device-launch control}
+
+The earlier native-dispatch calibration compares a pre-instantiated graph
+launched from the host with a fixed child graph launched from a GPU kernel. The
+child path retains the host root launch, adds a launcher kernel, and removes no
+host decision. Across \NativePlacements{} named placements and all \NativeCells{}
+cells, it is slower. The ratio of within-placement wall-time medians ranges
+from \NativeRatioMin$\times$ to \NativeRatioMax$\times$. All \NativeRows{} rows
+are field-exact.
+
+This negative control separates device residency from device launch. Adding a
+nested launcher while removing no host decision produces overhead rather than
+an alternative positive treatment.
+
+The timed comparison isolates one control-path choice. Cold graph construction,
+ingress, effect egress, validation, and a tuned CPU implementation of a real
+route body enter the joined runtime evaluation in
+Section~\ref{sec:interpretation}.
+
+\FloatBarrier

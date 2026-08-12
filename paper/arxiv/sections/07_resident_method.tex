@@ -1,0 +1,91 @@
+\section{Device-resident decision study}
+\label{sec:resident-method}
+
+The trace study measures cohort supply. This study isolates the second gate:
+the placement of a decision over state that is already resident on the GPU. It
+is a mechanism experiment rather than an implementation of trace-driven route
+compaction.
+
+\subsection{Matched mechanisms}
+
+The frozen CUDA program maintains a 16-byte synthetic state for each agent and
+two route bodies, represented by per-epoch pre-instantiated branch or path graph
+executables. At each epoch, a GPU predicate computes one global binary route
+decision. All mechanisms use the same initialized state, predicate, route
+functions, block size, and implied route sequence.
+
+\paragraph{Host round trip.}
+Launch the predicate graph, copy its four-byte result to pinned host memory,
+synchronize, and launch the selected per-epoch route graph from the host.
+
+\paragraph{Device resident.}
+Launch one root graph. A one-thread selector reads the predicate on device and
+tail-launches one of the uploaded per-epoch path graphs. Each nonfinal path
+executes the selected body and the next predicate and selector, so execution
+continues for $H$ epochs without exposing the decision to the host.
+
+\paragraph{No-decision floor.}
+Replay the oracle route sequence as one graph while omitting predicate and
+selection work. This mechanism is a structural floor, not an admissible online
+scheduler.
+
+Graph creation, instantiation, and upload are outside steady-state timing for
+all mechanisms. State reset, result copy, and validation are also outside. The
+predicate copy and synchronization remain inside the host-roundtrip interval.
+The primary metric is cohort-horizon wall time per batched invocation, averaged
+within each recorded technical row.
+
+\subsection{Grid and independent unit}
+
+The full grid is $N\in\{256,2048,16384\}$ agents and
+$H\in\{2,8,32\}$ epochs. Each mechanism-cell has five warmups, three
+calibration samples, and 30 measured rows. One common batch count, calibrated
+from the fastest mechanism, is applied to all mechanisms in a cell; each row
+runs for at least 100 ms of aggregate timed work, subject to a frozen cap.
+
+The four named placements are a local GTX 1660 Ti, a Modal L4, a RunPod L4,
+and a Lambda H100 SXM5. The CUDA source hash is
+\sha{4b5cdcb9496a734bd7801d5c419efb8eceb72fd6962800520101e89676d204da}.
+Provider receipts, device UUIDs, images, binaries, raw files, and manifests are
+bound where provider interfaces permit.
+
+A named placement is the outer performance unit. Thirty rows reduce technical
+timing noise inside one placement and are not independent hardware
+replications. Effect magnitudes and directions are therefore reported by
+placement, with L4 $n=2$, H100 $n=1$, and GTX $n=1$.
+
+\subsection{Correctness contract}
+
+A separately written host implementation computes both route functions and
+the predicate without calling the device transition functions. After every
+batched invocation, the experiment compares all four fields of every final
+agent state. It also compares the complete epoch-by-epoch decision trace for
+the host and resident mechanisms. Any mismatch, illegal launch, setup error,
+OOM, crash, or nonpositive timing blocks performance interpretation.
+
+The no-decision floor receives the oracle route sequence by construction. Its
+final state is checked independently, but its decision sequence is not an
+independent observation. This is why the paper reports admissible-mechanism
+correctness separately from total tested work.
+
+\subsection{Prospective-plan deviations}
+
+A bounded local engineering smoke preceded the freeze. The full local run
+used the same physical GPU shortly afterward. The prospectively frozen bounded cloud
+stage allowed Modal plus one of RunPod or Lambda; the final report retains both
+external providers as a descriptive scope expansion, one placement beyond the
+frozen first-stage count. Neither fact strengthens the sampling claim.
+
+The primary directional cell was $N=256,H=32$. Horizon scaling is reported as
+an exploratory diagnostic because ``advantage increases'' was not given a
+complete operational definition before the run.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.9\linewidth]{resident-policy-speedup-by-horizon.png}
+  \caption{Within-placement ratio of batch-average row medians for the host
+  round trip over the device-resident mechanism. Ratios above one favor the
+  resident path. Placement is the outer unit; the plotted rows are technical
+  repetitions rather than invocation-tail samples.}
+  \label{fig:resident-horizon}
+\end{figure*}

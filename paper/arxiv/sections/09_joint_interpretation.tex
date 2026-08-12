@@ -1,0 +1,65 @@
+\section{Joining the evidence}
+\label{sec:interpretation}
+
+The two studies define a staged systems test. Cohort supply determines whether
+any legal scheduler can find enough same-group work before launch deadlines.
+Observation placement determines whether an already resident decision chain
+pays a host copy, synchronization, branch, and redispatch epoch. A proposed GPU
+route service must pass both gates. Failure at either gate is a concrete reason
+to keep that transition on the CPU.
+
+The current numbers do not form a service-level acceleration estimate and must
+not be multiplied.
+The trace study sweeps candidate thresholds, while the resident study fixes
+three cohort sizes and a synthetic route body. The trace also contains no
+measurement that 32 consecutive control epochs can execute without a model,
+tool, policy, or commit observation. The value of the separation is that each
+missing quantity now has a named measurement rather than being hidden inside a
+broad GPU-agent claim.
+
+\subsection{The next systems test}
+
+The runtime implied by the boundary is a finite-capacity online route compactor.
+It receives typed completion events, updates compact state, queues events by a
+verified executable route and deadline, launches a route only above its
+measured safe-suffix threshold $K_r$, and falls back to a tuned CPU path when a
+deadline or capacity limit prevents batching. The GPU may emit ordered effect
+descriptors; a privileged CPU or DPU remains the authority for external
+effects.
+
+Such a system adds one essential quantity. Let $z_i=1$ only when the frozen
+online policy accelerates event $i$ with an exact output and observed device
+start no later than its launch deadline; otherwise $z_i=0$. Then
+
+\begin{equation}
+  A=\frac{1}{|E|}\sum_{i\in E}z_i.
+\end{equation}
+
+Late, missing, failed, and fallback events have $z_i=0$ and remain in $E$. The
+opportunity recovery above fixed windows is
+
+\begin{equation}
+  R_A=\frac{A-F}{\pstar-F},
+  \label{eq:online-recovery}
+\end{equation}
+
+when $\pstar>F$. This turns the offline result into a direct runtime target. A
+credible evaluation pairs $A$ and $R_A$ with raw invocation P99, deadline
+misses, CPU core-seconds per event, exact trajectories, task utility, network
+bytes, cost, and, for a shared inference GPU, TTFT and TPOT guardrails.
+
+\subsection{Deployment paths}
+
+The strongest architecture is a regional route service that aggregates typed
+events from many inference and tool workers. Aggregation attacks the cohort
+supply problem directly; measured ingress, state movement, and effect egress
+then determine whether the control-path savings survive the network boundary.
+A second path uses a low-priority queue on an inference GPU that is already
+allocated. Its economic advantage is marginal device cost, while its decisive
+constraint is noninterference with model TTFT and TPOT.
+
+A dedicated control GPU is the weakest starting point because the present
+experiments do not establish enough utilization or CPU displacement to pay for
+one. GPU-initiated VM lifecycle operations are also outside the transition
+unit: a device can emit a typed prewarm request, but a privileged CPU or DPU
+control plane must authorize and commit it.

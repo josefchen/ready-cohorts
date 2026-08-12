@@ -1,0 +1,81 @@
+\section{Proof and evaluator scope}
+\label{app:proof-scope}
+
+\subsection{Binary-program reference formulation}
+
+For arbitrary deadlines under the same zero-service and unlimited-capacity
+assumptions, candidate launch times may be restricted to unique deadlines by
+Proposition~\ref{prop:deadlines}. Let $x_{i\tau}$ assign event $i$ to deadline $\tau$,
+let $y_{r\tau}$ indicate a batch for route $r$, and let $M_{r\tau}$ be the
+number of route-$r$ event intervals containing $\tau$. One reference
+formulation is
+
+\begin{align}
+\max\quad &\sum_i\sum_\tau x_{i\tau} \\
+\text{s.t.}\quad
+&\sum_\tau x_{i\tau}\leq1 &&\forall i,\\
+&x_{i\tau}=0 &&\text{if }\tau\notin[t_i,d_i],\\
+&K_r y_{r\tau}\leq\sum_{i:r_i=r}x_{i\tau} &&\forall r,\tau,\\
+&\sum_{i:r_i=r}x_{i\tau}\leq M_{r\tau}y_{r\tau} &&\forall r,\tau,\\
+&x_{i\tau},y_{r\tau}\in\{0,1\}.
+\end{align}
+
+The objective does not minimize batch count or wait among
+maximum-cardinality schedules. The reported equal-deadline evaluator avoids
+this quadratic candidate assignment and returns one witness.
+
+\section{Evidence inventory}
+\label{app:evidence}
+
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \begin{tabularx}{\linewidth}{@{}p{0.19\linewidth} X p{0.27\linewidth}@{}}
+    \toprule
+    Layer & Current evidence and outer unit & Admissible inference \\
+    \midrule
+    Route-key trace packing & Replay-seed unit conditional on one panel;
+      540 cell-seed rows from nine swarms; all invariants pass & Conditional opportunity surface \\
+    Primary trace cell & Same outer unit;
+      $F=\TraceFixedPct\%$, $\pstar=\TraceExactPct\%$, $U=\TraceUpperPct\%$ &
+      Exact offline share under the model \\
+    Resident decision & Named-placement unit; four placements and
+      \ResidentCells{} directional cells & Named-placement effect direction and size \\
+    Exactness stress & Tested-batched-invocation unit;
+      \ResidentLegalInvocations{} admissible-mechanism invocations & Exactness on tested invocations \\
+    Nested launch & Named-placement unit; five placements and
+      \NativeCells{} negative cells & Fixed nested-launch calibration \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Evidence layers, outer units, and admissible inference. Population
+  and end-to-end claims require the joined confirmation design.}
+  \label{tab:evidence-inventory}
+\end{table}
+
+\section{Protocol deviations}
+\label{app:deviations}
+
+\paragraph{Resident policy.}
+
+\begin{enumerate}
+  \item A correctness and engineering smoke preceded the source freeze. The
+  smoke and full local run used the same GPU UUID and are not independent
+  placements.
+  \item The cloud protocol authorized Modal plus one of RunPod or Lambda. Both
+  external placements were ultimately retained. The additional placement is a
+  disclosed descriptive scope expansion.
+  \item Horizon-ratio monotonicity is exploratory because the preregistration
+  did not fully specify its operational test.
+  \item No unsupported account of failed Lambda provisioning attempts is used
+  as scientific evidence. Retained receipts support the successful execution
+  and final resource absence.
+\end{enumerate}
+
+\paragraph{Native dispatch.}
+\label{app:native-deviation}
+
+The native-dispatch plan proposed two fresh placements per available
+provider/SKU and at least six H100 placements for nuisance estimation. That
+layout was not completed. The retained calibration contains five named
+placements, including one H100, three L4s, and one GTX, and supports only the
+descriptive negative result reported here.

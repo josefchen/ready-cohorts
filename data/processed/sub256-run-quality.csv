@@ -1,0 +1,3 @@
+source_file,run_id,hardware,provider,rows,cases,execution_error_rows,duplicate_case_repetitions,shapes,invalid_shapes,median_cell_cv,p90_cell_cv,cells_cv_over_10pct
+pilot-005-local-sub256-20260811T171204Z.csv,20260811T171204Z,NVIDIA GeForce GTX 1660 Ti,local,432,48,0,0,12,0,0.015590447852557341,0.08024426287197821,3
+pilot-006-modal-l4-sub256-20260811T171244Z.csv,20260811T171244Z,NVIDIA L4,modal,432,48,0,0,12,0,0.02769837158417664,0.0825096965803379,2

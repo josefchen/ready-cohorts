@@ -1,0 +1,196 @@
+{
+  "content_policy": "Derived outputs retain timestamps, counts, lengths, route labels, and public IDs only; prompt text, tool arguments, and tool results are not emitted.",
+  "created_at": "2026-08-11T16:54:41.765394+00:00",
+  "outputs": {
+    "session_summary": {
+      "bytes": 202833,
+      "path": "data/processed/exgentic-tau2-session-summary.csv",
+      "sha256": "389c4e700aad48f322f7e82560594f402b62f56123c6d39a27b3f18ffe409fc6"
+    },
+    "span_features": {
+      "bytes": 693396,
+      "path": "data/processed/exgentic-tau2-span-features.parquet",
+      "sha256": "da57b75db69916a4c1036909e453e41e470b7daef304e61bf2f8b2d8720d4dc2"
+    }
+  },
+  "quality": {
+    "benchmarks": [
+      [
+        "tau2_retail",
+        469
+      ],
+      [
+        "tau2_airline",
+        196
+      ],
+      [
+        "tau2_telecom",
+        186
+      ]
+    ],
+    "duplicate_session_ids": 0,
+    "failed_status_spans": 52,
+    "harnesses": [
+      [
+        "claude_code",
+        349
+      ],
+      [
+        "smolagents_code",
+        219
+      ],
+      [
+        "tool_calling",
+        216
+      ],
+      [
+        "openai_solo",
+        67
+      ]
+    ],
+    "invalid_json_fields": 0,
+    "nonpositive_duration_spans": 52,
+    "overlapping_span_starts": 617,
+    "required_nulls": {
+      "benchmark": 0,
+      "harness": 0,
+      "route_key": 0,
+      "session_id": 0,
+      "start_time": 0
+    },
+    "session_rows": 851,
+    "span_rows": 9031
+  },
+  "selected_benchmarks": [
+    "tau2_airline",
+    "tau2_retail",
+    "tau2_telecom"
+  ],
+  "source_dataset": "Exgentic/agent-llm-traces",
+  "source_conversion_revision": "f7c94012d0bfbf66fe4d6ed627699508bbb555ff",
+  "source_files": [
+    {
+      "bytes": 8380103,
+      "path": "data/external/exgentic-agent-llm-traces/0020.parquet",
+      "sha256": "4208d674e2de5edc8513877e54613a6109c97f1b99ed7be6d397513e038941b1",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0020.parquet"
+    },
+    {
+      "bytes": 12605995,
+      "path": "data/external/exgentic-agent-llm-traces/0021.parquet",
+      "sha256": "2ee63b04c6bc9343d270f4f6de075f262cc0aa33727802137fdccbab72fae017",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0021.parquet"
+    },
+    {
+      "bytes": 265853,
+      "path": "data/external/exgentic-agent-llm-traces/0022.parquet",
+      "sha256": "38bd8d57ceb882de7d2afb7354fec558687dbc67621c2293e92a3f9ce4d3351a",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0022.parquet"
+    },
+    {
+      "bytes": 374962,
+      "path": "data/external/exgentic-agent-llm-traces/0023.parquet",
+      "sha256": "2f5f9ed450e6ea618ab2ea31d9904f067e177278f333be50f1ec4f585c3de61a",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0023.parquet"
+    },
+    {
+      "bytes": 322786,
+      "path": "data/external/exgentic-agent-llm-traces/0024.parquet",
+      "sha256": "f6ca483def33a83fc5855115c6bba4ce5a06eae8eac6f683659e8a32c0656bff",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0024.parquet"
+    },
+    {
+      "bytes": 1280514,
+      "path": "data/external/exgentic-agent-llm-traces/0025.parquet",
+      "sha256": "a1b57eca96d0619af1d83d6f2c913e03a72073e4a60d0ea2945f8095f336cc73",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0025.parquet"
+    },
+    {
+      "bytes": 2017273,
+      "path": "data/external/exgentic-agent-llm-traces/0026.parquet",
+      "sha256": "abc54ae92c80e66d63ef0e537a200933de345b8328ba16f71ceb0b9b5275388b",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0026.parquet"
+    },
+    {
+      "bytes": 2106740,
+      "path": "data/external/exgentic-agent-llm-traces/0027.parquet",
+      "sha256": "4787b7e33aad9a0c0aed75aa7e7029bce2f15e50c30b02f083ff3eaf7d1d5d6a",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0027.parquet"
+    },
+    {
+      "bytes": 10853048,
+      "path": "data/external/exgentic-agent-llm-traces/0028.parquet",
+      "sha256": "17b2161b4eab8235cc6ac733f09f182ceae47de7d88f8881b42f46601d12025b",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0028.parquet"
+    },
+    {
+      "bytes": 323877,
+      "path": "data/external/exgentic-agent-llm-traces/0029.parquet",
+      "sha256": "36258df7a80e4b48c2002dc77f359835ae32b4850929373723aab3c648c45df9",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0029.parquet"
+    },
+    {
+      "bytes": 273483,
+      "path": "data/external/exgentic-agent-llm-traces/0030.parquet",
+      "sha256": "749338d2e71979f07877bcb180724c764833aa4e4edf4ca5f30dcbd40cb5f6ee",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0030.parquet"
+    },
+    {
+      "bytes": 296951,
+      "path": "data/external/exgentic-agent-llm-traces/0031.parquet",
+      "sha256": "b2c35c41c3fb1f75c3ce12a80b6d1f9407d5450eea2300c4da4165df6aa1a07d",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0031.parquet"
+    },
+    {
+      "bytes": 438079,
+      "path": "data/external/exgentic-agent-llm-traces/0032.parquet",
+      "sha256": "6c7cfdc7edbc67b7c0010e01e81bb1898f54586235fb16e33f4c7d23fa599908",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0032.parquet"
+    },
+    {
+      "bytes": 454211,
+      "path": "data/external/exgentic-agent-llm-traces/0033.parquet",
+      "sha256": "1842d80742e816a92c2c87472f77f942481a342a2d0e45c0e01e35ac0808aed3",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0033.parquet"
+    },
+    {
+      "bytes": 668615,
+      "path": "data/external/exgentic-agent-llm-traces/0034.parquet",
+      "sha256": "c46231c5060f238865e461caba8cc0f188c4e8571bbc60b4f4e479029e103b9d",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0034.parquet"
+    },
+    {
+      "bytes": 5637536,
+      "path": "data/external/exgentic-agent-llm-traces/0035.parquet",
+      "sha256": "bcf6f5bb11508049b1822f484179c4fbdad5c91cd2789a20e8888bd8c4869040",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0035.parquet"
+    },
+    {
+      "bytes": 5482968,
+      "path": "data/external/exgentic-agent-llm-traces/0036.parquet",
+      "sha256": "168901217a7f6c241a3cbd3d4c2be11e229ef2a04ec06b22cf8b9a2b540c4a31",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0036.parquet"
+    },
+    {
+      "bytes": 1643641,
+      "path": "data/external/exgentic-agent-llm-traces/0037.parquet",
+      "sha256": "f9372103af81b3e86efb5afa68d82de2fcd036bf136debe5b856feaa84112b6d",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0037.parquet"
+    },
+    {
+      "bytes": 2542646,
+      "path": "data/external/exgentic-agent-llm-traces/0038.parquet",
+      "sha256": "1f6d582adfd96eff8adac9446746546c05af176e20f2a451559b31dfad007f38",
+      "url": "https://huggingface.co/datasets/Exgentic/agent-llm-traces/resolve/f7c94012d0bfbf66fe4d6ed627699508bbb555ff/default/train/0038.parquet"
+    }
+  ],
+  "source_fingerprint_sha256": "776d435f038f1bc1dc495f5f10c8e98ccd0fe541421c48175e0bedfa85eaa289",
+  "source_license": "cdla-permissive-2.0",
+  "source_revision": "70036b93a04e61b0ea2706a68b962f4f26774587",
+  "source_verification": {
+    "checked_at": "2026-08-12T01:56:56Z",
+    "commit_resolved_hash_failures": 0,
+    "commit_resolved_hash_matches": 19,
+    "method": "independent HTTPS fetch and SHA-256 comparison"
+  }
+}

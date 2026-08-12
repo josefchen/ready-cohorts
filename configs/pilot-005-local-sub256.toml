@@ -1,0 +1,17 @@
+[experiment]
+id = "pilot-005-local-sub256"
+seed = 20260811
+agent_counts = [8, 16, 32, 64, 128, 256]
+state_widths = [8]
+action_counts = [1]
+total_steps = 64
+observation_horizons = [1, 64]
+warmup_rollouts = 5
+repetitions = 9
+cpu_threads = [1, 8]
+gpu_visibility = ["resident", "host-visible"]
+absolute_tolerance = 1.0e-4
+relative_tolerance = 1.0e-5
+compile_threads = 8
+recompile_limit = 512
+randomize_case_order = true

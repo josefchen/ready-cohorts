@@ -1,0 +1,115 @@
+\section{Trace study}
+\label{sec:trace-method}
+
+\subsection{Pinned public source}
+
+The source is the complete \texttt{tau2\_airline}, \texttt{tau2\_retail}, and
+\texttt{tau2\_telecom} subset of the public Exgentic agent-trace dataset. The
+dataset revision is
+\sha{70036b93a04e61b0ea2706a68b962f4f26774587}
+and the Parquet conversion revision is
+\sha{f7c94012d0bfbf66fe4d6ed627699508bbb555ff}; all 19 retained shard hashes
+match commit-resolved URLs \cite{exgentic2026traces}. The domain labels correspond to the airline, retail,
+and telecom environments released with $\tau^2$-Bench
+\cite{barres2026tau2bench}, which builds on the original $\tau$-bench framework
+\cite{yao2024taubench}. The selected panel contains
+\TraceSessions{} sessions and \TraceSpans{} recorded LLM spans across four
+harnesses.
+
+\claimid{RC-015}Each span completion becomes one candidate control event. Its route key is
+derived from the recorded outcome: final or text, error, one named tool, or a
+generic multi-tool outcome. It omits benchmark and harness semantics,
+state-machine node, schema and version, arguments, policy context, and the tool
+identities inside a multi-tool outcome. The extraction retains timestamps,
+public identifiers, counts, lengths, and route labels. It excludes prompt text,
+tool arguments, and tool results. Source Parquet files and both derived outputs
+are content-hashed.
+
+The selected data contain 70 route labels. Eight labels occur in more than one
+benchmark domain, and 28 occur under more than one harness. The generic
+\texttt{tool:<multi>} label alone covers 325 spans and 122 distinct recorded
+tool-name encodings. The source audit also retains 52 failed-status spans, 52
+nonpositive-duration spans, and 617 overlapping span starts. We do not remove
+these observations after inspecting outcomes.
+
+This construction treats a model completion as the point at which a control
+transition could become ready. The route key is a declared conditioning proxy,
+not proof of executable compatibility. The construction does not claim that
+the recorded harnesses implemented our transition or that their span durations
+equal model service times.
+
+\subsection{Stationary replay}
+
+We use the prospectively frozen stationary swarm model from trace replay 003. Session
+arrivals follow a homogeneous Poisson process. A session template is sampled
+uniformly from the fixed empirical panel. For target mean active population
+$C$, the arrival rate is $C$ divided by mean template duration. Arrivals begin
+one maximum template duration before measurement so that the retained
+60-second interval is in steady state under the model. Fixed partitions are
+origin-aligned half-open windows of width $\delta$; $F$ is conditional on that
+phase, whereas $\pstar$ is not.
+
+The exact-packing grid contains:
+
+\begin{itemize}
+  \item $C\in\{1{,}000,10{,}000,100{,}000\}$;
+  \item $\delta\in\{10,25,50,100,250\}$ ms;
+  \item pooled, event-class, and route-key grouping;
+  \item $K\in\{32,64,128,256\}$; and
+  \item three replay seeds from root seed 20260811.
+\end{itemize}
+
+\claimid{RC-007}Every generated event is retained. The three population values crossed with
+three seeds produce nine generated swarms. Reusing each swarm across deadlines,
+groupings, and thresholds yields \TraceReplayCells{} design cells and
+\TraceReplayRepetitions{} cell-seed rows. For each row we compute $F$, $\pstar$,
+$U$, the exact batch count, and
+
+\begin{equation}
+  G=\frac{\pstar-F}{U-F}\quad\text{when }U>F.
+  \label{eq:gap-closure}
+\end{equation}
+
+$G$ describes how much of the local boundary-alignment opportunity is jointly
+packable. The reported primary $G$ is the mean of the three per-seed ratios,
+not the ratio formed from three mean shares.
+
+\subsection{Prospective freeze and validity gates}
+
+The exact solver, integer-clock contract, inputs, grid, primary cell, and
+directional hypothesis were frozen before any exact trace outcome was
+computed according to the artifact-recorded chronology. The plan was not
+externally registered or independently timestamped. Earlier fixed-window and local-bound results were permitted design
+data. Five invariants gate interpretation: $F\leq\pstar\leq U$; monotonicity
+under grouping coarsening; monotonicity with $\delta$; antitonicity with
+$K$; and equality of all three shares whenever the previously computed lower
+and upper bounds coincide.
+
+The primary cell was $C=100{,}000$, route-key grouping, $K=256$, and
+$\delta=50$ ms.
+The directional pilot hypothesis was only $\pstar>F$. The three seeds quantify
+Monte Carlo variation under one fixed panel and arrival model. They are not
+independent traces from a deployment population, so no population $p$-value or
+confidence interval is reported.
+
+\begin{table}[t]
+  \centering
+  \footnotesize
+  \begin{tabularx}{\columnwidth}{@{}lX@{}}
+    \toprule
+    Frozen item & Value \\
+    \midrule
+    Source & Exgentic tau2 panel, two commit hashes \\
+    Empirical unit & one of \TraceSessions{} session templates \\
+    Event & recorded LLM-span completion \\
+    Grouping & outcome-derived route-key proxy \\
+    Replay & stationary Poisson session arrivals \\
+    Clock & integer nanoseconds, inclusive endpoints \\
+    Capacity/service & unlimited / zero \\
+    Uncertainty & three seeds conditional on one panel \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Trace-study contract. The replay is a controlled load model rather
+  than a model of production arrival statistics.}
+  \label{tab:trace-contract}
+\end{table}

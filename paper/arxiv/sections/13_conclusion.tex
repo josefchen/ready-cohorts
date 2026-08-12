@@ -1,0 +1,26 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+The ready-cohort boundary turns GPU agent control into a falsifiable systems
+question. A workload must supply enough same-group events before their launch
+deadlines, and the control path must account for where intermediate decisions
+are observed. Under the frozen trace model, exact sliding-deadline packing
+raises eligible share from \TraceFixedPct\% to \TraceExactPct\%, recovering
+\TraceGapClosurePct\% of the opportunity lost by fixed windows. The full
+surface also shows where cohort supply collapses to zero.
+
+The mechanism study establishes the second gate. Keeping the tested binary
+decision on device reduces cohort-horizon wall time in all
+\ResidentCells{} cells across four named placements, with ratios from
+\ResidentRatioMin$\times$ to \ResidentRatioMax$\times$. A nested device graph
+that removes no host decision loses in all \NativeCells{} cells across five
+placements. Device launch alone is therefore insufficient; the gain appears
+only in the treatment that removes the matched host-mediated decision epoch.
+
+These results provide the workload budget and the mechanism test for an online
+route compactor. Its decisive measurements are achieved share $A$ relative to
+$F$ and $\pstar$, raw P99, CPU core-seconds, exact effects, task utility, cost,
+and shared-inference guardrails. If it cannot convert offline headroom into
+online work or displace CPU without harming model service, the boundary rejects
+the GPU design. If it can, the same quantities show exactly where GPU-resident
+agent control belongs in a datacenter.

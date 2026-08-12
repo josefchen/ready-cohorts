@@ -1,0 +1,49 @@
+{
+  "archive_files_verified": 23,
+  "archive_path": "release/arxiv/ready-cohorts-arxiv-v1.tar.gz",
+  "archive_sha256": "14613c17f7774aee5ecd41bb49d964a84bfd5366c499cf77ed84b0b58fb354df",
+  "isolated_compile": {
+    "arxiv_target": "TeX Live 2025 / pdflatex",
+    "compiler": "pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian)",
+    "local_tex_live": "2023",
+    "network_required": false,
+    "runs": 3,
+    "shell_escape": false,
+    "tex_live_2025_static_compatibility": "cleveref dependency removed"
+  },
+  "log_gates": {
+    "overfull_boxes": 0,
+    "undefined_citations": 0,
+    "undefined_references": 0
+  },
+  "official_arxiv_preflight": {
+    "all_archive_files_used": true,
+    "issues": 0,
+    "path": "release/arxiv/ready-cohorts-arxiv-v1-official-preflight.json",
+    "sha256": "959978881262199f2bf3fe720c590ccbf11202c9f791cf45cee97f68c1b29c08",
+    "status": "success",
+    "tool_commit": "c494260357a28295d2e95c4cecdfd2b77b0b2e9e"
+  },
+  "pdf": {
+    "bytes": 946791,
+    "fonts_embedded": 31,
+    "javascript": false,
+    "pages": 14,
+    "path": "release/arxiv/ready-cohorts-arxiv-v1.pdf",
+    "public_email": false,
+    "sha256": "466f1a3687fc7de53c0579148e4c298744d3a6982fee2c698b8470480ebd02d0"
+  },
+  "public_source_scan": "passed",
+  "release_id": "ready-cohorts-arxiv-v1",
+  "schema_version": "ready-cohorts-arxiv-verification-v1",
+  "tex_live_2025_compile": {
+    "compiler": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025)",
+    "container_digest": "sha256:5912d6a33798957f4cd6ff1673819209f59300c378033d25066feb93270b90ce",
+    "extracted_text_exact_match": true,
+    "pages": 14,
+    "path": "release/arxiv/ready-cohorts-arxiv-v1-texlive-2025.json",
+    "pdf_sha256": "c757724856c052a501af3d10452c5a4056aed9017795075ceef1f2a35a82e3c5",
+    "sha256": "407e97b2133056e81d16da7004a1b0adf891e86b1c6488e244fab47bbe963197",
+    "status": "success"
+  }
+}

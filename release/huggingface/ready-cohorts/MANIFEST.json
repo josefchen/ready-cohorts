@@ -1,0 +1,151 @@
+{
+  "files": [
+    {
+      "bytes": 179407,
+      "path": "figures/resident-policy-primary-mechanisms.png",
+      "public_sha256": "2a72ce818ca13a4f317c4c491dc925995462c852c5a0f6b66f08ec3033bba844",
+      "source_path": "results/figures/resident-policy-primary-mechanisms.png",
+      "source_sha256": "2a72ce818ca13a4f317c4c491dc925995462c852c5a0f6b66f08ec3033bba844",
+      "transformation": "none"
+    },
+    {
+      "bytes": 216330,
+      "path": "figures/resident-policy-speedup-by-horizon.png",
+      "public_sha256": "0736ad6580c33b8b50bc76a9c1b750d6f05ee03fee74a1ab2b90684a6d4713d8",
+      "source_path": "results/figures/resident-policy-speedup-by-horizon.png",
+      "source_sha256": "0736ad6580c33b8b50bc76a9c1b750d6f05ee03fee74a1ab2b90684a6d4713d8",
+      "transformation": "none"
+    },
+    {
+      "bytes": 150654,
+      "path": "figures/trace-exact-opportunity-frontier.png",
+      "public_sha256": "7d0e55e3ddb3ee360c70fb5b07c32bb415c3b2003b611be1a18ec05847eda5ee",
+      "source_path": "results/figures/trace-exact-opportunity-frontier.png",
+      "source_sha256": "7d0e55e3ddb3ee360c70fb5b07c32bb415c3b2003b611be1a18ec05847eda5ee",
+      "transformation": "none"
+    },
+    {
+      "bytes": 88753,
+      "path": "native/cell-summary.csv",
+      "public_sha256": "1bb083c8984bc6f07ba3a1e8cb20cea129a94efdd983dfb6925c67e41eca1479",
+      "source_path": "data/processed/native-dispatch-pilot-cell-summary.csv",
+      "source_sha256": "1bb083c8984bc6f07ba3a1e8cb20cea129a94efdd983dfb6925c67e41eca1479",
+      "transformation": "none"
+    },
+    {
+      "bytes": 25272,
+      "path": "native/contrasts.csv",
+      "public_sha256": "799ed4fe36f96e8e7d7f63b4d180d679311491e4b835a48bcbf50264acd39e05",
+      "source_path": "data/processed/native-dispatch-pilot-contrasts.csv",
+      "source_sha256": "799ed4fe36f96e8e7d7f63b4d180d679311491e4b835a48bcbf50264acd39e05",
+      "transformation": "none"
+    },
+    {
+      "bytes": 14135,
+      "path": "native/manifest.json",
+      "public_sha256": "d31b356a1fa238b1901841e3495961b39ab06f7a32de8344bfe06a2a440379d1",
+      "source_path": "data/processed/native-dispatch-pilot-manifest.json",
+      "source_sha256": "d31b356a1fa238b1901841e3495961b39ab06f7a32de8344bfe06a2a440379d1",
+      "transformation": "redact_paths"
+    },
+    {
+      "bytes": 4961,
+      "path": "paper/claim-evidence-map.csv",
+      "public_sha256": "563c1f5ea74acf74aa7b5de750d3e9fc6e568c6156b06aa6a6e48a70f7b150d2",
+      "source_path": "paper/governance/claim-evidence-map.csv",
+      "source_sha256": "563c1f5ea74acf74aa7b5de750d3e9fc6e568c6156b06aa6a6e48a70f7b150d2",
+      "transformation": "none"
+    },
+    {
+      "bytes": 4417,
+      "path": "paper/paper-data-manifest.json",
+      "public_sha256": "9cc3733b1335f883fb26a16e9a458e2405b0027576b901377c205f914240a29a",
+      "source_path": "paper/arxiv/generated/paper-data-manifest.json",
+      "source_sha256": "9cc3733b1335f883fb26a16e9a458e2405b0027576b901377c205f914240a29a",
+      "transformation": "none"
+    },
+    {
+      "bytes": 946791,
+      "path": "paper/ready-cohorts.pdf",
+      "public_sha256": "466f1a3687fc7de53c0579148e4c298744d3a6982fee2c698b8470480ebd02d0",
+      "source_path": "paper/arxiv/main.pdf",
+      "source_sha256": "466f1a3687fc7de53c0579148e4c298744d3a6982fee2c698b8470480ebd02d0",
+      "transformation": "none"
+    },
+    {
+      "bytes": 37199,
+      "path": "resident/cell-summary.csv",
+      "public_sha256": "07dfd68ec14dd26b163037d239c53fcbd66ef0d0ba080c5748b6f582c46c4038",
+      "source_path": "data/processed/resident-policy-pilot-cell-summary.csv",
+      "source_sha256": "07dfd68ec14dd26b163037d239c53fcbd66ef0d0ba080c5748b6f582c46c4038",
+      "transformation": "none"
+    },
+    {
+      "bytes": 14277,
+      "path": "resident/contrasts.csv",
+      "public_sha256": "00fb518cef7b2eb935fddad6b890025fd6b4cb05368458bb317cc29a987ba851",
+      "source_path": "data/processed/resident-policy-pilot-contrasts.csv",
+      "source_sha256": "00fb518cef7b2eb935fddad6b890025fd6b4cb05368458bb317cc29a987ba851",
+      "transformation": "none"
+    },
+    {
+      "bytes": 15674,
+      "path": "resident/manifest.json",
+      "public_sha256": "e28ae0f6fbdd2fff79e49ce6fb0c9377ff36b111688156034d352eeb1c2c3ddd",
+      "source_path": "data/processed/resident-policy-pilot-manifest.json",
+      "source_sha256": "064eb8cb63ff73cd9d9c5a34c473916a4bc7d23cbb7191d650235c63fcb49be2",
+      "transformation": "redact_paths"
+    },
+    {
+      "bytes": 202833,
+      "path": "source/session-summary.csv",
+      "public_sha256": "389c4e700aad48f322f7e82560594f402b62f56123c6d39a27b3f18ffe409fc6",
+      "source_path": "data/processed/exgentic-tau2-session-summary.csv",
+      "source_sha256": "389c4e700aad48f322f7e82560594f402b62f56123c6d39a27b3f18ffe409fc6",
+      "transformation": "none"
+    },
+    {
+      "bytes": 8566,
+      "path": "source/source-manifest.json",
+      "public_sha256": "07f9069c11b5ec560d55baa8d1b531b60c1f8d23aaff5b190cf7d8cef9147868",
+      "source_path": "data/processed/exgentic-tau2-source-manifest.json",
+      "source_sha256": "07f9069c11b5ec560d55baa8d1b531b60c1f8d23aaff5b190cf7d8cef9147868",
+      "transformation": "none"
+    },
+    {
+      "bytes": 693396,
+      "path": "source/span-features.parquet",
+      "public_sha256": "da57b75db69916a4c1036909e453e41e470b7daef304e61bf2f8b2d8720d4dc2",
+      "source_path": "data/processed/exgentic-tau2-span-features.parquet",
+      "source_sha256": "da57b75db69916a4c1036909e453e41e470b7daef304e61bf2f8b2d8720d4dc2",
+      "transformation": "none"
+    },
+    {
+      "bytes": 73700,
+      "path": "trace/cell-seed-evaluations.csv",
+      "public_sha256": "a573e7e5b6e89d01f71a06eae04c265dc7801048bc33b6c85fbbf2db20e27230",
+      "source_path": "data/processed/trace-exact-packing-repetitions.csv",
+      "source_sha256": "a573e7e5b6e89d01f71a06eae04c265dc7801048bc33b6c85fbbf2db20e27230",
+      "transformation": "none"
+    },
+    {
+      "bytes": 2170,
+      "path": "trace/manifest.json",
+      "public_sha256": "8eb73518423972a5ce9d0328e4e575d1aed49efb1e9d4147e52c29f489c2085a",
+      "source_path": "data/processed/trace-exact-packing-manifest.json",
+      "source_sha256": "8eb73518423972a5ce9d0328e4e575d1aed49efb1e9d4147e52c29f489c2085a",
+      "transformation": "none"
+    },
+    {
+      "bytes": 19924,
+      "path": "trace/summary.csv",
+      "public_sha256": "266d749f3f8a4d9ab172ae7eeaec3eb9d3afc9745cf1bda664b7fc39d2476e69",
+      "source_path": "data/processed/trace-exact-packing-summary.csv",
+      "source_sha256": "266d749f3f8a4d9ab172ae7eeaec3eb9d3afc9745cf1bda664b7fc39d2476e69",
+      "transformation": "none"
+    }
+  ],
+  "release_date": "2026-08-12",
+  "release_id": "ready-cohorts-public-evidence-v1",
+  "schema_version": "ready-cohorts-public-evidence-manifest-v1"
+}

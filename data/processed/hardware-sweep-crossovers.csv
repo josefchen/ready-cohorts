@@ -1,0 +1,29 @@
+source_file,run_id,hardware,provider,state_width,action_count,observation_horizon,mode,smallest_tested_crossover_n_best_cpu,smallest_tested_ci_supported_crossover_n_best_cpu,smallest_sustained_crossover_n_best_cpu,max_valid_speedup_best_cpu,valid_populations,requested_gpu,cpu_model_name,cpu_logical_count,cpu_affinity_count
+pilot-008-modal-a10-sub256-20260811T173724Z.csv,20260811T173724Z,NVIDIA A10,modal,8,1,1,compiled-gpu-host-visible,,,,0.7634267921809805,6,A10,unknown,24,24
+pilot-008-modal-a10-sub256-20260811T173724Z.csv,20260811T173724Z,NVIDIA A10,modal,8,1,1,compiled-gpu-resident,128.0,256.0,128.0,1.030151907785372,6,A10,unknown,24,24
+pilot-008-modal-a10-sub256-20260811T173724Z.csv,20260811T173724Z,NVIDIA A10,modal,8,1,64,compiled-gpu-host-visible,8.0,8.0,8.0,2.8011900133538434,6,A10,unknown,24,24
+pilot-008-modal-a10-sub256-20260811T173724Z.csv,20260811T173724Z,NVIDIA A10,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,4.366705489884005,6,A10,unknown,24,24
+pilot-010-modal-a100-80gb-sub256-20260811T173809Z.csv,20260811T173809Z,NVIDIA A100 80GB PCIe,modal,8,1,1,compiled-gpu-host-visible,,,,0.6405919085348583,6,A100-80GB,unknown,24,24
+pilot-010-modal-a100-80gb-sub256-20260811T173809Z.csv,20260811T173809Z,NVIDIA A100 80GB PCIe,modal,8,1,1,compiled-gpu-resident,,,,0.920569877899344,6,A100-80GB,unknown,24,24
+pilot-010-modal-a100-80gb-sub256-20260811T173809Z.csv,20260811T173809Z,NVIDIA A100 80GB PCIe,modal,8,1,64,compiled-gpu-host-visible,8.0,32.0,8.0,2.3304899220056416,6,A100-80GB,unknown,24,24
+pilot-010-modal-a100-80gb-sub256-20260811T173809Z.csv,20260811T173809Z,NVIDIA A100 80GB PCIe,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,2.6397558233866776,6,A100-80GB,unknown,24,24
+pilot-005-local-sub256-20260811T171204Z.csv,20260811T171204Z,NVIDIA GeForce GTX 1660 Ti,local,8,1,1,compiled-gpu-host-visible,,,,0.7158355469768638,6,,Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz,8,8
+pilot-005-local-sub256-20260811T171204Z.csv,20260811T171204Z,NVIDIA GeForce GTX 1660 Ti,local,8,1,1,compiled-gpu-resident,,,,0.978047544546109,6,,Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz,8,8
+pilot-005-local-sub256-20260811T171204Z.csv,20260811T171204Z,NVIDIA GeForce GTX 1660 Ti,local,8,1,64,compiled-gpu-host-visible,8.0,8.0,8.0,2.9889088472614262,6,,Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz,8,8
+pilot-005-local-sub256-20260811T171204Z.csv,20260811T171204Z,NVIDIA GeForce GTX 1660 Ti,local,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,3.3337149471782834,6,,Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz,8,8
+pilot-011-modal-h100-sub256-20260811T173725Z.csv,20260811T173725Z,NVIDIA H100 80GB HBM3,modal,8,1,1,compiled-gpu-host-visible,,,,0.7180125188348397,6,H100!,unknown,24,24
+pilot-011-modal-h100-sub256-20260811T173725Z.csv,20260811T173725Z,NVIDIA H100 80GB HBM3,modal,8,1,1,compiled-gpu-resident,,,,0.9480414763127448,6,H100!,unknown,24,24
+pilot-011-modal-h100-sub256-20260811T173725Z.csv,20260811T173725Z,NVIDIA H100 80GB HBM3,modal,8,1,64,compiled-gpu-host-visible,8.0,8.0,8.0,2.4161665775957375,6,H100!,unknown,24,24
+pilot-011-modal-h100-sub256-20260811T173725Z.csv,20260811T173725Z,NVIDIA H100 80GB HBM3,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,4.712752362177962,6,H100!,unknown,24,24
+pilot-006-modal-l4-sub256-20260811T171244Z.csv,20260811T171244Z,NVIDIA L4,modal,8,1,1,compiled-gpu-host-visible,,,,0.7347264280563882,6,L4,unknown,21,21
+pilot-006-modal-l4-sub256-20260811T171244Z.csv,20260811T171244Z,NVIDIA L4,modal,8,1,1,compiled-gpu-resident,16.0,16.0,16.0,1.1316510936717146,6,L4,unknown,21,21
+pilot-006-modal-l4-sub256-20260811T171244Z.csv,20260811T171244Z,NVIDIA L4,modal,8,1,64,compiled-gpu-host-visible,8.0,8.0,8.0,3.0788525305924974,6,L4,unknown,21,21
+pilot-006-modal-l4-sub256-20260811T171244Z.csv,20260811T171244Z,NVIDIA L4,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,3.5572558632894413,6,L4,unknown,21,21
+pilot-009-modal-l40s-sub256-20260811T174032Z.csv,20260811T174032Z,NVIDIA L40S,modal,8,1,1,compiled-gpu-host-visible,,,,0.6597826528510038,6,L40S,unknown,21,21
+pilot-009-modal-l40s-sub256-20260811T174032Z.csv,20260811T174032Z,NVIDIA L40S,modal,8,1,1,compiled-gpu-resident,,,,0.9280206410266268,6,L40S,unknown,21,21
+pilot-009-modal-l40s-sub256-20260811T174032Z.csv,20260811T174032Z,NVIDIA L40S,modal,8,1,64,compiled-gpu-host-visible,8.0,8.0,8.0,2.498557702371732,6,L40S,unknown,21,21
+pilot-009-modal-l40s-sub256-20260811T174032Z.csv,20260811T174032Z,NVIDIA L40S,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,2.854721189591078,6,L40S,unknown,21,21
+pilot-007-modal-t4-sub256-20260811T173729Z.csv,20260811T173729Z,Tesla T4,modal,8,1,1,compiled-gpu-host-visible,,,,0.7033474367444101,6,T4,unknown,24,24
+pilot-007-modal-t4-sub256-20260811T173729Z.csv,20260811T173729Z,Tesla T4,modal,8,1,1,compiled-gpu-resident,64.0,,,1.011806250726559,6,T4,unknown,24,24
+pilot-007-modal-t4-sub256-20260811T173729Z.csv,20260811T173729Z,Tesla T4,modal,8,1,64,compiled-gpu-host-visible,8.0,8.0,8.0,2.4790591750694095,6,T4,unknown,24,24
+pilot-007-modal-t4-sub256-20260811T173729Z.csv,20260811T173729Z,Tesla T4,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,3.1546312403511196,6,T4,unknown,24,24

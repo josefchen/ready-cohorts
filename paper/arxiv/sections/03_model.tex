@@ -1,0 +1,130 @@
+\section{The ready-cohort model}
+\label{sec:model}
+
+\subsection{Events and the hardware threshold}
+
+Let $E$ be a set of control events. Event $i$ has release time $t_i$, latest
+admissible launch time $d_i\geq t_i$, and route $r_i$. A route in the
+mathematical model means that one implementation can process the grouped events
+without changing their declared transition semantics. A trace label does not
+establish that condition by itself.
+
+For route $r$ and hardware/runtime configuration $h$, define
+$K_r(h,v,H)$ as the start of a measured safe suffix: every tested cohort size
+from $K_r$ through a declared maximum beats a named admissible baseline. The
+model extrapolates that monotone threshold and has no upper batch limit. The
+arguments record state visibility $v$ and observation-free horizon $H$ because
+transfer, synchronization, and temporal fusion can move the crossover. We
+write $K_r$ when the configuration is fixed.
+
+A batch $(\tau,B)$ is feasible when
+
+\begin{equation}
+  |B|\geq K_r,\quad r_i=r\ \forall i\in B,\quad
+  t_i\leq\tau\leq d_i\ \forall i\in B.
+  \label{eq:feasible-batch}
+\end{equation}
+
+A schedule contains feasible batches and assigns each event at most once. The
+model allows batches to have more than $K_r$ events. It has no maximum batch
+size, service time, or device-capacity constraint.
+
+\subsection{Four shares with different meanings}
+
+Let $\pi$ be a frozen partition of time into non-overlapping windows. Each
+event belongs to a bucket defined by its window and route. If bucket $b$ has
+$n_b$ events, fixed-partition eligibility is
+
+\begin{equation}
+  F(\pi,K)=\frac{1}{|E|}\sum_b n_b\,\mathbf{1}[n_b\geq K_{r(b)}].
+  \label{eq:fixed}
+\end{equation}
+
+$F$ is exact only for schedulers constrained to $\pi$. Sliding deadlines can
+join events across a fixed boundary, so $F$ is not a universal ceiling.
+
+Let $\pstar$ be the maximum number of assigned events in any feasible offline
+schedule, divided by $|E|$. It uses future knowledge and therefore measures
+opportunity rather than online performance.
+
+For route $r$, define the active count at time $\tau$ as
+
+\begin{equation}
+  Q_r(\tau)=|\{j:r_j=r,\ t_j\leq\tau\leq d_j\}|.
+\end{equation}
+
+Event $i$ is locally eligible if $Q_{r_i}(\tau)\geq K_{r_i}$ at some
+$\tau\in[t_i,d_i]$. The local-overlap share is
+
+\begin{equation}
+  U=\frac{1}{|E|}\sum_i \mathbf{1}\!\left[
+  \max_{\tau\in[t_i,d_i]}Q_{r_i}(\tau)\geq K_{r_i}\right].
+  \label{eq:upper}
+\end{equation}
+
+$U$ may count incompatible opportunities that reuse the same events. It is an
+upper bound, not necessarily an achievable schedule.
+
+Finally, $A$ is the share accelerated within deadline by a specified finite
+online runtime, including its queue, service, fallback, and capacity rules. To
+compare $A$ with $\pstar$, each accelerated batch must obey the same route
+grouping, threshold $K_r$, and launch deadline as the offline model; finite
+service and capacity may impose stricter constraints. Its denominator is the
+identical event set $E$ and retained horizon used by $\pstar$; late, missing,
+failed, and fallback events remain in that denominator. The current paper does
+not measure $A$.
+
+\begin{proposition}[Boundary ordering]
+\label{prop:ordering}
+If every batch admitted by the frozen partition is admissible under the event
+deadlines, and the batches counted by $A$ obey the same route, threshold,
+deadline, and event-set constraints as the offline model, then
+\begin{equation}
+  F\leq\pstar\leq U,\qquad A\leq\pstar.
+  \label{eq:ordering}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Every bucket with $n_b\geq K_{r(b)}$ is a feasible batch, and buckets are
+disjoint, so the fixed schedule attains $F$. Every event in any feasible batch
+overlaps at least $K_{r_i}$ same-route intervals at that batch's launch time,
+so it is counted by $U$. An online schedule is one member of the offline
+feasible set.
+\end{proof}
+
+\subsection{Compatibility has a measurable tax}
+
+Suppose grouping $g_f$ refines $g_c$, so every fine bucket lies inside one
+coarse bucket. For fixed $\pi$ and $K$,
+
+\begin{equation}
+  F(\pi,K,g_f)\leq F(\pi,K,g_c).
+  \label{eq:grouping}
+\end{equation}
+
+This inequality measures fragmentation under a declared grouping. It does not
+make coarse fusion admissible.
+A pooled kernel may change control flow, memory access, actions, or numerical
+trajectory. The route-key proxy is therefore the narrowest grouping in the
+trace study.
+
+\begin{table}[t]
+  \centering
+  \footnotesize
+  \begin{tabularx}{\columnwidth}{@{}llX@{}}
+    \toprule
+    Symbol & Source & Meaning \\
+    \midrule
+    $K_r$ & hardware & route-specific profitable cohort \\
+    $F$ & workload, policy & fixed-partition eligible share \\
+    $\pstar$ & workload, offline & exact schedulable share \\
+    $U$ & workload, local & necessary-overlap upper bound \\
+    $A$ & online runtime & achieved accelerated share \\
+    \bottomrule
+  \end{tabularx}
+  \caption{The quantities cannot be substituted for one another. In
+  particular, $K=256$ in the trace sweep is not a measured $K_r$ for the
+  resident-policy mechanism.}
+  \label{tab:notation}
+\end{table}

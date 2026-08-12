@@ -1,0 +1,37 @@
+source_file,run_id,hardware,provider,state_width,action_count,observation_horizon,mode,smallest_tested_crossover_n_best_cpu,smallest_tested_ci_supported_crossover_n_best_cpu,smallest_sustained_crossover_n_best_cpu,max_valid_speedup_best_cpu,valid_populations,requested_gpu,placement_replicate,cpu_vendor,cpu_family,cpu_model,cpu_logical_count
+pilot-018-modal-a10-rep1-20260811T180124Z.csv,20260811T180124Z,NVIDIA A10,modal,8,1,1,compiled-gpu-resident,128.0,128.0,128.0,1.0359017936803578,6,A10,1,GenuineIntel,6,106,24
+pilot-019-modal-a10-rep2-20260811T180342Z.csv,20260811T180342Z,NVIDIA A10,modal,8,1,1,compiled-gpu-resident,256.0,256.0,256.0,1.0384241024751022,6,A10,2,GenuineIntel,6,106,24
+pilot-020-modal-a10-rep3-20260811T180428Z.csv,20260811T180428Z,NVIDIA A10,modal,8,1,1,compiled-gpu-resident,256.0,256.0,256.0,1.031405847468178,6,A10,3,GenuineIntel,6,106,24
+pilot-018-modal-a10-rep1-20260811T180124Z.csv,20260811T180124Z,NVIDIA A10,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,4.0036838858173365,6,A10,1,GenuineIntel,6,106,24
+pilot-019-modal-a10-rep2-20260811T180342Z.csv,20260811T180342Z,NVIDIA A10,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,3.9029615681396774,6,A10,2,GenuineIntel,6,106,24
+pilot-020-modal-a10-rep3-20260811T180428Z.csv,20260811T180428Z,NVIDIA A10,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,3.495979183004206,6,A10,3,GenuineIntel,6,106,24
+pilot-025-modal-a100-rep2-20260811T175950Z.csv,20260811T175950Z,NVIDIA A100 80GB PCIe,modal,8,1,1,compiled-gpu-resident,,,,0.8604799684350195,6,A100-80GB,2,AuthenticAMD,175,1,24
+pilot-025-modal-a100-rep2-20260811T175950Z.csv,20260811T175950Z,NVIDIA A100 80GB PCIe,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,3.237379141191526,6,A100-80GB,2,AuthenticAMD,175,1,24
+pilot-024-modal-a100-rep1-20260811T175434Z.csv,20260811T175434Z,NVIDIA A100-SXM4-80GB,modal,8,1,1,compiled-gpu-resident,,,,0.9161273270300471,6,A100-80GB,1,AuthenticAMD,143,49,24
+pilot-026-modal-a100-rep3-20260811T180100Z.csv,20260811T180100Z,NVIDIA A100-SXM4-80GB,modal,8,1,1,compiled-gpu-resident,,,,0.9431844675810542,6,A100-80GB,3,AuthenticAMD,143,49,24
+pilot-024-modal-a100-rep1-20260811T175434Z.csv,20260811T175434Z,NVIDIA A100-SXM4-80GB,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,3.2697659169599995,6,A100-80GB,1,AuthenticAMD,143,49,24
+pilot-026-modal-a100-rep3-20260811T180100Z.csv,20260811T180100Z,NVIDIA A100-SXM4-80GB,modal,8,1,64,compiled-gpu-resident,8.0,16.0,8.0,5.543863107751275,6,A100-80GB,3,AuthenticAMD,143,49,24
+pilot-027-modal-h100-rep1-20260811T175410Z.csv,20260811T175410Z,NVIDIA H100 80GB HBM3,modal,8,1,1,compiled-gpu-resident,,,,0.959142597613586,6,H100!,1,GenuineIntel,6,143,24
+pilot-028-modal-h100-rep2-20260811T175412Z.csv,20260811T175412Z,NVIDIA H100 80GB HBM3,modal,8,1,1,compiled-gpu-resident,,,,0.9264183195330445,6,H100!,2,GenuineIntel,6,143,24
+pilot-029-modal-h100-rep3-20260811T175422Z.csv,20260811T175422Z,NVIDIA H100 80GB HBM3,modal,8,1,1,compiled-gpu-resident,,,,0.8739989974144857,6,H100!,3,GenuineIntel,6,143,24
+pilot-027-modal-h100-rep1-20260811T175410Z.csv,20260811T175410Z,NVIDIA H100 80GB HBM3,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,4.912795575498278,6,H100!,1,GenuineIntel,6,143,24
+pilot-028-modal-h100-rep2-20260811T175412Z.csv,20260811T175412Z,NVIDIA H100 80GB HBM3,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,4.519026408149639,6,H100!,2,GenuineIntel,6,143,24
+pilot-029-modal-h100-rep3-20260811T175422Z.csv,20260811T175422Z,NVIDIA H100 80GB HBM3,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,3.5944644142889066,6,H100!,3,GenuineIntel,6,143,24
+pilot-015-modal-l4-rep1-20260811T175410Z.csv,20260811T175410Z,NVIDIA L4,modal,8,1,1,compiled-gpu-resident,16.0,16.0,16.0,1.1722722802702739,6,L4,1,GenuineIntel,6,85,24
+pilot-016-modal-l4-rep2-20260811T175411Z.csv,20260811T175411Z,NVIDIA L4,modal,8,1,1,compiled-gpu-resident,16.0,16.0,16.0,1.1633359821660796,6,L4,2,GenuineIntel,6,85,21
+pilot-017-modal-l4-rep3-20260811T175411Z.csv,20260811T175411Z,NVIDIA L4,modal,8,1,1,compiled-gpu-resident,16.0,16.0,16.0,1.1477795794309702,6,L4,3,GenuineIntel,6,85,24
+pilot-015-modal-l4-rep1-20260811T175410Z.csv,20260811T175410Z,NVIDIA L4,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,3.937418533268461,6,L4,1,GenuineIntel,6,85,24
+pilot-016-modal-l4-rep2-20260811T175411Z.csv,20260811T175411Z,NVIDIA L4,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,3.8083999342018497,6,L4,2,GenuineIntel,6,85,21
+pilot-017-modal-l4-rep3-20260811T175411Z.csv,20260811T175411Z,NVIDIA L4,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,3.668348767568434,6,L4,3,GenuineIntel,6,85,24
+pilot-021-modal-l40s-rep1-20260811T175932Z.csv,20260811T175932Z,NVIDIA L40S,modal,8,1,1,compiled-gpu-resident,,,,0.9896557291318057,6,L40S,1,GenuineIntel,6,143,24
+pilot-022-modal-l40s-rep2-20260811T180107Z.csv,20260811T180107Z,NVIDIA L40S,modal,8,1,1,compiled-gpu-resident,,,,0.9692978798153045,6,L40S,2,GenuineIntel,6,143,24
+pilot-023-modal-l40s-rep3-20260811T180122Z.csv,20260811T180122Z,NVIDIA L40S,modal,8,1,1,compiled-gpu-resident,,,,0.906233533765087,6,L40S,3,AuthenticAMD,175,1,21
+pilot-021-modal-l40s-rep1-20260811T175932Z.csv,20260811T175932Z,NVIDIA L40S,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,4.12438576462997,6,L40S,1,GenuineIntel,6,143,24
+pilot-022-modal-l40s-rep2-20260811T180107Z.csv,20260811T180107Z,NVIDIA L40S,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,3.6558143586616483,6,L40S,2,GenuineIntel,6,143,24
+pilot-023-modal-l40s-rep3-20260811T180122Z.csv,20260811T180122Z,NVIDIA L40S,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,3.0446897833611075,6,L40S,3,AuthenticAMD,175,1,21
+pilot-012-modal-t4-rep1-20260811T175408Z.csv,20260811T175408Z,Tesla T4,modal,8,1,1,compiled-gpu-resident,8.0,8.0,8.0,1.2441047641479117,6,T4,1,GenuineIntel,6,85,21
+pilot-013-modal-t4-rep2-20260811T175407Z.csv,20260811T175407Z,Tesla T4,modal,8,1,1,compiled-gpu-resident,8.0,16.0,8.0,1.1523071208666615,6,T4,2,GenuineIntel,6,85,21
+pilot-014-modal-t4-rep3-20260811T175413Z.csv,20260811T175413Z,Tesla T4,modal,8,1,1,compiled-gpu-resident,8.0,8.0,8.0,1.2225572434984502,6,T4,3,GenuineIntel,6,85,24
+pilot-012-modal-t4-rep1-20260811T175408Z.csv,20260811T175408Z,Tesla T4,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,4.798391002141072,6,T4,1,GenuineIntel,6,85,21
+pilot-013-modal-t4-rep2-20260811T175407Z.csv,20260811T175407Z,Tesla T4,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,4.45757023978326,6,T4,2,GenuineIntel,6,85,21
+pilot-014-modal-t4-rep3-20260811T175413Z.csv,20260811T175413Z,Tesla T4,modal,8,1,64,compiled-gpu-resident,8.0,8.0,8.0,4.74395360290252,6,T4,3,GenuineIntel,6,85,24

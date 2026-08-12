@@ -1,0 +1,310 @@
+{
+  "analysis_script": {
+    "path": "scripts/analyze_native_dispatch_pilot.py",
+    "sha256": "c977adbc523341ca2cab1fd63018beda560f2b4718dec221afb4304372f9880e"
+  },
+  "correctness_semantics": {
+    "archived_source_dir": "data/raw/runpod-native-dispatch-001-runpod-l4-p1-ylcym8f1s0khl3/source",
+    "cuda_source_file": "data/raw/runpod-native-dispatch-001-runpod-l4-p1-ylcym8f1s0khl3/source/device_dispatch_pilot.cu",
+    "cuda_source_sha256": "a5c1f4a349075b6e76116c4f52163b488ccdae32a7bf66e95fed752e363d3ac6",
+    "interpretation": "For this frozen source, exact_match=true means every pc, budget, risk, and route field equals the separately implemented host oracle; checksum equality is an additional guard, not the definition.",
+    "semantic_markers": {
+      "all_four_fields_compared": true,
+      "checksum_is_secondary_guard": true,
+      "exact_match_derived_from_field_difference": true,
+      "fieldwise_comparison_function": true,
+      "separate_host_reference": true
+    },
+    "source_bundle_sha256": "2ec4c6246c6c6287f443c749ebe6385ee9690a9a4eed00a9119cb96aad024395"
+  },
+  "created_at_utc": "2026-08-12T14:15:25.246312+00:00",
+  "design": {
+    "agents": [
+      32,
+      256,
+      2048,
+      16384
+    ],
+    "contrast_pairing": "paired by placement, agents, steps, and repetition",
+    "independent_unit": "fresh GPU placement",
+    "inferential_p_values": 0,
+    "mechanisms": [
+      "cpu_cpp",
+      "cuda_host_launch",
+      "cuda_host_graph",
+      "cuda_device_graph"
+    ],
+    "placements": 5,
+    "quantile_method": "NumPy linear quantile",
+    "raw_rows": 12000,
+    "steps": [
+      1,
+      8,
+      64
+    ],
+    "technical_repetition_unit": "within-placement timed repetition",
+    "technical_repetitions_per_mechanism_cell": 50
+  },
+  "outputs": {
+    "cell_summary": {
+      "path": "data/processed/native-dispatch-pilot-cell-summary.csv",
+      "rows": 240,
+      "sha256": "1bb083c8984bc6f07ba3a1e8cb20cea129a94efdd983dfb6925c67e41eca1479"
+    },
+    "contrasts": {
+      "path": "data/processed/native-dispatch-pilot-contrasts.csv",
+      "rows": 60,
+      "sha256": "799ed4fe36f96e8e7d7f63b4d180d679311491e4b835a48bcbf50264acd39e05"
+    }
+  },
+  "pilot_results": {
+    "checksum_equal_rows": 12000,
+    "failure_rows": 0,
+    "field_exact_rows": 12000,
+    "placement_cell_ratio_ranges": [
+      {
+        "device_graph_over_host_graph_ratio_of_medians_max": 1.8655270337992094,
+        "device_graph_over_host_graph_ratio_of_medians_min": 1.0915916548755156,
+        "device_name": "NVIDIA H100 80GB HBM3",
+        "device_uuid": "7964af6ebe675c48d8719797603d3893",
+        "host_launch_over_host_graph_ratio_of_medians_max": 2.278068698076624,
+        "host_launch_over_host_graph_ratio_of_medians_min": 1.0711103955348038,
+        "placement_id": "native-dispatch-001-lambda-h100-p1",
+        "provider": "lambda"
+      },
+      {
+        "device_graph_over_host_graph_ratio_of_medians_max": 1.9943039613359799,
+        "device_graph_over_host_graph_ratio_of_medians_min": 1.1545390157709523,
+        "device_name": "NVIDIA GeForce GTX 1660 Ti",
+        "device_uuid": "50798f9011b9a145d0237e476534cf0c",
+        "host_launch_over_host_graph_ratio_of_medians_max": 1.3420091152209124,
+        "host_launch_over_host_graph_ratio_of_medians_min": 1.0875392314869794,
+        "placement_id": "native-dispatch-001-local",
+        "provider": "local"
+      },
+      {
+        "device_graph_over_host_graph_ratio_of_medians_max": 1.6616748166259168,
+        "device_graph_over_host_graph_ratio_of_medians_min": 1.0795394601041262,
+        "device_name": "NVIDIA L4",
+        "device_uuid": "7aa089db4b574bf77f4eca092af33188",
+        "host_launch_over_host_graph_ratio_of_medians_max": 2.7850620595461875,
+        "host_launch_over_host_graph_ratio_of_medians_min": 1.0883666731404156,
+        "placement_id": "native-dispatch-001-modal-l4-p1",
+        "provider": "modal"
+      },
+      {
+        "device_graph_over_host_graph_ratio_of_medians_max": 1.7056694813027744,
+        "device_graph_over_host_graph_ratio_of_medians_min": 1.0747747808816253,
+        "device_name": "NVIDIA L4",
+        "device_uuid": "d7010c62a5ce188be02cf3696c792ce7",
+        "host_launch_over_host_graph_ratio_of_medians_max": 1.8721179644701538,
+        "host_launch_over_host_graph_ratio_of_medians_min": 1.0526595744680851,
+        "placement_id": "native-dispatch-001-modal-l4-p2",
+        "provider": "modal"
+      },
+      {
+        "device_graph_over_host_graph_ratio_of_medians_max": 1.57562226866806,
+        "device_graph_over_host_graph_ratio_of_medians_min": 1.0778274469385554,
+        "device_name": "NVIDIA L4",
+        "device_uuid": "24a9aae06e1c76b84e6fef5569fe493b",
+        "host_launch_over_host_graph_ratio_of_medians_max": 2.767039747453006,
+        "host_launch_over_host_graph_ratio_of_medians_min": 1.0025384445588992,
+        "placement_id": "native-dispatch-001-runpod-l4-p1",
+        "provider": "runpod"
+      }
+    ],
+    "raw_rows": 12000,
+    "status_ok_rows": 12000
+  },
+  "placements": [
+    {
+      "binary_sha256": "11f7b618713ecfe1e6f420f7da8946ea09c7d596437aefdc86dddc163b2ff382",
+      "checksum_equal_rows": 2400,
+      "completed_at_utc": "2026-08-11T21:07:29Z",
+      "compute_capability": "9.0",
+      "device_name": "NVIDIA H100 80GB HBM3",
+      "device_uuid": "7964af6ebe675c48d8719797603d3893",
+      "failure_rows": 0,
+      "field_exact_rows": 2400,
+      "manifest_file": "data/raw/native-dispatch-001-lambda-h100-p1-20260811T210728Z-p2682.manifest.json",
+      "manifest_file_sha256": "f99b6b48d6949b9effd58620e53aaccf54ec54ac5a6ea9c304c7e965b7e7b747",
+      "measured_rows": 2400,
+      "placement_id": "native-dispatch-001-lambda-h100-p1",
+      "provenance": {
+        "binary_sha256": "11f7b618713ecfe1e6f420f7da8946ea09c7d596437aefdc86dddc163b2ff382",
+        "checks": {
+          "lambda_csv_receipt_hash_matches": true,
+          "lambda_manifest_receipt_hash_matches": true,
+          "lambda_native_summary_matches": true,
+          "lambda_source_hash_matches": true
+        },
+        "receipt_files": [
+          "data/raw/native-dispatch-001-lambda-h100-p1-20260811T210728Z-p2682.provider-lambda.json"
+        ],
+        "receipt_level": "provider_receipt_and_manifest"
+      },
+      "provider": "lambda",
+      "requested_gpu": "H100 (80 GB SXM5)",
+      "run_id": "native-dispatch-001-lambda-h100-p1-20260811T210728Z-p2682",
+      "seed": 20260841,
+      "source_file": "data/raw/native-dispatch-001-lambda-h100-p1-20260811T210728Z-p2682.csv",
+      "source_file_sha256": "819ad7212064f54d9eca9c586b96d0a8e283093ac14e3ca285e1af0ec9b948c9",
+      "source_sha256": "2ec4c6246c6c6287f443c749ebe6385ee9690a9a4eed00a9119cb96aad024395",
+      "started_at_utc": "2026-08-11T21:07:28Z"
+    },
+    {
+      "binary_sha256": null,
+      "checksum_equal_rows": 2400,
+      "completed_at_utc": "2026-08-11T20:58:18Z",
+      "compute_capability": "7.5",
+      "device_name": "NVIDIA GeForce GTX 1660 Ti",
+      "device_uuid": "50798f9011b9a145d0237e476534cf0c",
+      "failure_rows": 0,
+      "field_exact_rows": 2400,
+      "manifest_file": "data/raw/native-dispatch-001-local-20260811T205817Z-p3867952.manifest.json",
+      "manifest_file_sha256": "152be529f1c6644da5174a1975da106b369ec2ae76394a412a8b006387ce2758",
+      "measured_rows": 2400,
+      "placement_id": "native-dispatch-001-local",
+      "provenance": {
+        "binary_sha256": null,
+        "checks": {
+          "manifest_present": true
+        },
+        "receipt_files": [],
+        "receipt_level": "native_manifest_and_frozen_source_hash"
+      },
+      "provider": "local",
+      "requested_gpu": "GTX 1660 Ti",
+      "run_id": "native-dispatch-001-local-20260811T205817Z-p3867952",
+      "seed": 20260811,
+      "source_file": "data/raw/native-dispatch-001-local-20260811T205817Z-p3867952.csv",
+      "source_file_sha256": "c1d5b2a8ec15726f63ccb869d44f5c64002871d8130992c82e250a767917d8a6",
+      "source_sha256": "a5c1f4a349075b6e76116c4f52163b488ccdae32a7bf66e95fed752e363d3ac6",
+      "started_at_utc": "2026-08-11T20:58:17Z"
+    },
+    {
+      "binary_sha256": null,
+      "checksum_equal_rows": 2400,
+      "completed_at_utc": "2026-08-11T20:59:24Z",
+      "compute_capability": "8.9",
+      "device_name": "NVIDIA L4",
+      "device_uuid": "7aa089db4b574bf77f4eca092af33188",
+      "failure_rows": 0,
+      "field_exact_rows": 2400,
+      "manifest_file": "data/raw/native-dispatch-001-modal-l4-p1-20260811T205922Z-p117.manifest.json",
+      "manifest_file_sha256": "580d3842ea570a9530eada8d69fdabee08ffaf1ef4ccd9e02691979b03cf2435",
+      "measured_rows": 2400,
+      "placement_id": "native-dispatch-001-modal-l4-p1",
+      "provenance": {
+        "binary_sha256": null,
+        "checks": {
+          "manifest_present": true
+        },
+        "receipt_files": [],
+        "receipt_level": "native_manifest_and_frozen_source_hash"
+      },
+      "provider": "modal",
+      "requested_gpu": "L4",
+      "run_id": "native-dispatch-001-modal-l4-p1-20260811T205922Z-p117",
+      "seed": 20260821,
+      "source_file": "data/raw/native-dispatch-001-modal-l4-p1-20260811T205922Z-p117.csv",
+      "source_file_sha256": "3086f922775b0bdc1fed718956fef1f62905c85d60def60358766dfe64b0f8ad",
+      "source_sha256": "2ec4c6246c6c6287f443c749ebe6385ee9690a9a4eed00a9119cb96aad024395",
+      "started_at_utc": "2026-08-11T20:59:22Z"
+    },
+    {
+      "binary_sha256": null,
+      "checksum_equal_rows": 2400,
+      "completed_at_utc": "2026-08-11T21:00:10Z",
+      "compute_capability": "8.9",
+      "device_name": "NVIDIA L4",
+      "device_uuid": "d7010c62a5ce188be02cf3696c792ce7",
+      "failure_rows": 0,
+      "field_exact_rows": 2400,
+      "manifest_file": "data/raw/native-dispatch-001-modal-l4-p2-20260811T210009Z-p117.manifest.json",
+      "manifest_file_sha256": "6eb54271de176ecf17cd458cee495ea49673bee495451c3afbe44fb85551294d",
+      "measured_rows": 2400,
+      "placement_id": "native-dispatch-001-modal-l4-p2",
+      "provenance": {
+        "binary_sha256": null,
+        "checks": {
+          "manifest_present": true
+        },
+        "receipt_files": [],
+        "receipt_level": "native_manifest_and_frozen_source_hash"
+      },
+      "provider": "modal",
+      "requested_gpu": "L4",
+      "run_id": "native-dispatch-001-modal-l4-p2-20260811T210009Z-p117",
+      "seed": 20260822,
+      "source_file": "data/raw/native-dispatch-001-modal-l4-p2-20260811T210009Z-p117.csv",
+      "source_file_sha256": "e35e31aa2c0b045968f78279c34fe1b13ca61f37db78e41ea364252de362ea2a",
+      "source_sha256": "2ec4c6246c6c6287f443c749ebe6385ee9690a9a4eed00a9119cb96aad024395",
+      "started_at_utc": "2026-08-11T21:00:09Z"
+    },
+    {
+      "binary_sha256": "dc90208675c2ccae435595a7072595ada955539c3c48222631bf0911bfa67400",
+      "checksum_equal_rows": 2400,
+      "completed_at_utc": "2026-08-11T21:07:38Z",
+      "compute_capability": "8.9",
+      "device_name": "NVIDIA L4",
+      "device_uuid": "24a9aae06e1c76b84e6fef5569fe493b",
+      "failure_rows": 0,
+      "field_exact_rows": 2400,
+      "manifest_file": "data/raw/runpod-native-dispatch-001-runpod-l4-p1-ylcym8f1s0khl3/results/native-dispatch-001-runpod-l4-p1-20260811T210722Z-p5201.manifest.json",
+      "manifest_file_sha256": "aefbd4fca577d1df1bd95738ea62601088e1abcc888f62634bbe51b36915e9d9",
+      "measured_rows": 2400,
+      "placement_id": "native-dispatch-001-runpod-l4-p1",
+      "provenance": {
+        "binary_sha256": "dc90208675c2ccae435595a7072595ada955539c3c48222631bf0911bfa67400",
+        "checks": {
+          "runpod_collection_counts_match": true,
+          "runpod_collection_native_validation_passed": true,
+          "runpod_compile_return_code_zero": true,
+          "runpod_gpu_uuid_matches": true,
+          "runpod_program_return_code_zero": true,
+          "runpod_source_hash_matches": true
+        },
+        "receipt_files": [
+          "data/raw/runpod-native-dispatch-001-runpod-l4-p1-ylcym8f1s0khl3/provider-metadata.json",
+          "data/raw/runpod-native-dispatch-001-runpod-l4-p1-ylcym8f1s0khl3/collection-receipt.json"
+        ],
+        "receipt_level": "provider_receipt_and_manifest"
+      },
+      "provider": "runpod",
+      "requested_gpu": "NVIDIA L4",
+      "run_id": "native-dispatch-001-runpod-l4-p1-20260811T210722Z-p5201",
+      "seed": 20260831,
+      "source_file": "data/raw/runpod-native-dispatch-001-runpod-l4-p1-ylcym8f1s0khl3/results/native-dispatch-001-runpod-l4-p1-20260811T210722Z-p5201.csv",
+      "source_file_sha256": "5e46a713fea0986a92db69cdd9b5cb540dd302768a566031a72eaf5e3cd62dec",
+      "source_sha256": "2ec4c6246c6c6287f443c749ebe6385ee9690a9a4eed00a9119cb96aad024395",
+      "started_at_utc": "2026-08-11T21:07:22Z"
+    }
+  ],
+  "preregistration": {
+    "path": "preregistration/native-dispatch-001.md",
+    "sha256": "5bc26aae2a7c468b2f5fdc8d10396ddc5bc236b94e88a7ff49c360385c33017c",
+    "status": "engineering/mechanism pilot; no confirmatory p-value"
+  },
+  "quality_gates": {
+    "all_checksums_equal": true,
+    "all_field_exact": true,
+    "all_status_ok": true,
+    "cell_summary_has_240_rows": true,
+    "contrast_summary_has_60_rows": true,
+    "distinct_gpu_uuid_per_placement": true,
+    "five_expected_placements": true,
+    "frozen_source_hashes_verified": true,
+    "provider_provenance_checks_passed": true,
+    "rows_2400_per_placement": true,
+    "rows_50_per_mechanism_cell": true
+  },
+  "required_caveats": [
+    "Technical repetitions are not independent placements and receive no p-value.",
+    "The fixed nested device graph is an overhead calibration, not a device-resident orchestration treatment.",
+    "CPU timing is an untuned single-thread pilot baseline and cannot support a CPU-versus-GPU headline.",
+    "CUDA event scopes differ: device-graph events include the parent/child environment while host-graph events cover transition kernels; primary mechanism contrasts therefore use wall time.",
+    "Modal and local artifacts have frozen native manifests and source hashes but no separately saved provider-level binary receipt; Lambda and RunPod do."
+  ],
+  "schema_version": "native-dispatch-pilot-analysis-v1"
+}

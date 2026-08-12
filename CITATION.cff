@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the paper."
+title: "Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control"
+type: software
+authors:
+  - family-names: Chen
+    given-names: Josef
+    affiliation: Independent Researcher
+repository-code: "https://github.com/josefchen/ready-cohorts"
+url: "https://huggingface.co/datasets/josefchen/ready-cohorts"
+version: "1.0.0"
+date-released: 2026-08-12
+keywords:
+  - LLM agents
+  - GPU systems
+  - batching
+  - CUDA Graphs
+  - datacenter control

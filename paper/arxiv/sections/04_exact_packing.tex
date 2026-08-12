@@ -1,0 +1,105 @@
+\section{Exact packing under equal relative deadlines}
+\label{sec:exact}
+
+The trace experiment uses $d_i=t_i+\delta$ for a common $\delta$. This special
+case permits an exact dynamic program. We keep the assumptions visible because
+the result does not extend unchanged to arbitrary deadlines or finite service.
+
+\begin{proposition}[Deadline launch times]
+\label{prop:deadlines}
+Under zero service time and unlimited simultaneous capacity, some optimal
+offline schedule launches every batch at an event deadline.
+\end{proposition}
+
+\begin{proof}
+Take a nonempty feasible batch launched at $\tau$ and let $d_{\min}$ be the
+smallest deadline among its events. Feasibility gives $\tau\leq d_{\min}$.
+Every assigned event has release at most $\tau$ and deadline at least
+$d_{\min}$, so moving the launch to $d_{\min}$ preserves every assignment.
+Same-route batches moved to the same time can be merged; different routes may
+co-launch under the unlimited-capacity assumption.
+\end{proof}
+
+\begin{lemma}[Contiguous block form]
+\label{lem:blocks}
+For one route with equal relative deadlines, there is an optimum whose batches
+are disjoint contiguous blocks in sorted release order.
+\end{lemma}
+
+\begin{proof}
+Sort releases so $t_1\leq\cdots\leq t_n$, and order batches by launch time.
+Suppose $i<j$, event $i$ is assigned to a later batch, and event $j$ to an
+earlier batch. Their feasibility gives
+\[
+ t_i\leq t_j\leq\tau_{\mathrm{early}}\leq
+ \tau_{\mathrm{late}}\leq t_i+\delta\leq t_j+\delta.
+\]
+Exchanging the two assignments is therefore feasible. Repeated exchanges
+remove crossings. An unassigned event between the first and last release of a
+batch can then be added to that batch: its release is no later than the batch
+launch, and its equal-length deadline is no earlier than the first event's
+deadline. Thus each batch may be taken as a contiguous block.
+\end{proof}
+
+Let $D[j]$ be the maximum number of assigned events among the first $j$
+releases of one route, with $D[0]=0$. A feasible block ending at $j$ starts at
+some $i\leq j-K_r+1$ and satisfies $t_j-t_i\leq\delta$. Hence
+
+\begin{equation}
+\begin{aligned}
+D[j]=\max\biggl\{&D[j-1],\\[-2pt]
+ &\max_{\substack{i\leq j-K_r+1\\t_j-t_i\leq\delta}}
+ \bigl(D[i-1]+j-i+1\bigr)\biggr\}.
+\end{aligned}
+\label{eq:dp}
+\end{equation}
+
+The inner term is $j+\max_i(D[i-1]-i+1)$ over a sliding interval of valid
+starts. A grouped sort, route slices, a moving left pointer, and a monotone
+deque give an $O(N\log N)$ evaluator including sorting. The frozen evaluator
+used for the reported results instead scans the full group array once per route
+and finds each left boundary by binary search. Its bound is
+$O(NR+\sum_r n_r\log n_r)$ for $R$ routes and $n_r$ events per route, which is
+quadratic in the worst case. This affects solver cost, not the returned optimum.
+Back-pointers recover a maximum-cardinality witness.
+
+\begin{algorithm}[t]
+  \caption{Equal-relative-deadline packing for one route}
+  \label{alg:packing}
+  \begin{algorithmic}[1]
+    \Require sorted integer releases $t_1,\ldots,t_n$, threshold $K$, deadline $\delta$
+    \State $D[0]\gets 0$; initialize empty monotone deque $Q$
+    \For{$j\gets1$ to $n$}
+      \State $D[j]\gets D[j-1]$
+      \State $i\gets j-K+1$
+      \If{$i\geq1$}
+        \State insert $(i,D[i-1]-i+1)$ into $Q$, removing smaller tails
+      \EndIf
+      \State $\ell\gets\Call{LowerBound}{t,t_j-\delta}$
+      \State remove heads whose start index is smaller than $\ell$
+      \If{$Q$ is nonempty}
+        \State $D[j]\gets\max(D[j],j+Q.\mathrm{head.value})$
+      \EndIf
+    \EndFor
+    \State \Return $D[n]$
+  \end{algorithmic}
+\end{algorithm}
+
+\paragraph{Exact clock.}
+The implementation rounds releases and relative deadlines to integer
+nanoseconds and uses inclusive comparisons. The claim is exact on that clock.
+It does not rely on a floating tolerance. The implementation agrees with
+subset brute force on tiny instances, including route-specific thresholds and
+adversarial boundary cases.
+
+\paragraph{Role in this paper.}
+For fixed $K$ and $\delta$, the trace oracle is equivalent to selecting the
+maximum number of ordered points that can be partitioned into clusters of at
+least $K$ points and diameter at most $\delta$. This is the fixed-radius
+decision form of one-dimensional $r$-gathering with outliers: related work
+often fixes an outlier budget and minimizes radius, whereas we fix the radius
+and maximize retained points \cite{aggarwal2010anonymity,akagi2015rgather,
+nakano2019rgather}. Classical scheduling also studies compatible batching
+under release times and deadlines \cite{barnoy2009throughput}. We use
+Equation~\eqref{eq:dp} only as an exact trace oracle and make no algorithmic-priority
+claim.

@@ -1,0 +1,195 @@
+{
+  "archive": {
+    "bytes": 521097,
+    "path": "release/arxiv/ready-cohorts-arxiv-v1.tar.gz",
+    "sha256": "14613c17f7774aee5ecd41bb49d964a84bfd5366c499cf77ed84b0b58fb354df"
+  },
+  "archive_files": [
+    {
+      "archive_path": "figures/resident-policy-primary-mechanisms.png",
+      "bytes": 179407,
+      "sha256": "2a72ce818ca13a4f317c4c491dc925995462c852c5a0f6b66f08ec3033bba844",
+      "source_path": "results/figures/resident-policy-primary-mechanisms.png",
+      "source_sha256": "2a72ce818ca13a4f317c4c491dc925995462c852c5a0f6b66f08ec3033bba844"
+    },
+    {
+      "archive_path": "figures/resident-policy-speedup-by-horizon.png",
+      "bytes": 216330,
+      "sha256": "0736ad6580c33b8b50bc76a9c1b750d6f05ee03fee74a1ab2b90684a6d4713d8",
+      "source_path": "results/figures/resident-policy-speedup-by-horizon.png",
+      "source_sha256": "0736ad6580c33b8b50bc76a9c1b750d6f05ee03fee74a1ab2b90684a6d4713d8"
+    },
+    {
+      "archive_path": "figures/trace-exact-opportunity-frontier.png",
+      "bytes": 150654,
+      "sha256": "7d0e55e3ddb3ee360c70fb5b07c32bb415c3b2003b611be1a18ec05847eda5ee",
+      "source_path": "results/figures/trace-exact-opportunity-frontier.png",
+      "source_sha256": "7d0e55e3ddb3ee360c70fb5b07c32bb415c3b2003b611be1a18ec05847eda5ee"
+    },
+    {
+      "archive_path": "generated/resident-primary-table.tex",
+      "bytes": 457,
+      "sha256": "a2822cd1cf7823a134098fb35052c275ac23ad20dbcfab1525dd19478c615230",
+      "source_path": "paper/arxiv/generated/resident-primary-table.tex",
+      "source_sha256": "a2822cd1cf7823a134098fb35052c275ac23ad20dbcfab1525dd19478c615230"
+    },
+    {
+      "archive_path": "generated/results-macros.tex",
+      "bytes": 1662,
+      "sha256": "e4468e800517f4697513fd4033325cd09cbf9a68183d0997852f1f33a8854605",
+      "source_path": "paper/arxiv/generated/results-macros.tex",
+      "source_sha256": "e4468e800517f4697513fd4033325cd09cbf9a68183d0997852f1f33a8854605"
+    },
+    {
+      "archive_path": "generated/trace-primary-table.tex",
+      "bytes": 405,
+      "sha256": "c6617cd3b06684c50b470dd8320479e4b962fae8a6224dafbb26b18b8d2cbd67",
+      "source_path": "paper/arxiv/generated/trace-primary-table.tex",
+      "source_sha256": "c6617cd3b06684c50b470dd8320479e4b962fae8a6224dafbb26b18b8d2cbd67"
+    },
+    {
+      "archive_path": "main.bbl",
+      "bytes": 12853,
+      "sha256": "df27dc7edc34b13a324442be0637b9c56431f4923f3d2f4641d7518b9ae0e839",
+      "source_path": "paper/arxiv/main.bbl",
+      "source_sha256": "df27dc7edc34b13a324442be0637b9c56431f4923f3d2f4641d7518b9ae0e839"
+    },
+    {
+      "archive_path": "main.tex",
+      "bytes": 2517,
+      "sha256": "dfbdd358a17817cca759fba9b4f59492667f7b9a0a3f06dda17593f9c1117ef2",
+      "source_path": "paper/arxiv/main.tex",
+      "source_sha256": "d58bd56e9414896d84e7deef64dab21dab805e991f58c27ca4aa79e16f53bf58",
+      "transformation": "rewrite_graphicspath"
+    },
+    {
+      "archive_path": "sections/00_abstract.tex",
+      "bytes": 2168,
+      "sha256": "9eb44de4c21185fddf64ac567d49110ea25ccc9f9ac4d45ee86f641aa5ea8795",
+      "source_path": "paper/arxiv/sections/00_abstract.tex",
+      "source_sha256": "9eb44de4c21185fddf64ac567d49110ea25ccc9f9ac4d45ee86f641aa5ea8795"
+    },
+    {
+      "archive_path": "sections/01_introduction.tex",
+      "bytes": 5532,
+      "sha256": "0aa38b6d11e0296ce4837fd43c9d3b04dddaa0392913f42600c6864d372ea53b",
+      "source_path": "paper/arxiv/sections/01_introduction.tex",
+      "source_sha256": "0aa38b6d11e0296ce4837fd43c9d3b04dddaa0392913f42600c6864d372ea53b"
+    },
+    {
+      "archive_path": "sections/02_scope.tex",
+      "bytes": 2797,
+      "sha256": "60089a22dbc4225dc8a33b6432b44cf7f98d4542f8641c5908b25474dec5410c",
+      "source_path": "paper/arxiv/sections/02_scope.tex",
+      "source_sha256": "60089a22dbc4225dc8a33b6432b44cf7f98d4542f8641c5908b25474dec5410c"
+    },
+    {
+      "archive_path": "sections/03_model.tex",
+      "bytes": 5094,
+      "sha256": "4439f1c9c72310b708ce3a8dd2b6ab5713ca6f18446a11c882a3fc9a7644804a",
+      "source_path": "paper/arxiv/sections/03_model.tex",
+      "source_sha256": "4439f1c9c72310b708ce3a8dd2b6ab5713ca6f18446a11c882a3fc9a7644804a"
+    },
+    {
+      "archive_path": "sections/04_exact_packing.tex",
+      "bytes": 4707,
+      "sha256": "b880b18bb2838122e0b3512a62d553bb243f102db51fe27d8c1f086b07a7eaee",
+      "source_path": "paper/arxiv/sections/04_exact_packing.tex",
+      "source_sha256": "b880b18bb2838122e0b3512a62d553bb243f102db51fe27d8c1f086b07a7eaee"
+    },
+    {
+      "archive_path": "sections/05_trace_method.tex",
+      "bytes": 5476,
+      "sha256": "7c1c92b55fcf9a5c3d62f43bc4a0587ac17ed51bcaa881506f6e6fdfb88919aa",
+      "source_path": "paper/arxiv/sections/05_trace_method.tex",
+      "source_sha256": "7c1c92b55fcf9a5c3d62f43bc4a0587ac17ed51bcaa881506f6e6fdfb88919aa"
+    },
+    {
+      "archive_path": "sections/06_trace_results.tex",
+      "bytes": 2926,
+      "sha256": "935fb7e7a64ebe07e08cd806f041ddeaf3ca6f86681dbe83a1c64ffe95290740",
+      "source_path": "paper/arxiv/sections/06_trace_results.tex",
+      "source_sha256": "935fb7e7a64ebe07e08cd806f041ddeaf3ca6f86681dbe83a1c64ffe95290740"
+    },
+    {
+      "archive_path": "sections/07_resident_method.tex",
+      "bytes": 4585,
+      "sha256": "098c82fbc0b75d80dfac580a1252dce1c6707f66a6d13323b644dd92833fc5ee",
+      "source_path": "paper/arxiv/sections/07_resident_method.tex",
+      "source_sha256": "098c82fbc0b75d80dfac580a1252dce1c6707f66a6d13323b644dd92833fc5ee"
+    },
+    {
+      "archive_path": "sections/08_resident_results.tex",
+      "bytes": 3020,
+      "sha256": "894493febe669bf74083bcad3348946187b8988e2afb92eb638e5f4f6da59d9a",
+      "source_path": "paper/arxiv/sections/08_resident_results.tex",
+      "source_sha256": "894493febe669bf74083bcad3348946187b8988e2afb92eb638e5f4f6da59d9a"
+    },
+    {
+      "archive_path": "sections/09_joint_interpretation.tex",
+      "bytes": 3205,
+      "sha256": "c14b2098b0ea6b77b77dda0621d4caefc575c62a2cf1d50a873ae5583e401e51",
+      "source_path": "paper/arxiv/sections/09_joint_interpretation.tex",
+      "source_sha256": "c14b2098b0ea6b77b77dda0621d4caefc575c62a2cf1d50a873ae5583e401e51"
+    },
+    {
+      "archive_path": "sections/10_related_work.tex",
+      "bytes": 4673,
+      "sha256": "2118cb6518dfc6a37dd55b14aa3d4ee15a8f3564031e1b026f693e913842712d",
+      "source_path": "paper/arxiv/sections/10_related_work.tex",
+      "source_sha256": "2118cb6518dfc6a37dd55b14aa3d4ee15a8f3564031e1b026f693e913842712d"
+    },
+    {
+      "archive_path": "sections/11_limitations.tex",
+      "bytes": 2602,
+      "sha256": "d69be58e73d40419d09c40eb0859edb0e27f10b4776fd7821cfb6cbff35f7e6e",
+      "source_path": "paper/arxiv/sections/11_limitations.tex",
+      "source_sha256": "d69be58e73d40419d09c40eb0859edb0e27f10b4776fd7821cfb6cbff35f7e6e"
+    },
+    {
+      "archive_path": "sections/12_reproducibility.tex",
+      "bytes": 3006,
+      "sha256": "83f5b503cb212ed98d74c0a76a22dc2f3e733f31c9a5053bd04edfe037e07e34",
+      "source_path": "paper/arxiv/sections/12_reproducibility.tex",
+      "source_sha256": "83f5b503cb212ed98d74c0a76a22dc2f3e733f31c9a5053bd04edfe037e07e34"
+    },
+    {
+      "archive_path": "sections/13_conclusion.tex",
+      "bytes": 1584,
+      "sha256": "1c50ef7b924b708a25423645f6050669c93bd54d2384f1b0bc358dfdd23cff77",
+      "source_path": "paper/arxiv/sections/13_conclusion.tex",
+      "source_sha256": "1c50ef7b924b708a25423645f6050669c93bd54d2384f1b0bc358dfdd23cff77"
+    },
+    {
+      "archive_path": "sections/appendix.tex",
+      "bytes": 3508,
+      "sha256": "2b1613787339de934bc09328dd328a807fb56c629801f0cb83cbae4a98c9d6f2",
+      "source_path": "paper/arxiv/sections/appendix.tex",
+      "source_sha256": "2b1613787339de934bc09328dd328a807fb56c629801f0cb83cbae4a98c9d6f2"
+    }
+  ],
+  "arxiv_tex_live_target": "2025",
+  "expected_pdf": {
+    "bytes": 946791,
+    "pages": 14,
+    "path": "paper/arxiv/main.pdf",
+    "sha256": "466f1a3687fc7de53c0579148e4c298744d3a6982fee2c698b8470480ebd02d0"
+  },
+  "omitted_from_upload": [
+    "PDF output and LaTeX auxiliary files",
+    "references.bib because the matching main.bbl is supplied",
+    "paper-data manifests, raw data, notebooks, and provider receipts",
+    "private submitter contact metadata"
+  ],
+  "processor": "pdflatex",
+  "release_date": "2026-08-12",
+  "release_id": "ready-cohorts-arxiv-v1",
+  "schema_version": "ready-cohorts-arxiv-release-v1",
+  "source_date_epoch": 1786492800,
+  "submission_metadata": {
+    "bytes": 2606,
+    "path": "release/arxiv/ready-cohorts-arxiv-v1-submission-metadata.txt",
+    "sha256": "2a063a184a1584da853042396382206c75cdd48b2e44b12d6be8ebd03614993c"
+  },
+  "top_level_tex": "main.tex"
+}

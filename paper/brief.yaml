@@ -1,0 +1,50 @@
+schema_version: ready-cohort-paper-brief-v1
+project_id: ready-cohort-boundary
+title_status: arxiv_release_candidate
+working_title: "Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control"
+author:
+  name: Josef Chen
+  affiliation: Independent Researcher
+  contact_visibility: private arXiv submission metadata only
+question: >-
+  When can a GPU execute deterministic control transitions between LLM and tool
+  events usefully, given the hardware crossover, semantic route compatibility,
+  asynchronous readiness, launch deadlines, state visibility, and exactness?
+audience:
+  - arXiv systems and machine-learning-systems readers
+  - systems venue reviewers
+evidence_cutoff_utc: "2026-08-12T01:00:00Z"
+claim_scope:
+  allowed:
+    - conditional mathematical results under the stated scheduling model
+    - computed results from the pinned 851-session trace panel
+    - descriptive measurements on named GPU placements
+    - exactness on tested states and seeds
+  prohibited_without_new_evidence:
+    - general GPU-versus-CPU superiority
+    - provider or hardware population significance
+    - CPU-core displacement
+    - end-to-end agent speedup or task benefit
+    - energy savings
+    - safe shared-vLLM execution
+    - first-ever or exhaustive-priority language
+    - GPU-created virtual machines
+exclusions:
+  - arbitrary Python execution on GPU
+  - LLM inference acceleration as the primary treatment
+  - privileged VM or sandbox lifecycle execution on GPU
+  - fixed nested device launch as a positive treatment
+deliverables:
+  - paper/arxiv/main.tex
+  - paper/arxiv/references.bib
+  - paper/arxiv/main.pdf
+  - paper/governance/claim-evidence-map.csv
+  - paper/governance/self-improvement-log.md
+  - paper/governance/release-checklist.md
+  - preregistration for the finite-capacity online runtime before new spend
+completion_command: "make -C paper/arxiv clean all && .venv/bin/python scripts/check_arxiv_paper.py"
+release_condition: >-
+  The current manuscript is eligible for arXiv release after the frozen public
+  bundle passes clean-checkout verification. The flagship systems claim remains blocked until a
+  finite-capacity online route compactor measures A, CPU use, raw P99 latency,
+  exact task behavior, and end-to-end leverage against frozen legal baselines.

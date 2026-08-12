@@ -1,0 +1,26 @@
+{
+  "github": {
+    "authenticated_owner": "josefchen",
+    "repository": "https://github.com/josefchen/ready-cohorts",
+    "visibility": "public"
+  },
+  "hugging_face": {
+    "authenticated_owner": "josefchen",
+    "commit": "41ff8d06578d4ec68934040a8fb925d3c8b01767",
+    "files": 21,
+    "private": false,
+    "repository": "https://huggingface.co/datasets/josefchen/ready-cohorts",
+    "verified_files": {
+      "MANIFEST.json": "b43e58b2ef137b2f84874e2c1c8cab18e97bd8bdf6cfa480dc56dd83b26cb5a3",
+      "README.md": "d0e10fda1afbacc6b4137e4ae7dc61da214af3326c4e52311ff77456ddf6d615",
+      "paper/ready-cohorts.pdf": "466f1a3687fc7de53c0579148e4c298744d3a6982fee2c698b8470480ebd02d0"
+    }
+  },
+  "source_dataset": {
+    "dataset": "Exgentic/agent-llm-traces",
+    "repository": "https://huggingface.co/datasets/Exgentic/agent-llm-traces",
+    "revision": "f7c94012d0bfbf66fe4d6ed627699508bbb555ff",
+    "verified_shards": 19
+  },
+  "verified_at_utc": "2026-08-12T14:20:00Z"
+}

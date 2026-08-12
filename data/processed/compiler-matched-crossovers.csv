@@ -1,0 +1,33 @@
+source_file,run_id,hardware,provider,state_width,action_count,observation_horizon,mode,smallest_tested_crossover_n_cpu8,smallest_tested_crossover_n_best_cpu,max_valid_speedup_cpu8,max_valid_speedup_best_cpu,valid_populations
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,8,1,1,compiled-gpu-host-visible,65536.0,65536.0,11.459790523221187,11.459790523221187,4.0
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,8,1,1,compiled-gpu-resident,256.0,65536.0,38.12646888327013,38.12646888327013,4.0
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,8,1,64,compiled-gpu-host-visible,256.0,256.0,81.16929381910053,81.16929381910053,4.0
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,8,1,64,compiled-gpu-resident,256.0,256.0,124.92802566269603,124.92802566269603,4.0
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,8,8,1,compiled-gpu-host-visible,,,0.9772450666769388,0.9772450666769388,2.0
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,8,8,1,compiled-gpu-resident,4096.0,4096.0,1.3302499520181303,1.3302499520181303,2.0
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,8,8,64,compiled-gpu-host-visible,256.0,256.0,5.286202232888701,5.286202232888701,2.0
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,8,8,64,compiled-gpu-resident,256.0,256.0,6.505067975485749,6.505067975485749,2.0
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,32,1,1,compiled-gpu-host-visible,65536.0,65536.0,16.968986539213827,16.968986539213827,4.0
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,32,1,1,compiled-gpu-resident,256.0,4096.0,28.789957680425147,28.789957680425147,4.0
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,32,1,64,compiled-gpu-host-visible,256.0,256.0,89.72081029157704,89.72081029157704,4.0
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,32,1,64,compiled-gpu-resident,256.0,256.0,106.90653674261168,106.90653674261168,4.0
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,32,8,1,compiled-gpu-host-visible,,,0.733742395296667,0.7250875339027554,1.0
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,32,8,1,compiled-gpu-resident,,,0.9905607091426274,0.9788765462881451,1.0
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,32,8,64,compiled-gpu-host-visible,256.0,256.0,3.7460814087543826,3.7460814087543826,2.0
+pilot-003-local-compiler-matched-20260811T154807Z.csv,20260811T154807Z,NVIDIA GeForce GTX 1660 Ti,local,32,8,64,compiled-gpu-resident,256.0,256.0,4.327236443061644,4.327236443061644,2.0
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,8,1,1,compiled-gpu-host-visible,256.0,4096.0,1.6301071818962296,1.6301071818962296,4.0
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,8,1,1,compiled-gpu-resident,256.0,256.0,11.348172191080453,11.348172191080453,4.0
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,8,1,64,compiled-gpu-host-visible,256.0,256.0,47.02046217791471,47.02046217791471,4.0
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,8,1,64,compiled-gpu-resident,256.0,256.0,99.48199988497004,99.48199988497004,4.0
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,8,8,1,compiled-gpu-host-visible,4096.0,4096.0,1.29314199882326,1.29314199882326,2.0
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,8,8,1,compiled-gpu-resident,256.0,256.0,2.0630554552322953,2.0630554552322953,2.0
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,8,8,64,compiled-gpu-host-visible,256.0,256.0,9.507342858709961,9.507342858709961,2.0
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,8,8,64,compiled-gpu-resident,256.0,256.0,11.62275373818198,11.62275373818198,2.0
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,32,1,1,compiled-gpu-host-visible,256.0,4096.0,4.203390857372601,4.203390857372601,4.0
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,32,1,1,compiled-gpu-resident,256.0,256.0,11.414984052702291,11.414984052702291,4.0
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,32,1,64,compiled-gpu-host-visible,256.0,256.0,36.44686237792262,36.44686237792262,4.0
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,32,1,64,compiled-gpu-resident,256.0,256.0,51.66600819168325,51.66600819168325,4.0
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,32,8,1,compiled-gpu-host-visible,256.0,,1.253495451263538,0.7894725116039195,1.0
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,32,8,1,compiled-gpu-resident,256.0,256.0,1.8598539595484034,1.1713672954944558,1.0
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,32,8,64,compiled-gpu-host-visible,256.0,256.0,9.256906215140166,9.256906215140166,2.0
+pilot-004-modal-l4-compiler-matched-20260811T162615Z.csv,20260811T162615Z,NVIDIA L4,modal,32,8,64,compiled-gpu-resident,256.0,256.0,10.810835787065479,10.810835787065479,2.0

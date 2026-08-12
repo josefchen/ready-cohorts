@@ -1,0 +1,272 @@
+\begin{thebibliography}{30}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Abhyankar et~al.(2024)Abhyankar, He, Srivatsa, Zhang, and
+  Zhang]{abhyankar2024infercept}
+Reyna Abhyankar, Zijian He, Vikranth Srivatsa, Hao Zhang, and Yiying Zhang.
+\newblock Infercept: Efficient intercept support for augmented large language
+  model inference.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning}, volume 235 of \emph{Proceedings of Machine Learning Research},
+  pages 81--95. PMLR, 2024.
+\newblock URL \url{https://proceedings.mlr.press/v235/abhyankar24a.html}.
+
+\bibitem[Aggarwal et~al.(2010)Aggarwal, Feder, Kenthapadi, Khuller, Panigrahy,
+  Thomas, and Zhu]{aggarwal2010anonymity}
+Gagan Aggarwal, Tom{\'a}s Feder, Krishnaram Kenthapadi, Samir Khuller, Rina
+  Panigrahy, Dilys Thomas, and An~Zhu.
+\newblock Achieving anonymity via clustering.
+\newblock \emph{ACM Transactions on Algorithms}, 6\penalty0 (3):\penalty0
+  1--19, 2010.
+\newblock \doi{10.1145/1798596.1798602}.
+\newblock URL \url{https://doi.org/10.1145/1798596.1798602}.
+
+\bibitem[Akagi and ichi Nakano(2015)]{akagi2015rgather}
+Toshihiro Akagi and Shin ichi Nakano.
+\newblock On {$r$}-gatherings on the line.
+\newblock In \emph{Frontiers in Algorithmics}, volume 9130 of \emph{Lecture
+  Notes in Computer Science}, pages 25--32. Springer, 2015.
+\newblock \doi{10.1007/978-3-319-19647-3_3}.
+\newblock URL \url{https://doi.org/10.1007/978-3-319-19647-3_3}.
+
+\bibitem[Bar-Noy et~al.(2009)Bar-Noy, Guha, Katz, Naor, Schieber, and
+  Shachnai]{barnoy2009throughput}
+Amotz Bar-Noy, Sudipto Guha, Yoav Katz, Joseph Naor, Baruch Schieber, and Hadas
+  Shachnai.
+\newblock Throughput maximization of real-time scheduling with batching.
+\newblock \emph{ACM Transactions on Algorithms}, 5\penalty0 (2):\penalty0
+  18:1--18:17, 2009.
+\newblock \doi{10.1145/1497290.1497294}.
+\newblock URL \url{https://doi.org/10.1145/1497290.1497294}.
+
+\bibitem[Barres et~al.(2026)Barres, Dong, Ray, Si, and
+  Narasimhan]{barres2026tau2bench}
+Victor Barres, Honghua Dong, Soham Ray, Xujie Si, and Karthik Narasimhan.
+\newblock {$\tau^2$-Bench}: Evaluating conversational agents in a dual-control
+  environment.
+\newblock In \emph{Proceedings of the 43rd International Conference on Machine
+  Learning}, volume 306 of \emph{Proceedings of Machine Learning Research}.
+  PMLR, 2026.
+\newblock URL \url{https://openreview.net/forum?id=OC2z7iSQKa}.
+
+\bibitem[Cang et~al.(2024)Cang, Chen, and Huang]{cang2024jointbatching}
+Yihan Cang, Ming Chen, and Kaibin Huang.
+\newblock Joint batching and scheduling for high-throughput multiuser edge {AI}
+  with asynchronous task arrivals.
+\newblock \emph{IEEE Transactions on Wireless Communications}, 23\penalty0
+  (10):\penalty0 13782--13795, 2024.
+\newblock \doi{10.1109/TWC.2024.3404811}.
+\newblock URL \url{https://doi.org/10.1109/TWC.2024.3404811}.
+
+\bibitem[Chaudhry et~al.(2026)Chaudhry, Choukse, Qiu, Goiri, Fonseca, Belay,
+  and Bianchini]{chaudhry2026murakkab}
+Gohar~Irfan Chaudhry, Esha Choukse, Haoran Qiu, Inigo Goiri, Rodrigo Fonseca,
+  Adam Belay, and Ricardo Bianchini.
+\newblock Murakkab: Resource-efficient agentic workflow orchestration in cloud
+  platforms.
+\newblock In \emph{20th USENIX Symposium on Operating Systems Design and
+  Implementation (OSDI 26)}, pages 567--587, Seattle, WA, July 2026. USENIX
+  Association.
+\newblock URL
+  \url{https://www.usenix.org/conference/osdi26/presentation/chaudhry}.
+
+\bibitem[Cheng et~al.(2026)Cheng, Zhang, Zhou, Ji, Jiang, Zhao, Xiao, Ye,
+  Huang, Lai, Jin, Hou, Wu, Dong, Yip, Wang, Yang, Miao, Chen, and
+  Jia]{cheng2026mpk}
+Xinhao Cheng, Zhihao Zhang, Yu~Zhou, Jianan Ji, Jinchen Jiang, Zepeng Zhao,
+  Ziruo Xiao, Zihao Ye, Yingyi Huang, Ruihang Lai, Hongyi Jin, Bohan Hou,
+  Mengdi Wu, Yixin Dong, Anthony Yip, Songting Wang, Wenqin Yang, Xupeng Miao,
+  Tianqi Chen, and Zhihao Jia.
+\newblock {MPK}: A compiler and runtime for {Mega-Kernelizing} tensor programs.
+\newblock In \emph{20th USENIX Symposium on Operating Systems Design and
+  Implementation (OSDI 26)}, pages 1909--1926, Seattle, WA, July 2026. USENIX
+  Association.
+\newblock ISBN 978-1-939133-55-7.
+\newblock URL
+  \url{https://www.usenix.org/conference/osdi26/presentation/cheng}.
+
+\bibitem[Chung et~al.(2026)Chung, Jia, Jezghani, and
+  Kim]{chung2026cpuslowdowns}
+Euijun Chung, Yuxiao Jia, Aaron Jezghani, and Hyesoon Kim.
+\newblock Characterizing {CPU}-induced slowdowns in multi-{GPU} {LLM}
+  inference, 2026.
+\newblock URL \url{https://arxiv.org/abs/2603.22774}.
+
+\bibitem[{Exgentic}(2026)]{exgentic2026traces}
+{Exgentic}.
+\newblock Multi-benchmark {LLM} agent traces.
+\newblock Hugging Face dataset, 2026.
+\newblock URL
+  \url{https://huggingface.co/datasets/Exgentic/agent-llm-traces/tree/f7c94012d0bfbf66fe4d6ed627699508bbb555ff}.
+\newblock Revision 70036b93a04e61b0ea2706a68b962f4f26774587;
+  CDLA-Permissive-2.0; accessed 2026-08-12.
+
+\bibitem[Guo et~al.(2026)Guo, Wu, and Yiu]{guo2026saga}
+Dongxin Guo, Jikun Wu, and Siu~Ming Yiu.
+\newblock {SAGA}: Workflow-atomic scheduling for {AI} agent inference on {GPU}
+  clusters, 2026.
+\newblock URL \url{https://arxiv.org/abs/2605.00528}.
+
+\bibitem[Huertas and Hentenryck(2025)]{huertas2025serialbatch}
+Jorge~A. Huertas and Pascal~Van Hentenryck.
+\newblock Constraint programming models for serial batch scheduling with
+  minimum batch size.
+\newblock \emph{Operations Research Perspectives}, 15:\penalty0 100352, 2025.
+\newblock \doi{10.1016/j.orp.2025.100352}.
+\newblock URL \url{https://doi.org/10.1016/j.orp.2025.100352}.
+
+\bibitem[ichi Nakano(2019)]{nakano2019rgather}
+Shin ichi Nakano.
+\newblock A simple algorithm for {$r$}-gatherings on the line.
+\newblock \emph{Journal of Graph Algorithms and Applications}, 23\penalty0
+  (5):\penalty0 837--845, 2019.
+\newblock \doi{10.7155/jgaa.00514}.
+\newblock URL \url{https://doi.org/10.7155/jgaa.00514}.
+
+\bibitem[Jin et~al.(2026)Jin, Hou, Wang, Lai, Chen, Ye, Cai, Dong, Cheng,
+  Zhang, Zhao, Huang, Yang, Jiang, Oliaro, Ji, Miao, Grover, Mowry, Jia, and
+  Chen]{jin2026eventtensor}
+Hongyi Jin, Bohan Hou, Guanjie Wang, Ruihang Lai, Jinqi Chen, Zihao Ye, Yaxing
+  Cai, Yixin Dong, Xinhao Cheng, Zhihao Zhang, Yilong Zhao, Yingyi Huang, Lijie
+  Yang, Jinchen Jiang, Gabriele Oliaro, Jianan Ji, Xupeng Miao, Vinod Grover,
+  Todd~C. Mowry, Zhihao Jia, and Tianqi Chen.
+\newblock Event tensor: A unified abstraction for compiling dynamic megakernel.
+\newblock In \emph{Proceedings of Machine Learning and Systems}, volume~8,
+  pages 1917--1933. MLSys, 2026.
+\newblock URL
+  \url{https://proceedings.mlsys.org/paper_files/paper/2026/file/53d3f45797970d323bd8a0d379c525aa-Paper-Conference.pdf}.
+
+\bibitem[Kang et~al.(2026)Kang, Li, Xu, Yang, Chen, Wang, Chen, Krishna, Xu,
+  and Arora]{kang2026thunderagent}
+Hao Kang, Ziyang Li, Weili Xu, Xinyu Yang, Yinfang Chen, Junxiong Wang, Beidi
+  Chen, Tushar Krishna, Chenfeng Xu, and Simran Arora.
+\newblock {ThunderAgent}: A simple, fast and program-aware agentic inference
+  system, 2026.
+\newblock URL \url{https://arxiv.org/abs/2602.13692}.
+
+\bibitem[Laszlo and Mukherjee(2013)]{laszlo2013microaggregation}
+Michael~J. Laszlo and Sumitra Mukherjee.
+\newblock Optimal univariate microaggregation with data suppression.
+\newblock \emph{Journal of Systems and Software}, 86\penalty0 (3):\penalty0
+  677--682, 2013.
+\newblock \doi{10.1016/j.jss.2012.10.901}.
+\newblock URL \url{https://doi.org/10.1016/j.jss.2012.10.901}.
+
+\bibitem[Lin et~al.(2024)Lin, Han, Zhang, Yang, Yang, Chen, and
+  Qiu]{lin2024parrot}
+Chaofan Lin, Zhenhua Han, Chengruidong Zhang, Yuqing Yang, Fan Yang, Chen Chen,
+  and Lili Qiu.
+\newblock Parrot: Efficient serving of {LLM-based} applications with semantic
+  variable.
+\newblock In \emph{18th USENIX Symposium on Operating Systems Design and
+  Implementation (OSDI 24)}, pages 929--945, Santa Clara, CA, July 2024. USENIX
+  Association.
+\newblock ISBN 978-1-939133-40-3.
+\newblock URL
+  \url{https://www.usenix.org/conference/osdi24/presentation/lin-chaofan}.
+
+\bibitem[Lu and Reda(2026)]{lu2026agenticcpugpu}
+Tianxi Lu and Sherief Reda.
+\newblock Agentic {CPU-GPU} scheduling for heterogeneous {AI} workloads, 2026.
+\newblock URL \url{https://arxiv.org/abs/2607.22242}.
+
+\bibitem[Luo et~al.(2026)Luo, Shi, Cai, Zhang, Wong, Wang, Wang, Huang, Chen,
+  Gonzalez, and Stoica]{luo2026agentix}
+Michael Luo, Xiaoxiang Shi, Colin Cai, Tianjun Zhang, Justin Wong, Yichuan
+  Wang, Chi Wang, Yanping Huang, Zhifeng Chen, Joseph~E. Gonzalez, and Ion
+  Stoica.
+\newblock Agentix: An efficient serving engine for {LLM} agents as general
+  programs.
+\newblock In \emph{23rd USENIX Symposium on Networked Systems Design and
+  Implementation (NSDI 26)}, pages 2443--2459, Renton, WA, May 2026. USENIX
+  Association.
+\newblock ISBN 978-1-939133-54-0.
+\newblock URL \url{https://www.usenix.org/conference/nsdi26/presentation/luo}.
+
+\bibitem[NVI(2026)]{nvidia2026cudaprogrammingguide}
+\emph{{CUDA Programming Guide}}.
+\newblock NVIDIA Corporation, 2026.
+\newblock URL
+  \url{https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html}.
+\newblock Chapter 4.2, CUDA Graphs; accessed 2026-08-12.
+
+\bibitem[Richmond et~al.(2023)Richmond, Chisholm, Heywood, Chimeh, and
+  Leach]{richmond2023flamegpu2}
+Paul Richmond, Robert Chisholm, Peter Heywood, Mozhgan~Kabiri Chimeh, and
+  Matthew Leach.
+\newblock {FLAME GPU 2}: A framework for flexible and performant agent based
+  simulation on {GPU}s.
+\newblock \emph{Software: Practice and Experience}, 53\penalty0 (8):\penalty0
+  1659--1680, 2023.
+\newblock \doi{10.1002/spe.3207}.
+\newblock URL \url{https://doi.org/10.1002/spe.3207}.
+
+\bibitem[Sarker et~al.(2021)Sarker, Sung, and Rahman]{sarker2021rgather}
+Anik Sarker, Wing-Kin Sung, and M.~Sohel Rahman.
+\newblock A linear time algorithm for the {$r$}-gathering problem on the line.
+\newblock \emph{Theoretical Computer Science}, 866:\penalty0 96--106, 2021.
+\newblock \doi{10.1016/j.tcs.2021.03.015}.
+\newblock URL \url{https://doi.org/10.1016/j.tcs.2021.03.015}.
+
+\bibitem[Sarker et~al.(2026)Sarker, Staylor, Alsaadi, von Laszewski, Jha, and
+  Fox]{sarker2026oprag}
+Arup~Kumar Sarker, Mills Staylor, Aymen Alsaadi, Gregor von Laszewski, Shantenu
+  Jha, and Geoffrey Fox.
+\newblock {OpRAG}: A resource-deterministic runtime for gpu-backed multi-stage
+  {RAG} workflows, 2026.
+\newblock URL \url{https://arxiv.org/abs/2608.08340}.
+
+\bibitem[Wang et~al.(2026)Wang, Ye, Xu, Guo, Wei, Wang, Li, Chen, Li, Zhuo, and
+  Chen]{wang2026mars}
+Yifei Wang, Hancheng Ye, Yechen Xu, Cong Guo, Chiyue Wei, Qinsi Wang, Dongting
+  Li, Tingjun Chen, Hai Li, Danyang Zhuo, and Yiran Chen.
+\newblock {MARS}: Efficient, adaptive co-scheduling for heterogeneous agentic
+  systems, 2026.
+\newblock URL \url{https://arxiv.org/abs/2604.26963}.
+
+\bibitem[Xu et~al.(2023)Xu, Sun, Zhou, and Niu]{xu2023smdpbatching}
+Yaodan Xu, Jingzhou Sun, Sheng Zhou, and Zhisheng Niu.
+\newblock {SMDP}-based dynamic batching for efficient inference on {GPU}-based
+  platforms.
+\newblock In \emph{2023 IEEE International Conference on Communications (ICC)},
+  pages 5483--5489. IEEE, 2023.
+\newblock \doi{10.1109/ICC45041.2023.10278962}.
+\newblock URL \url{https://doi.org/10.1109/ICC45041.2023.10278962}.
+
+\bibitem[Yang et~al.(2026{\natexlab{a}})Yang, Liu, Zhang, and
+  Stojkovic]{yang2026agenticarchitecture}
+Jirong Yang, Peizhe Liu, Chaojie Zhang, and Jovan Stojkovic.
+\newblock Architectural implications of agentic {AI} workflows,
+  2026{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2608.04458}.
+
+\bibitem[Yang et~al.(2026{\natexlab{b}})Yang, Gao, Zhou, Gan, Zheng, and
+  Quinn]{yang2026gpuos}
+Yiwei Yang, Xiangyu Gao, Yuan Zhou, Yuhang Gan, Yusheng Zheng, and Andi Quinn.
+\newblock {GPUOS}: A {GPU} operating system primitive for transparent operation
+  fusion, 2026{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2604.17861}.
+
+\bibitem[Yao et~al.(2024)Yao, Shinn, Razavi, and Narasimhan]{yao2024taubench}
+Shunyu Yao, Noah Shinn, Pedram Razavi, and Karthik Narasimhan.
+\newblock {$\tau$-bench}: A benchmark for tool-agent-user interaction in
+  real-world domains, 2024.
+\newblock URL \url{https://arxiv.org/abs/2406.12045}.
+
+\bibitem[Zhang et~al.(2026)Zhang, Yan, Yang, and Yuan]{zhang2026agentserve}
+Yuning Zhang, Yan Yan, Nan Yang, and Dong Yuan.
+\newblock {AgentServe}: Algorithm-system co-design for efficient agentic {AI}
+  serving on a consumer-grade {GPU}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2603.10342}.
+
+\bibitem[Zhang and Cao(2026)]{zhang2026toktier}
+Zhenyu Zhang and Zhichao Cao.
+\newblock {TokTier}: Exact stateful {CPU+GPU} tokenization for agentic {LLM}
+  serving, 2026.
+\newblock URL \url{https://arxiv.org/abs/2607.29678}.
+
+\end{thebibliography}

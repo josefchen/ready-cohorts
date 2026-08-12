@@ -1,0 +1,72 @@
+{
+  "configuration": {
+    "active_sessions": [
+      100,
+      1000,
+      10000,
+      100000
+    ],
+    "arrival_model": "stationary homogeneous Poisson",
+    "event_time": "recorded span completion offset",
+    "groupings": [
+      "pooled",
+      "event_class",
+      "route_key"
+    ],
+    "horizon_s": 60.0,
+    "repetitions": 5,
+    "seed": 20260811,
+    "template_sampling": "uniform over empirical sessions",
+    "thresholds": [
+      32,
+      64,
+      128,
+      256,
+      512,
+      1024,
+      4096
+    ],
+    "windows_ms": [
+      1,
+      5,
+      10,
+      25,
+      50,
+      100,
+      250,
+      500,
+      1000
+    ]
+  },
+  "created_at": "2026-08-11T16:55:11.684479+00:00",
+  "outputs": {
+    "repetitions": {
+      "path": "data/processed/trace-ready-cohort-repetitions.csv",
+      "sha256": "9eb2eb8f0228f7f20c2bbbd4c582823632ce2e6725b4d96083b0683c5d099d51"
+    },
+    "summary": {
+      "path": "data/processed/trace-ready-cohort-summary.csv",
+      "sha256": "5ecb0041f1b3de4662d098ea4b98724967d52efb333eca349fd28422363493f6"
+    }
+  },
+  "preregistration": "preregistration/trace-replay-001.md",
+  "quality": {
+    "active_population_ratio_max": 1.122185220305543,
+    "active_population_ratio_min": 0.9309422922654609,
+    "grouping_hierarchy_checked": true,
+    "input_events": 9031,
+    "input_sessions": 851,
+    "output_repetition_rows": 3780,
+    "output_summary_rows": 756
+  },
+  "source_files": {
+    "session_summary": {
+      "path": "data/processed/exgentic-tau2-session-summary.csv",
+      "sha256": "389c4e700aad48f322f7e82560594f402b62f56123c6d39a27b3f18ffe409fc6"
+    },
+    "span_features": {
+      "path": "data/processed/exgentic-tau2-span-features.parquet",
+      "sha256": "da57b75db69916a4c1036909e453e41e470b7daef304e61bf2f8b2d8720d4dc2"
+    }
+  }
+}

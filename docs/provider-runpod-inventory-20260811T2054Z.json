@@ -1,0 +1,2028 @@
+{
+  "authentication": {
+    "identity_redacted": true,
+    "ok": true
+  },
+  "available_offers": [
+    {
+      "data_center_id": "CA-MTL-3",
+      "display_name": "A100 PCIe",
+      "gpu_type_id": "NVIDIA A100 80GB PCIe",
+      "location": "Canada",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-IS-1",
+      "display_name": "A100 SXM",
+      "gpu_type_id": "NVIDIA A100-SXM4-80GB",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-CA-2",
+      "display_name": "A100 SXM",
+      "gpu_type_id": "NVIDIA A100-SXM4-80GB",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-KS-2",
+      "display_name": "A100 SXM",
+      "gpu_type_id": "NVIDIA A100-SXM4-80GB",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-MD-1",
+      "display_name": "A100 SXM",
+      "gpu_type_id": "NVIDIA A100-SXM4-80GB",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-MO-1",
+      "display_name": "A100 SXM",
+      "gpu_type_id": "NVIDIA A100-SXM4-80GB",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-WA-1",
+      "display_name": "A100 SXM",
+      "gpu_type_id": "NVIDIA A100-SXM4-80GB",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "CA-MTL-1",
+      "display_name": "A40",
+      "gpu_type_id": "NVIDIA A40",
+      "location": "Canada",
+      "stock_status": "High"
+    },
+    {
+      "data_center_id": "EU-SE-1",
+      "display_name": "A40",
+      "gpu_type_id": "NVIDIA A40",
+      "location": "Europe",
+      "stock_status": "High"
+    },
+    {
+      "data_center_id": "US-CA-2",
+      "display_name": "B200",
+      "gpu_type_id": "NVIDIA B200",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-NC-2",
+      "display_name": "B200",
+      "gpu_type_id": "NVIDIA B200",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EU-NL-1",
+      "display_name": "B300",
+      "gpu_type_id": "NVIDIA B300 SXM6 AC",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-IS-1",
+      "display_name": "B300",
+      "gpu_type_id": "NVIDIA B300 SXM6 AC",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EU-CZ-1",
+      "display_name": "RTX 3090",
+      "gpu_type_id": "NVIDIA GeForce RTX 3090",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-IS-2",
+      "display_name": "RTX 3090",
+      "gpu_type_id": "NVIDIA GeForce RTX 3090",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EU-RO-1",
+      "display_name": "RTX 4090",
+      "gpu_type_id": "NVIDIA GeForce RTX 4090",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-IS-1",
+      "display_name": "RTX 4090",
+      "gpu_type_id": "NVIDIA GeForce RTX 4090",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-IS-2",
+      "display_name": "RTX 4090",
+      "gpu_type_id": "NVIDIA GeForce RTX 4090",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-IL-1",
+      "display_name": "RTX 4090",
+      "gpu_type_id": "NVIDIA GeForce RTX 4090",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EU-CZ-1",
+      "display_name": "RTX 5090",
+      "gpu_type_id": "NVIDIA GeForce RTX 5090",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EU-RO-1",
+      "display_name": "RTX 5090",
+      "gpu_type_id": "NVIDIA GeForce RTX 5090",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-NO-1",
+      "display_name": "RTX 5090",
+      "gpu_type_id": "NVIDIA GeForce RTX 5090",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "AP-IN-1",
+      "display_name": "H100 SXM",
+      "gpu_type_id": "NVIDIA H100 80GB HBM3",
+      "location": "India",
+      "stock_status": "Medium"
+    },
+    {
+      "data_center_id": "AP-IN-2",
+      "display_name": "H100 SXM",
+      "gpu_type_id": "NVIDIA H100 80GB HBM3",
+      "location": "India",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "AP-JP-1",
+      "display_name": "H100 SXM",
+      "gpu_type_id": "NVIDIA H100 80GB HBM3",
+      "location": "Japan",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "CA-MTL-1",
+      "display_name": "H100 SXM",
+      "gpu_type_id": "NVIDIA H100 80GB HBM3",
+      "location": "Canada",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EU-FR-1",
+      "display_name": "H100 SXM",
+      "gpu_type_id": "NVIDIA H100 80GB HBM3",
+      "location": "France",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EU-NL-1",
+      "display_name": "H100 SXM",
+      "gpu_type_id": "NVIDIA H100 80GB HBM3",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-IS-3",
+      "display_name": "H100 SXM",
+      "gpu_type_id": "NVIDIA H100 80GB HBM3",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-NO-2",
+      "display_name": "H100 SXM",
+      "gpu_type_id": "NVIDIA H100 80GB HBM3",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-CA-2",
+      "display_name": "H100 SXM",
+      "gpu_type_id": "NVIDIA H100 80GB HBM3",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-GA-2",
+      "display_name": "H100 SXM",
+      "gpu_type_id": "NVIDIA H100 80GB HBM3",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-MO-1",
+      "display_name": "H100 SXM",
+      "gpu_type_id": "NVIDIA H100 80GB HBM3",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-NE-1",
+      "display_name": "H100 SXM",
+      "gpu_type_id": "NVIDIA H100 80GB HBM3",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-KS-2",
+      "display_name": "H100 NVL",
+      "gpu_type_id": "NVIDIA H100 NVL",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-KS-2",
+      "display_name": "H100 PCIe",
+      "gpu_type_id": "NVIDIA H100 PCIe",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "AP-JP-1",
+      "display_name": "H200 SXM",
+      "gpu_type_id": "NVIDIA H200",
+      "location": "Japan",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EU-FR-1",
+      "display_name": "H200 SXM",
+      "gpu_type_id": "NVIDIA H200",
+      "location": "France",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-IS-2",
+      "display_name": "H200 SXM",
+      "gpu_type_id": "NVIDIA H200",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-IS-4",
+      "display_name": "H200 SXM",
+      "gpu_type_id": "NVIDIA H200",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-IS-5",
+      "display_name": "H200 SXM",
+      "gpu_type_id": "NVIDIA H200",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-CA-2",
+      "display_name": "H200 SXM",
+      "gpu_type_id": "NVIDIA H200",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-GA-2",
+      "display_name": "H200 SXM",
+      "gpu_type_id": "NVIDIA H200",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-NC-1",
+      "display_name": "H200 SXM",
+      "gpu_type_id": "NVIDIA H200",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EU-RO-1",
+      "display_name": "L4",
+      "gpu_type_id": "NVIDIA L4",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-IS-1",
+      "display_name": "L4",
+      "gpu_type_id": "NVIDIA L4",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-IS-2",
+      "display_name": "L4",
+      "gpu_type_id": "NVIDIA L4",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-MO-2",
+      "display_name": "L4",
+      "gpu_type_id": "NVIDIA L4",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-IS-2",
+      "display_name": "L40S",
+      "gpu_type_id": "NVIDIA L40S",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-MO-1",
+      "display_name": "L40S",
+      "gpu_type_id": "NVIDIA L40S",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-TX-3",
+      "display_name": "L40S",
+      "gpu_type_id": "NVIDIA L40S",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-TX-4",
+      "display_name": "L40S",
+      "gpu_type_id": "NVIDIA L40S",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EU-RO-1",
+      "display_name": "RTX 2000 Ada",
+      "gpu_type_id": "NVIDIA RTX 2000 Ada Generation",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-IS-1",
+      "display_name": "RTX 2000 Ada",
+      "gpu_type_id": "NVIDIA RTX 2000 Ada Generation",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-IS-1",
+      "display_name": "RTX 4000 Ada",
+      "gpu_type_id": "NVIDIA RTX 4000 Ada Generation",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "CA-MTL-1",
+      "display_name": "RTX A5000",
+      "gpu_type_id": "NVIDIA RTX A5000",
+      "location": "Canada",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EU-SE-1",
+      "display_name": "RTX A5000",
+      "gpu_type_id": "NVIDIA RTX A5000",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-IL-1",
+      "display_name": "RTX A5000",
+      "gpu_type_id": "NVIDIA RTX A5000",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EU-SE-1",
+      "display_name": "RTX A6000",
+      "gpu_type_id": "NVIDIA RTX A6000",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-TX-1",
+      "display_name": "RTX A6000",
+      "gpu_type_id": "NVIDIA RTX A6000",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EU-RO-1",
+      "display_name": "RTX PRO 4000",
+      "gpu_type_id": "NVIDIA RTX PRO 4000 Blackwell",
+      "location": "Europe",
+      "stock_status": "Medium"
+    },
+    {
+      "data_center_id": "EU-RO-1",
+      "display_name": "RTX PRO 4500",
+      "gpu_type_id": "NVIDIA RTX PRO 4500 Blackwell",
+      "location": "Europe",
+      "stock_status": "High"
+    },
+    {
+      "data_center_id": "EUR-IS-1",
+      "display_name": "RTX PRO 4500",
+      "gpu_type_id": "NVIDIA RTX PRO 4500 Blackwell",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-KS-2",
+      "display_name": "RTX PRO 4500 SE",
+      "gpu_type_id": "NVIDIA RTX PRO 4500 Blackwell Server Edition",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "CA-MTL-3",
+      "display_name": "RTX PRO 6000",
+      "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "location": "Canada",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EU-RO-1",
+      "display_name": "RTX PRO 6000",
+      "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-IS-1",
+      "display_name": "RTX PRO 6000",
+      "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "EUR-IS-2",
+      "display_name": "RTX PRO 6000",
+      "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "location": "Europe",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-MO-2",
+      "display_name": "RTX PRO 6000",
+      "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-NC-2",
+      "display_name": "RTX PRO 6000",
+      "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-NE-1",
+      "display_name": "RTX PRO 6000",
+      "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "location": "United States",
+      "stock_status": "Low"
+    },
+    {
+      "data_center_id": "US-PA-1",
+      "display_name": "RTX PRO 6000",
+      "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "location": "United States",
+      "stock_status": "Low"
+    }
+  ],
+  "captured_at_utc": "2026-08-11T20:53:39Z",
+  "counts": {
+    "catalog_gpu_types": 48,
+    "data_centers": 49,
+    "data_centers_with_stock": 32,
+    "stocked_gpu_datacenter_offers": 72,
+    "stocked_gpu_types": 22
+  },
+  "data_centers": [
+    {
+      "gpu_availability": [
+        {
+          "display_name": "H100 SXM",
+          "gpu_type_id": "NVIDIA H100 80GB HBM3",
+          "stock_status": "Medium"
+        }
+      ],
+      "id": "AP-IN-1",
+      "location": "India",
+      "name": "AP-IN-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "H100 SXM",
+          "gpu_type_id": "NVIDIA H100 80GB HBM3",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "AP-IN-2",
+      "location": "India",
+      "name": "AP-IN-2"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "H100 SXM",
+          "gpu_type_id": "NVIDIA H100 80GB HBM3",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "H200 SXM",
+          "gpu_type_id": "NVIDIA H200",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "AP-JP-1",
+      "location": "Japan",
+      "name": "AP-JP-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "A40",
+          "gpu_type_id": "NVIDIA A40",
+          "stock_status": "High"
+        },
+        {
+          "display_name": "H100 SXM",
+          "gpu_type_id": "NVIDIA H100 80GB HBM3",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX A5000",
+          "gpu_type_id": "NVIDIA RTX A5000",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "CA-MTL-1",
+      "location": "Canada",
+      "name": "CA-MTL-1"
+    },
+    {
+      "gpu_availability": [],
+      "id": "CA-MTL-2",
+      "location": "Canada",
+      "name": "CA-MTL-2"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "A100 PCIe",
+          "gpu_type_id": "NVIDIA A100 80GB PCIe",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX 4090",
+          "gpu_type_id": "NVIDIA GeForce RTX 4090",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "H200 SXM",
+          "gpu_type_id": "NVIDIA H200",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX A6000",
+          "gpu_type_id": "NVIDIA RTX A6000",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX PRO 6000",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "CA-MTL-3",
+      "location": "Canada",
+      "name": "CA-MTL-3"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "H200 SXM",
+          "gpu_type_id": "NVIDIA H200",
+          "stock_status": "none"
+        }
+      ],
+      "id": "CA-MTL-4",
+      "location": "Canada",
+      "name": "CA-MTL-4"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "RTX 3090",
+          "gpu_type_id": "NVIDIA GeForce RTX 3090",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX 4090",
+          "gpu_type_id": "NVIDIA GeForce RTX 4090",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX 5090",
+          "gpu_type_id": "NVIDIA GeForce RTX 5090",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX PRO 6000",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX PRO 6000 WK",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+          "stock_status": "none"
+        }
+      ],
+      "id": "EU-CZ-1",
+      "location": "Europe",
+      "name": "EU-CZ-1"
+    },
+    {
+      "gpu_availability": [],
+      "id": "EU-DK-1",
+      "location": "Europe",
+      "name": "EU-DK-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "H100 SXM",
+          "gpu_type_id": "NVIDIA H100 80GB HBM3",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "H200 SXM",
+          "gpu_type_id": "NVIDIA H200",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "EU-FR-1",
+      "location": "France",
+      "name": "EU-FR-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "B300",
+          "gpu_type_id": "NVIDIA B300 SXM6 AC",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "H100 SXM",
+          "gpu_type_id": "NVIDIA H100 80GB HBM3",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "L40S",
+          "gpu_type_id": "NVIDIA L40S",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX PRO 6000",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "stock_status": "none"
+        }
+      ],
+      "id": "EU-NL-1",
+      "location": "Europe",
+      "name": "EU-NL-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "MI300X",
+          "gpu_type_id": "AMD Instinct MI300X OAM",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "A100 PCIe",
+          "gpu_type_id": "NVIDIA A100 80GB PCIe",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "A100 SXM",
+          "gpu_type_id": "NVIDIA A100-SXM4-80GB",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "B200",
+          "gpu_type_id": "NVIDIA B200",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX 4090",
+          "gpu_type_id": "NVIDIA GeForce RTX 4090",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX 5090",
+          "gpu_type_id": "NVIDIA GeForce RTX 5090",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "L4",
+          "gpu_type_id": "NVIDIA L4",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX 2000 Ada",
+          "gpu_type_id": "NVIDIA RTX 2000 Ada Generation",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX 4000 Ada",
+          "gpu_type_id": "NVIDIA RTX 4000 Ada Generation",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX A4000",
+          "gpu_type_id": "NVIDIA RTX A4000",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX A4500",
+          "gpu_type_id": "NVIDIA RTX A4500",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX A6000",
+          "gpu_type_id": "NVIDIA RTX A6000",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX PRO 4000",
+          "gpu_type_id": "NVIDIA RTX PRO 4000 Blackwell",
+          "stock_status": "Medium"
+        },
+        {
+          "display_name": "RTX PRO 4500",
+          "gpu_type_id": "NVIDIA RTX PRO 4500 Blackwell",
+          "stock_status": "High"
+        },
+        {
+          "display_name": "RTX PRO 6000",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX PRO 6000 WK",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+          "stock_status": "none"
+        }
+      ],
+      "id": "EU-RO-1",
+      "location": "Europe",
+      "name": "EU-RO-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "A40",
+          "gpu_type_id": "NVIDIA A40",
+          "stock_status": "High"
+        },
+        {
+          "display_name": "RTX A5000",
+          "gpu_type_id": "NVIDIA RTX A5000",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX A6000",
+          "gpu_type_id": "NVIDIA RTX A6000",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "EU-SE-1",
+      "location": "Europe",
+      "name": "EU-SE-1"
+    },
+    {
+      "gpu_availability": [],
+      "id": "EU-SE-2",
+      "location": "Europe",
+      "name": "EU-SE-2"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "A100 SXM",
+          "gpu_type_id": "NVIDIA A100-SXM4-80GB",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "B300",
+          "gpu_type_id": "NVIDIA B300 SXM6 AC",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX 4090",
+          "gpu_type_id": "NVIDIA GeForce RTX 4090",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX 5090",
+          "gpu_type_id": "NVIDIA GeForce RTX 5090",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "H100 NVL",
+          "gpu_type_id": "NVIDIA H100 NVL",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "L4",
+          "gpu_type_id": "NVIDIA L4",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX 2000 Ada",
+          "gpu_type_id": "NVIDIA RTX 2000 Ada Generation",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX 4000 Ada",
+          "gpu_type_id": "NVIDIA RTX 4000 Ada Generation",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX A4000",
+          "gpu_type_id": "NVIDIA RTX A4000",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX PRO 4500",
+          "gpu_type_id": "NVIDIA RTX PRO 4500 Blackwell",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX PRO 6000",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX PRO 6000 WK",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+          "stock_status": "none"
+        }
+      ],
+      "id": "EUR-IS-1",
+      "location": "Europe",
+      "name": "EUR-IS-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "RTX 3090",
+          "gpu_type_id": "NVIDIA GeForce RTX 3090",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX 4090",
+          "gpu_type_id": "NVIDIA GeForce RTX 4090",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX 5090",
+          "gpu_type_id": "NVIDIA GeForce RTX 5090",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "H200 SXM",
+          "gpu_type_id": "NVIDIA H200",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "L4",
+          "gpu_type_id": "NVIDIA L4",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "L40",
+          "gpu_type_id": "NVIDIA L40",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "L40S",
+          "gpu_type_id": "NVIDIA L40S",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX 4000 Ada",
+          "gpu_type_id": "NVIDIA RTX 4000 Ada Generation",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX PRO 6000",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "PRO 6000 MIG 24GB",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 1g.24gb",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "PRO 6000 MIG 48GB",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 2g.48gb",
+          "stock_status": "none"
+        }
+      ],
+      "id": "EUR-IS-2",
+      "location": "Europe",
+      "name": "EUR-IS-2"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "H100 SXM",
+          "gpu_type_id": "NVIDIA H100 80GB HBM3",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "EUR-IS-3",
+      "location": "Europe",
+      "name": "EUR-IS-3"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "H200 SXM",
+          "gpu_type_id": "NVIDIA H200",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "EUR-IS-4",
+      "location": "Europe",
+      "name": "EUR-IS-4"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "H200 SXM",
+          "gpu_type_id": "NVIDIA H200",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "EUR-IS-5",
+      "location": "Europe",
+      "name": "EUR-IS-5"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "RTX 4090",
+          "gpu_type_id": "NVIDIA GeForce RTX 4090",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX 5090",
+          "gpu_type_id": "NVIDIA GeForce RTX 5090",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "EUR-NO-1",
+      "location": "Europe",
+      "name": "EUR-NO-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "H100 SXM",
+          "gpu_type_id": "NVIDIA H100 80GB HBM3",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "EUR-NO-2",
+      "location": "Europe",
+      "name": "EUR-NO-2"
+    },
+    {
+      "gpu_availability": [],
+      "id": "OC-AU-1",
+      "location": "Australia",
+      "name": "OC-AU-1"
+    },
+    {
+      "gpu_availability": [],
+      "id": "SEA-SG-1",
+      "location": "SE Asia",
+      "name": "SEA-SG-1"
+    },
+    {
+      "gpu_availability": [],
+      "id": "US-CA-1",
+      "location": "United States",
+      "name": "US-CA-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "A100 SXM",
+          "gpu_type_id": "NVIDIA A100-SXM4-80GB",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "B200",
+          "gpu_type_id": "NVIDIA B200",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX 4090",
+          "gpu_type_id": "NVIDIA GeForce RTX 4090",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "H100 SXM",
+          "gpu_type_id": "NVIDIA H100 80GB HBM3",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "H100 NVL",
+          "gpu_type_id": "NVIDIA H100 NVL",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "H200 SXM",
+          "gpu_type_id": "NVIDIA H200",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX 4000 Ada",
+          "gpu_type_id": "NVIDIA RTX 4000 Ada Generation",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX 6000 Ada",
+          "gpu_type_id": "NVIDIA RTX 6000 Ada Generation",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX A5000",
+          "gpu_type_id": "NVIDIA RTX A5000",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX PRO 6000",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "stock_status": "none"
+        }
+      ],
+      "id": "US-CA-2",
+      "location": "United States",
+      "name": "US-CA-2"
+    },
+    {
+      "gpu_availability": [],
+      "id": "US-DE-1",
+      "location": "United States",
+      "name": "US-DE-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "RTX A4000",
+          "gpu_type_id": "NVIDIA RTX A4000",
+          "stock_status": "none"
+        }
+      ],
+      "id": "US-GA-1",
+      "location": "United States",
+      "name": "US-GA-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "H100 SXM",
+          "gpu_type_id": "NVIDIA H100 80GB HBM3",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "H100 NVL",
+          "gpu_type_id": "NVIDIA H100 NVL",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "H200 SXM",
+          "gpu_type_id": "NVIDIA H200",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "L4",
+          "gpu_type_id": "NVIDIA L4",
+          "stock_status": "none"
+        }
+      ],
+      "id": "US-GA-2",
+      "location": "United States",
+      "name": "US-GA-2"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "RTX 4090",
+          "gpu_type_id": "NVIDIA GeForce RTX 4090",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX 5090",
+          "gpu_type_id": "NVIDIA GeForce RTX 5090",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "L40S",
+          "gpu_type_id": "NVIDIA L40S",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX 6000 Ada",
+          "gpu_type_id": "NVIDIA RTX 6000 Ada Generation",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX A5000",
+          "gpu_type_id": "NVIDIA RTX A5000",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "US-IL-1",
+      "location": "United States",
+      "name": "US-IL-1"
+    },
+    {
+      "gpu_availability": [],
+      "id": "US-KS-1",
+      "location": "United States",
+      "name": "US-KS-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "A100 PCIe",
+          "gpu_type_id": "NVIDIA A100 80GB PCIe",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "A100 SXM",
+          "gpu_type_id": "NVIDIA A100-SXM4-80GB",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "H100 SXM",
+          "gpu_type_id": "NVIDIA H100 80GB HBM3",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "H100 NVL",
+          "gpu_type_id": "NVIDIA H100 NVL",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "H100 PCIe",
+          "gpu_type_id": "NVIDIA H100 PCIe",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "L40",
+          "gpu_type_id": "NVIDIA L40",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX A6000",
+          "gpu_type_id": "NVIDIA RTX A6000",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX PRO 4500 SE",
+          "gpu_type_id": "NVIDIA RTX PRO 4500 Blackwell Server Edition",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX PRO 6000",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "stock_status": "none"
+        }
+      ],
+      "id": "US-KS-2",
+      "location": "United States",
+      "name": "US-KS-2"
+    },
+    {
+      "gpu_availability": [],
+      "id": "US-KS-3",
+      "location": "United States",
+      "name": "US-KS-3"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "A100 SXM",
+          "gpu_type_id": "NVIDIA A100-SXM4-80GB",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "H200 NVL",
+          "gpu_type_id": "NVIDIA H200 NVL",
+          "stock_status": "none"
+        }
+      ],
+      "id": "US-MD-1",
+      "location": "United States",
+      "name": "US-MD-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "A100 PCIe",
+          "gpu_type_id": "NVIDIA A100 80GB PCIe",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "A100 SXM",
+          "gpu_type_id": "NVIDIA A100-SXM4-80GB",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "A40",
+          "gpu_type_id": "NVIDIA A40",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "H100 SXM",
+          "gpu_type_id": "NVIDIA H100 80GB HBM3",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "L40S",
+          "gpu_type_id": "NVIDIA L40S",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "US-MO-1",
+      "location": "United States",
+      "name": "US-MO-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "L4",
+          "gpu_type_id": "NVIDIA L4",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX PRO 6000",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "US-MO-2",
+      "location": "United States",
+      "name": "US-MO-2"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "RTX 4090",
+          "gpu_type_id": "NVIDIA GeForce RTX 4090",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "H200 SXM",
+          "gpu_type_id": "NVIDIA H200",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "L40S",
+          "gpu_type_id": "NVIDIA L40S",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX PRO 6000",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "stock_status": "none"
+        }
+      ],
+      "id": "US-NC-1",
+      "location": "United States",
+      "name": "US-NC-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "B200",
+          "gpu_type_id": "NVIDIA B200",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX PRO 6000",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "US-NC-2",
+      "location": "United States",
+      "name": "US-NC-2"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "B200",
+          "gpu_type_id": "NVIDIA B200",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "H100 SXM",
+          "gpu_type_id": "NVIDIA H100 80GB HBM3",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX PRO 6000",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "PRO 6000 MIG 24GB",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 1g.24gb",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "PRO 6000 MIG 48GB",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 2g.48gb",
+          "stock_status": "none"
+        }
+      ],
+      "id": "US-NE-1",
+      "location": "United States",
+      "name": "US-NE-1"
+    },
+    {
+      "gpu_availability": [],
+      "id": "US-OR-1",
+      "location": "United States",
+      "name": "US-OR-1"
+    },
+    {
+      "gpu_availability": [],
+      "id": "US-OR-2",
+      "location": "United States",
+      "name": "US-OR-2"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "H200 SXM",
+          "gpu_type_id": "NVIDIA H200",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "RTX PRO 6000",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "US-PA-1",
+      "location": "United States",
+      "name": "US-PA-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "RTX A6000",
+          "gpu_type_id": "NVIDIA RTX A6000",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "US-TX-1",
+      "location": "United States",
+      "name": "US-TX-1"
+    },
+    {
+      "gpu_availability": [],
+      "id": "US-TX-2",
+      "location": "United States",
+      "name": "US-TX-2"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "RTX 4090",
+          "gpu_type_id": "NVIDIA GeForce RTX 4090",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "L40S",
+          "gpu_type_id": "NVIDIA L40S",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "US-TX-3",
+      "location": "United States",
+      "name": "US-TX-3"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "L40S",
+          "gpu_type_id": "NVIDIA L40S",
+          "stock_status": "Low"
+        }
+      ],
+      "id": "US-TX-4",
+      "location": "United States",
+      "name": "US-TX-4"
+    },
+    {
+      "gpu_availability": [],
+      "id": "US-TX-5",
+      "location": "United States",
+      "name": "US-TX-5"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "B200",
+          "gpu_type_id": "NVIDIA B200",
+          "stock_status": "none"
+        }
+      ],
+      "id": "US-TX-6",
+      "location": "United States",
+      "name": "US-TX-6"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "A100 SXM",
+          "gpu_type_id": "NVIDIA A100-SXM4-80GB",
+          "stock_status": "Low"
+        },
+        {
+          "display_name": "RTX 6000 Ada",
+          "gpu_type_id": "NVIDIA RTX 6000 Ada Generation",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "PRO 6000 MIG 24GB",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 1g.24gb",
+          "stock_status": "none"
+        },
+        {
+          "display_name": "PRO 6000 MIG 48GB",
+          "gpu_type_id": "NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 2g.48gb",
+          "stock_status": "none"
+        }
+      ],
+      "id": "US-WA-1",
+      "location": "United States",
+      "name": "US-WA-1"
+    },
+    {
+      "gpu_availability": [
+        {
+          "display_name": "B300",
+          "gpu_type_id": "NVIDIA B300 SXM6 AC",
+          "stock_status": "none"
+        }
+      ],
+      "id": "US-WA-2",
+      "location": "United States",
+      "name": "US-WA-2"
+    }
+  ],
+  "gpu_types": [
+    {
+      "community_cloud": false,
+      "community_price_per_hour": 0.5,
+      "display_name": "MI300X",
+      "id": "AMD Instinct MI300X OAM",
+      "memory_gb": 192,
+      "secure_cloud": true,
+      "secure_price_per_hour": 2.39
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 1.19,
+      "display_name": "A100 PCIe",
+      "id": "NVIDIA A100 80GB PCIe",
+      "memory_gb": 80,
+      "secure_cloud": true,
+      "secure_price_per_hour": 1.39
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 1,
+      "display_name": "A100 SXM 40GB",
+      "id": "NVIDIA A100-SXM4-40GB",
+      "memory_gb": 40,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 1.39,
+      "display_name": "A100 SXM",
+      "id": "NVIDIA A100-SXM4-80GB",
+      "memory_gb": 80,
+      "secure_cloud": true,
+      "secure_price_per_hour": 1.59
+    },
+    {
+      "community_cloud": false,
+      "community_price_per_hour": 0.35,
+      "display_name": "A40",
+      "id": "NVIDIA A40",
+      "memory_gb": 48,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.44
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 5.98,
+      "display_name": "B200",
+      "id": "NVIDIA B200",
+      "memory_gb": 180,
+      "secure_cloud": true,
+      "secure_price_per_hour": 6.79
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 6.94,
+      "display_name": "B300",
+      "id": "NVIDIA B300 SXM6 AC",
+      "memory_gb": 288,
+      "secure_cloud": true,
+      "secure_price_per_hour": 7.39
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.13,
+      "display_name": "RTX 3070",
+      "id": "NVIDIA GeForce RTX 3070",
+      "memory_gb": 8,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.17,
+      "display_name": "RTX 3080",
+      "id": "NVIDIA GeForce RTX 3080",
+      "memory_gb": 10,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.18,
+      "display_name": "RTX 3080 Ti",
+      "id": "NVIDIA GeForce RTX 3080 Ti",
+      "memory_gb": 12,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.22,
+      "display_name": "RTX 3090",
+      "id": "NVIDIA GeForce RTX 3090",
+      "memory_gb": 24,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.5
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.27,
+      "display_name": "RTX 3090 Ti",
+      "id": "NVIDIA GeForce RTX 3090 Ti",
+      "memory_gb": 24,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0.46
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.19,
+      "display_name": "RTX 4070 Ti",
+      "id": "NVIDIA GeForce RTX 4070 Ti",
+      "memory_gb": 12,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0.5
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.27,
+      "display_name": "RTX 4080",
+      "id": "NVIDIA GeForce RTX 4080",
+      "memory_gb": 16,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0.5
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.28,
+      "display_name": "RTX 4080 SUPER",
+      "id": "NVIDIA GeForce RTX 4080 SUPER",
+      "memory_gb": 16,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0.5
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.34,
+      "display_name": "RTX 4090",
+      "id": "NVIDIA GeForce RTX 4090",
+      "memory_gb": 24,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.74
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.39,
+      "display_name": "RTX 5080",
+      "id": "NVIDIA GeForce RTX 5080",
+      "memory_gb": 16,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0.59
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.69,
+      "display_name": "RTX 5090",
+      "id": "NVIDIA GeForce RTX 5090",
+      "memory_gb": 32,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.99
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 2.69,
+      "display_name": "H100 SXM",
+      "id": "NVIDIA H100 80GB HBM3",
+      "memory_gb": 80,
+      "secure_cloud": true,
+      "secure_price_per_hour": 3.29
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 2.59,
+      "display_name": "H100 NVL",
+      "id": "NVIDIA H100 NVL",
+      "memory_gb": 94,
+      "secure_cloud": true,
+      "secure_price_per_hour": 3.19
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 1.99,
+      "display_name": "H100 PCIe",
+      "id": "NVIDIA H100 PCIe",
+      "memory_gb": 80,
+      "secure_cloud": true,
+      "secure_price_per_hour": 2.89
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 3.59,
+      "display_name": "H200 SXM",
+      "id": "NVIDIA H200",
+      "memory_gb": 141,
+      "secure_cloud": true,
+      "secure_price_per_hour": 4.59
+    },
+    {
+      "community_cloud": false,
+      "community_price_per_hour": 0.5,
+      "display_name": "H200 NVL",
+      "id": "NVIDIA H200 NVL",
+      "memory_gb": 143,
+      "secure_cloud": true,
+      "secure_price_per_hour": 3.79
+    },
+    {
+      "community_cloud": false,
+      "community_price_per_hour": 0.44,
+      "display_name": "L4",
+      "id": "NVIDIA L4",
+      "memory_gb": 24,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.49
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.69,
+      "display_name": "L40",
+      "id": "NVIDIA L40",
+      "memory_gb": 48,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.82
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.79,
+      "display_name": "L40S",
+      "id": "NVIDIA L40S",
+      "memory_gb": 48,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.99
+    },
+    {
+      "community_cloud": false,
+      "community_price_per_hour": 0.5,
+      "display_name": "RTX 2000 Ada",
+      "id": "NVIDIA RTX 2000 Ada Generation",
+      "memory_gb": 16,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.24
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.2,
+      "display_name": "RTX 4000 Ada",
+      "id": "NVIDIA RTX 4000 Ada Generation",
+      "memory_gb": 20,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.28
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.18,
+      "display_name": "RTX 4000 Ada SFF",
+      "id": "NVIDIA RTX 4000 SFF Ada Generation",
+      "memory_gb": 20,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0.44
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.49,
+      "display_name": "RTX 5000 Ada",
+      "id": "NVIDIA RTX 5000 Ada Generation",
+      "memory_gb": 32,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0.83
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.74,
+      "display_name": "RTX 6000 Ada",
+      "id": "NVIDIA RTX 6000 Ada Generation",
+      "memory_gb": 48,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.84
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.12,
+      "display_name": "RTX A2000",
+      "id": "NVIDIA RTX A2000",
+      "memory_gb": 6,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0.5
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.17,
+      "display_name": "RTX A4000",
+      "id": "NVIDIA RTX A4000",
+      "memory_gb": 16,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.25
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.19,
+      "display_name": "RTX A4500",
+      "id": "NVIDIA RTX A4500",
+      "memory_gb": 20,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.25
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.16,
+      "display_name": "RTX A5000",
+      "id": "NVIDIA RTX A5000",
+      "memory_gb": 24,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.27
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.33,
+      "display_name": "RTX A6000",
+      "id": "NVIDIA RTX A6000",
+      "memory_gb": 48,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.53
+    },
+    {
+      "community_cloud": false,
+      "community_price_per_hour": 0.5,
+      "display_name": "RTX PRO 4000",
+      "id": "NVIDIA RTX PRO 4000 Blackwell",
+      "memory_gb": 24,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.57
+    },
+    {
+      "community_cloud": false,
+      "community_price_per_hour": 0.34,
+      "display_name": "RTX PRO 4500",
+      "id": "NVIDIA RTX PRO 4500 Blackwell",
+      "memory_gb": 32,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.72
+    },
+    {
+      "community_cloud": false,
+      "community_price_per_hour": 0.5,
+      "display_name": "RTX PRO 4500 SE",
+      "id": "NVIDIA RTX PRO 4500 Blackwell Server Edition",
+      "memory_gb": 32,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.72
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.82,
+      "display_name": "RTX PRO 5000",
+      "id": "NVIDIA RTX PRO 5000 Blackwell",
+      "memory_gb": 48,
+      "secure_cloud": true,
+      "secure_price_per_hour": 0.96
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 1.64,
+      "display_name": "RTX PRO 6000 MaxQ",
+      "id": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+      "memory_gb": 96,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0.5
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 1.69,
+      "display_name": "RTX PRO 6000",
+      "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "memory_gb": 96,
+      "secure_cloud": true,
+      "secure_price_per_hour": 2.09
+    },
+    {
+      "community_cloud": false,
+      "community_price_per_hour": 0.5,
+      "display_name": "PRO 6000 MIG 24GB",
+      "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 1g.24gb",
+      "memory_gb": 24,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0.49
+    },
+    {
+      "community_cloud": false,
+      "community_price_per_hour": 1,
+      "display_name": "PRO 6000 MIG 48GB",
+      "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 2g.48gb",
+      "memory_gb": 48,
+      "secure_cloud": false,
+      "secure_price_per_hour": 1
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 1.69,
+      "display_name": "RTX PRO 6000 WK",
+      "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+      "memory_gb": 96,
+      "secure_cloud": true,
+      "secure_price_per_hour": 1.89
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.19,
+      "display_name": "Tesla V100",
+      "id": "Tesla V100-PCIE-16GB",
+      "memory_gb": 16,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0
+    },
+    {
+      "community_cloud": true,
+      "community_price_per_hour": 0.23,
+      "display_name": "V100 SXM2",
+      "id": "Tesla V100-SXM2-16GB",
+      "memory_gb": 16,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0
+    },
+    {
+      "community_cloud": false,
+      "community_price_per_hour": 0,
+      "display_name": "unknown",
+      "id": "unknown",
+      "memory_gb": 0,
+      "secure_cloud": false,
+      "secure_price_per_hour": 0
+    }
+  ],
+  "schema_version": "runpod-inventory-v1",
+  "source": {
+    "api": "https://api.runpod.io/graphql",
+    "mutating_calls": 0,
+    "operation": "DeviceDispatchInventory"
+  },
+  "stock_semantics": {
+    "excluded_as_unavailable": [
+      "none",
+      "blank",
+      "missing"
+    ],
+    "included_as_available": [
+      "High",
+      "Medium",
+      "Low"
+    ],
+    "note": "Availability is a volatile point-in-time control-plane report."
+  },
+  "stocked_data_center_ids": [
+    "AP-IN-1",
+    "AP-IN-2",
+    "AP-JP-1",
+    "CA-MTL-1",
+    "CA-MTL-3",
+    "EU-CZ-1",
+    "EU-FR-1",
+    "EU-NL-1",
+    "EU-RO-1",
+    "EU-SE-1",
+    "EUR-IS-1",
+    "EUR-IS-2",
+    "EUR-IS-3",
+    "EUR-IS-4",
+    "EUR-IS-5",
+    "EUR-NO-1",
+    "EUR-NO-2",
+    "US-CA-2",
+    "US-GA-2",
+    "US-IL-1",
+    "US-KS-2",
+    "US-MD-1",
+    "US-MO-1",
+    "US-MO-2",
+    "US-NC-1",
+    "US-NC-2",
+    "US-NE-1",
+    "US-PA-1",
+    "US-TX-1",
+    "US-TX-3",
+    "US-TX-4",
+    "US-WA-1"
+  ],
+  "stocked_gpu_type_ids": [
+    "NVIDIA A100 80GB PCIe",
+    "NVIDIA A100-SXM4-80GB",
+    "NVIDIA A40",
+    "NVIDIA B200",
+    "NVIDIA B300 SXM6 AC",
+    "NVIDIA GeForce RTX 3090",
+    "NVIDIA GeForce RTX 4090",
+    "NVIDIA GeForce RTX 5090",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 NVL",
+    "NVIDIA H100 PCIe",
+    "NVIDIA H200",
+    "NVIDIA L4",
+    "NVIDIA L40S",
+    "NVIDIA RTX 2000 Ada Generation",
+    "NVIDIA RTX 4000 Ada Generation",
+    "NVIDIA RTX A5000",
+    "NVIDIA RTX A6000",
+    "NVIDIA RTX PRO 4000 Blackwell",
+    "NVIDIA RTX PRO 4500 Blackwell",
+    "NVIDIA RTX PRO 4500 Blackwell Server Edition",
+    "NVIDIA RTX PRO 6000 Blackwell Server Edition"
+  ]
+}

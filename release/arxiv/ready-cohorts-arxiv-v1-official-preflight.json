@@ -1,0 +1,25 @@
+{
+  "all_archive_files_used": true,
+  "archive_file_count": 23,
+  "archive_sha256": "14613c17f7774aee5ecd41bb49d964a84bfd5366c499cf77ed84b0b58fb354df",
+  "bibliography": {
+    "can_be_generated": false,
+    "pre_generated": true
+  },
+  "detected_top_level_files": [
+    "main.tex"
+  ],
+  "image_file_count": 3,
+  "processor": {
+    "engine": "tex",
+    "language": "latex",
+    "output": "pdf",
+    "postprocess": "none"
+  },
+  "status": "success",
+  "tex_file_count": 19,
+  "tex_file_issue_count": 0,
+  "tool_commit": "c494260357a28295d2e95c4cecdfd2b77b0b2e9e",
+  "tool_repository": "https://github.com/arXiv/submission-tools",
+  "top_level_issue_count": 0
+}

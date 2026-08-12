@@ -1,0 +1,60 @@
+\section{Execution and semantic scope}
+\label{sec:scope}
+
+\subsection{Unit of execution}
+
+Our unit is a deterministic control transition inside an agent runtime. It is
+smaller than an LLM request, a tool, or a complete workflow. A transition reads
+typed state and an already available event, then produces new typed state, a
+route, and possibly an effect descriptor. Model inference, tool execution, and
+the privileged commit of external effects remain outside the unit.
+
+This separation matters for both performance and safety. A GPU may compute
+that an agent should call a tool, but the current paper does not ask the GPU to
+hold cloud credentials, create a virtual machine, or commit a side effect. A
+future runtime can keep pure state evolution on device while a CPU or DPU
+validates and commits ordered effect descriptors.
+
+\subsection{Compatibility and exactness}
+
+Two events are compatible only when one implementation can process them
+together without changing the declared semantics. The trace study cannot
+verify that condition. Its narrowest grouping is an outcome-derived route-key
+proxy, and even that key omits state-machine node, schema, arguments, policy
+context, and the identities in multi-tool outcomes. Coarser event classes and a
+pooled route are diagnostics. None of these groupings proves that fusion is
+semantically admissible.
+
+Correctness in the mechanism studies means exact equality of every declared
+state field and the full decision sequence against a separately implemented
+host oracle. It does not establish correct recovery, distributed ordering, or
+real tool effects. Checksums are provenance guards rather than the definition
+of equality.
+
+\subsection{Launch deadlines, not completion SLOs}
+
+Every trace event has a latest admissible launch time. This is a bound on how
+long the scheduler may wait to form a cohort. Kernel service and queueing after
+launch are zero in the mathematical model. The 50 ms primary value is therefore
+not a 50 ms completion service-level objective. Finite service enters only in
+the proposed online system.
+
+\begin{table}[t]
+  \centering
+  \footnotesize
+  \begin{tabularx}{\columnwidth}{@{}lX@{}}
+    \toprule
+    In scope & Out of scope in this paper \\
+    \midrule
+    Typed deterministic transition & Arbitrary Python on a GPU \\
+    Route-key-conditioned cohorts & Verified semantic fusion \\
+    Latest launch time & End-to-end completion SLO \\
+    Device-resident pure decision & Privileged tool or VM lifecycle \\
+    Exact tested trajectory & Distributed commit and recovery \\
+    Named GPU placements & Hardware-population inference \\
+    \bottomrule
+  \end{tabularx}
+  \caption{The execution contract. These exclusions are claim boundaries, not
+  assumed properties of a future system.}
+  \label{tab:scope}
+\end{table}

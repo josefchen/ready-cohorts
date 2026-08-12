@@ -1,0 +1,368 @@
+{
+  "schema_version": "resident-policy-analysis-v1",
+  "created_at_utc": "2026-08-12T14:15:26.057171+00:00",
+  "preregistration": {
+    "path": "preregistration/resident-policy-001.md",
+    "sha256": "2f4da9a34135f4b3e83a0a1b25abe010e193dc3b5a30e69f2a6c937eaabf83f3"
+  },
+  "analysis_script": {
+    "path": "scripts/analyze_resident_policy_pilot.py",
+    "sha256": "49b4a0d7b72e4f35f3f1dc70013f3a4de815409082f8911e402d18547a5e0f4b"
+  },
+  "design": {
+    "sampling_unit": "fresh GPU placement",
+    "technical_unit": "randomized-order measured row containing many validated invocations",
+    "primary_contrast": "host_roundtrip median wall / device_resident median wall",
+    "p_values_reported": false,
+    "frozen_source_sha256": "4b5cdcb9496a734bd7801d5c419efb8eceb72fd6962800520101e89676d204da",
+    "frozen_config": {
+      "agent_counts": [
+        256,
+        2048,
+        16384
+      ],
+      "epoch_counts": [
+        2,
+        8,
+        32
+      ],
+      "warmups_per_mechanism_cell": 5,
+      "calibration_samples_per_mechanism_cell": 3,
+      "repetitions_per_mechanism_cell": 30,
+      "min_duration_target_ns": 100000000,
+      "max_batch_iterations": 20000,
+      "seed": 20260811,
+      "block_size": 256,
+      "mechanisms": [
+        "host_roundtrip",
+        "device_resident",
+        "no_decision_lower_bound"
+      ],
+      "mechanism_order": "deterministically shuffled within cell and repetition",
+      "batch_policy": "one calibrated common lower-bound count per cell; each row extends until its aggregate wall time reaches the target, with a safety cap",
+      "state_reset_in_timing": false,
+      "result_copy_or_validation_in_timing": false,
+      "host_predicate_copy_and_sync_in_timing": true,
+      "graph_instantiation_or_upload_in_timing": false
+    },
+    "technical_quantiles": "quantiles across batch-average rows; not individual-invocation tail latency"
+  },
+  "placements": [
+    {
+      "placement_id": "lambda-h100-3aa339b8e40349a8a1650d62ba26e709-16f0f2f286da",
+      "provider": "lambda",
+      "requested_gpu": "H100",
+      "device_name": "NVIDIA H100 80GB HBM3",
+      "device_uuid": "3a1b91c42f0f891c7672e8744b48b9ee",
+      "compute_capability": "9.0",
+      "run_id": "resident-policy-001-lambda-h100-p1-20260811T222448Z-p1",
+      "source_file": "data/raw/resident-policy-001-lambda-h100-p1-20260811T222448Z-p1.csv",
+      "source_file_sha256": "1bf929579712c55588bb2b94edc9b249def5ce09b7292ba67d9592274dc8f513",
+      "manifest_file": "data/raw/resident-policy-001-lambda-h100-p1-20260811T222448Z-p1.manifest.json",
+      "manifest_file_sha256": "44e4d42f862c71c95f13f9d7d20f76bacf02863b9c3f437cb829efd7ac2e08f8",
+      "source_sha256": "4b5cdcb9496a734bd7801d5c419efb8eceb72fd6962800520101e89676d204da",
+      "binary_sha256": "5e30cd0121c2fad2583c9effea40a3a40d5888a979fa21a0ffa783ee23d75872",
+      "image_digest": "nvidia/cuda@sha256:7d2f6a8c2071d911524f95061a0db363e24d27aa51ec831fcccf9e76eb72bc92",
+      "cuda_compile_version": 13000,
+      "cuda_runtime_version": 13000,
+      "cuda_driver_version": 13000,
+      "cpu_model": "Intel(R) Xeon(R) Platinum 8480+",
+      "cpu_hardware_threads": 26,
+      "provider_binding": {
+        "binding_type": "lambda-provider-sidecar",
+        "validation_passed": true,
+        "provider_receipt_required": true,
+        "paths": [
+          "data/raw/resident-policy-001-lambda-h100-p1-20260811T222448Z-p1.provider-lambda-resident-policy.json"
+        ],
+        "sha256": [
+          "38b96ab70697857c3fb9933de3a08f210fca5b11372e086d133c3402c133ee77"
+        ],
+        "instance_id": "3aa339b8e40349a8a1650d62ba26e709",
+        "region": "us-south-2",
+        "provider_adapter": {
+          "docker_access_correction": "passwordless sudo prefix added before the first successful Lambda run; frozen CUDA source and experiment contract unchanged",
+          "path": "scripts/provider_lambda_resident_policy.py",
+          "sha256": "6288d328e7a490930410f904dfb076518c8dcf3e5e8aacdb764de0caf2bf9e55"
+        }
+      },
+      "rows": 810,
+      "strict_gates": {
+        "all_status_ok": true,
+        "all_error_fields_clear": true,
+        "all_min_duration_reached": true,
+        "all_state_fields_exact": true,
+        "all_decision_traces_exact": true,
+        "all_state_checksums_equal": true,
+        "all_decision_hashes_equal": true,
+        "all_decision_strings_equal": true,
+        "all_invocations_validated": true,
+        "all_positive_wall_times": true,
+        "all_positive_device_times": true,
+        "all_finite_timing": true,
+        "all_aggregate_wall_targets_met": true,
+        "all_min_duration_targets_frozen": true,
+        "all_batch_iterations_within_frozen_cap": true
+      }
+    },
+    {
+      "placement_id": "local-gtx1660ti-rp001",
+      "provider": "local",
+      "requested_gpu": "GTX 1660 Ti",
+      "device_name": "NVIDIA GeForce GTX 1660 Ti",
+      "device_uuid": "50798f9011b9a145d0237e476534cf0c",
+      "compute_capability": "7.5",
+      "run_id": "resident-policy-001-local-p1-20260811T212837Z-p3957049",
+      "source_file": "data/raw/resident-policy-001-local-p1-20260811T212837Z-p3957049.csv",
+      "source_file_sha256": "043c8b0037535a56a14e34e96782dad43677910e6e7a01bed933d8f4eda6cb6e",
+      "manifest_file": "data/raw/resident-policy-001-local-p1-20260811T212837Z-p3957049.manifest.json",
+      "manifest_file_sha256": "e33d483fb22554bca4cb2bf20bdb9bc00784465864283229d5a5f9170b91c91b",
+      "source_sha256": "4b5cdcb9496a734bd7801d5c419efb8eceb72fd6962800520101e89676d204da",
+      "binary_sha256": "9c44a480e6d248c3c0d3175025e6133744f386966f3256327c6b7c61769518de",
+      "image_digest": "",
+      "cuda_compile_version": 13000,
+      "cuda_runtime_version": 13000,
+      "cuda_driver_version": 13020,
+      "cpu_model": "Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz",
+      "cpu_hardware_threads": 8,
+      "provider_binding": {
+        "binding_type": "native-local-manifest",
+        "validation_passed": true,
+        "provider_receipt_required": false,
+        "paths": [],
+        "sha256": []
+      },
+      "rows": 810,
+      "strict_gates": {
+        "all_status_ok": true,
+        "all_error_fields_clear": true,
+        "all_min_duration_reached": true,
+        "all_state_fields_exact": true,
+        "all_decision_traces_exact": true,
+        "all_state_checksums_equal": true,
+        "all_decision_hashes_equal": true,
+        "all_decision_strings_equal": true,
+        "all_invocations_validated": true,
+        "all_positive_wall_times": true,
+        "all_positive_device_times": true,
+        "all_finite_timing": true,
+        "all_aggregate_wall_targets_met": true,
+        "all_min_duration_targets_frozen": true,
+        "all_batch_iterations_within_frozen_cap": true
+      }
+    },
+    {
+      "placement_id": "ta-01KZSCEECZ5ASAX5JQPGCJT1MR",
+      "provider": "modal",
+      "requested_gpu": "L4",
+      "device_name": "NVIDIA L4",
+      "device_uuid": "d697ea5dae8c0edf8c65856c48f5cc82",
+      "compute_capability": "8.9",
+      "run_id": "resident-policy-001-modal-l4-p1-20260811T214304Z-p126",
+      "source_file": "data/raw/resident-policy-001-modal-l4-p1-20260811T214304Z-p126.csv",
+      "source_file_sha256": "ba4e3a1e5ec230d8f0ec04878386138e10ca4ebe1d38aa12c511b729f8b5ceb8",
+      "manifest_file": "data/raw/resident-policy-001-modal-l4-p1-20260811T214304Z-p126.manifest.json",
+      "manifest_file_sha256": "c0185f4df3c400f4b5be641ae41bb32f8a2d3d07bdb23469b8b784864a4bd4bb",
+      "source_sha256": "4b5cdcb9496a734bd7801d5c419efb8eceb72fd6962800520101e89676d204da",
+      "binary_sha256": "db670d288ccacb6649c94737b3601fbcecdafd964fea13524edb2fe0704c7772",
+      "image_digest": "im-mykkc86OLFptevpzqkpNSb",
+      "cuda_compile_version": 13000,
+      "cuda_runtime_version": 13000,
+      "cuda_driver_version": 13000,
+      "cpu_model": "unknown",
+      "cpu_hardware_threads": 20,
+      "provider_binding": {
+        "binding_type": "modal-artifact-hash-receipt",
+        "validation_passed": true,
+        "provider_receipt_required": true,
+        "paths": [
+          "data/external/resident-policy-001-modal-l4-p1-receipt.json"
+        ],
+        "sha256": [
+          "87aec95fe92ba5d1c85d25923a747aaee19063b999d29c581d04dba0afba03c8"
+        ],
+        "modal_app_run_id": "ap-L1WQNF5wJIC6m2x5aK7Dfr"
+      },
+      "rows": 810,
+      "strict_gates": {
+        "all_status_ok": true,
+        "all_error_fields_clear": true,
+        "all_min_duration_reached": true,
+        "all_state_fields_exact": true,
+        "all_decision_traces_exact": true,
+        "all_state_checksums_equal": true,
+        "all_decision_hashes_equal": true,
+        "all_decision_strings_equal": true,
+        "all_invocations_validated": true,
+        "all_positive_wall_times": true,
+        "all_positive_device_times": true,
+        "all_finite_timing": true,
+        "all_aggregate_wall_targets_met": true,
+        "all_min_duration_targets_frozen": true,
+        "all_batch_iterations_within_frozen_cap": true
+      }
+    },
+    {
+      "placement_id": "td8sro1p62gj2c",
+      "provider": "runpod",
+      "requested_gpu": "NVIDIA L4",
+      "device_name": "NVIDIA L4",
+      "device_uuid": "bdf1b13bca1872761f7a40cc37bad92f",
+      "compute_capability": "8.9",
+      "run_id": "resident-policy-001-runpod-l4-p1-20260811T221520Z-p5211",
+      "source_file": "data/raw/runpod-resident-policy-001-runpod-l4-p1-td8sro1p62gj2c/results/resident-policy-001-runpod-l4-p1-20260811T221520Z-p5211.csv",
+      "source_file_sha256": "fc59e185fba2e494fdba946f7e672e8a0825d903b654f3f7b788a6c22360f5b1",
+      "manifest_file": "data/raw/runpod-resident-policy-001-runpod-l4-p1-td8sro1p62gj2c/results/resident-policy-001-runpod-l4-p1-20260811T221520Z-p5211.manifest.json",
+      "manifest_file_sha256": "43983040079d4fffad3d784ba70a09ff807ce96749da7c908f4bfaeaa7188dde",
+      "source_sha256": "4b5cdcb9496a734bd7801d5c419efb8eceb72fd6962800520101e89676d204da",
+      "binary_sha256": "69b6d110cbcaf5c4250f6f54dabc17b2ee588cdc1964d7730238bcdd68aa69e2",
+      "image_digest": "registry-ref:nvidia/cuda:13.0.1-devel-ubuntu24.04",
+      "cuda_compile_version": 13000,
+      "cuda_runtime_version": 13000,
+      "cuda_driver_version": 13000,
+      "cpu_model": "AMD EPYC 9254 24-Core Processor",
+      "cpu_hardware_threads": 48,
+      "provider_binding": {
+        "binding_type": "runpod-validated-collection",
+        "validation_passed": true,
+        "provider_receipt_required": true,
+        "paths": [
+          "data/raw/runpod-resident-policy-001-runpod-l4-p1-td8sro1p62gj2c/collection-receipt.json",
+          "data/provider-runpod-launches/resident-policy-001-runpod-l4-p1.launch.json",
+          "data/raw/runpod-resident-policy-001-runpod-l4-p1-td8sro1p62gj2c/resident-policy-artifacts.tar.gz",
+          "data/raw/runpod-resident-policy-001-runpod-l4-p1-td8sro1p62gj2c/artifact-index.json"
+        ],
+        "sha256": [
+          "c764a76bc604a0b80d48cbc143e5123449f1e78d9a141a426e491a399b3c7076",
+          "0a80c46178fbbb4c49590d3ec1cbdd07c01e7b5fdbceb183bbefe92077c77e14",
+          "b395b6eb2c4ce3d9e04e0748e63102570975e50e962660277311a3ffba0288d3",
+          "3863ff56b95528cfc27b76095b4749d2e4e5c184203464476a37c5f434f0632b"
+        ],
+        "pod_id": "td8sro1p62gj2c",
+        "data_center_id": "EU-RO-1"
+      },
+      "rows": 810,
+      "strict_gates": {
+        "all_status_ok": true,
+        "all_error_fields_clear": true,
+        "all_min_duration_reached": true,
+        "all_state_fields_exact": true,
+        "all_decision_traces_exact": true,
+        "all_state_checksums_equal": true,
+        "all_decision_hashes_equal": true,
+        "all_decision_strings_equal": true,
+        "all_invocations_validated": true,
+        "all_positive_wall_times": true,
+        "all_positive_device_times": true,
+        "all_finite_timing": true,
+        "all_aggregate_wall_targets_met": true,
+        "all_min_duration_targets_frozen": true,
+        "all_batch_iterations_within_frozen_cap": true
+      }
+    }
+  ],
+  "quality_gates": {
+    "all_placement_gates_pass": true,
+    "all_provider_bindings_pass": true,
+    "distinct_placement_ids": true,
+    "distinct_run_ids": true,
+    "distinct_gpu_uuid_per_placement": true,
+    "physical_gpu_uuid_cluster_count": 4
+  },
+  "pilot_outcomes": {
+    "placements": 4,
+    "raw_rows": 3240,
+    "cell_summary_rows": 108,
+    "contrast_rows": 36,
+    "host_over_resident_ratio_min": 1.193877812358832,
+    "host_over_resident_ratio_max": 2.387655191668207,
+    "resident_over_floor_ratio_min": 2.612423575898527,
+    "resident_over_floor_ratio_max": 8.171001944171095,
+    "R1_primary_device_faster_all_observed_placements": true,
+    "R2_exploratory_ratio_monotonicity_checks": [
+      {
+        "placement_id": "lambda-h100-3aa339b8e40349a8a1650d62ba26e709-16f0f2f286da",
+        "agents": 256,
+        "nondecreasing_speedup_with_epochs": true
+      },
+      {
+        "placement_id": "lambda-h100-3aa339b8e40349a8a1650d62ba26e709-16f0f2f286da",
+        "agents": 2048,
+        "nondecreasing_speedup_with_epochs": true
+      },
+      {
+        "placement_id": "lambda-h100-3aa339b8e40349a8a1650d62ba26e709-16f0f2f286da",
+        "agents": 16384,
+        "nondecreasing_speedup_with_epochs": true
+      },
+      {
+        "placement_id": "local-gtx1660ti-rp001",
+        "agents": 256,
+        "nondecreasing_speedup_with_epochs": true
+      },
+      {
+        "placement_id": "local-gtx1660ti-rp001",
+        "agents": 2048,
+        "nondecreasing_speedup_with_epochs": true
+      },
+      {
+        "placement_id": "local-gtx1660ti-rp001",
+        "agents": 16384,
+        "nondecreasing_speedup_with_epochs": true
+      },
+      {
+        "placement_id": "ta-01KZSCEECZ5ASAX5JQPGCJT1MR",
+        "agents": 256,
+        "nondecreasing_speedup_with_epochs": true
+      },
+      {
+        "placement_id": "ta-01KZSCEECZ5ASAX5JQPGCJT1MR",
+        "agents": 2048,
+        "nondecreasing_speedup_with_epochs": true
+      },
+      {
+        "placement_id": "ta-01KZSCEECZ5ASAX5JQPGCJT1MR",
+        "agents": 16384,
+        "nondecreasing_speedup_with_epochs": true
+      },
+      {
+        "placement_id": "td8sro1p62gj2c",
+        "agents": 256,
+        "nondecreasing_speedup_with_epochs": true
+      },
+      {
+        "placement_id": "td8sro1p62gj2c",
+        "agents": 2048,
+        "nondecreasing_speedup_with_epochs": true
+      },
+      {
+        "placement_id": "td8sro1p62gj2c",
+        "agents": 16384,
+        "nondecreasing_speedup_with_epochs": true
+      }
+    ],
+    "R3_resident_slower_than_floor_all_cells": true,
+    "R4_all_exact": true
+  },
+  "outputs": {
+    "cell_summary": {
+      "path": "data/processed/resident-policy-pilot-cell-summary.csv",
+      "rows": 108,
+      "sha256": "07dfd68ec14dd26b163037d239c53fcbd66ef0d0ba080c5748b6f582c46c4038"
+    },
+    "contrasts": {
+      "path": "data/processed/resident-policy-pilot-contrasts.csv",
+      "rows": 36,
+      "sha256": "00fb518cef7b2eb935fddad6b890025fd6b4cb05368458bb317cc29a987ba851"
+    }
+  },
+  "required_caveats": [
+    "This is a mechanism pilot, not a deployment-level hypothesis test.",
+    "Rows and batch invocations are technical repetitions; placement is the sampling unit.",
+    "P95/P99 fields summarize batch-average rows and are not individual-invocation tails.",
+    "R2 is exploratory because the preregistration did not operationally define advantage.",
+    "The no-decision path is an oracle floor and not a legal online scheduler.",
+    "The no-decision decision trace is assigned from the oracle rather than independently observed.",
+    "The global binary synthetic policy is not the final deadline-aware route-compacting runtime."
+  ]
+}

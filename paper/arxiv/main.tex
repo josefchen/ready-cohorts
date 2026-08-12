@@ -1,0 +1,94 @@
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\documentclass[10pt,twocolumn]{article}
+
+\usepackage[margin=0.72in,columnsep=0.24in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{placeins}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage{seqsplit}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{hyperref}
+\usetikzlibrary{arrows.meta,positioning,fit,backgrounds}
+
+\definecolor{RCBlue}{HTML}{1769AA}
+\definecolor{RCCharcoal}{HTML}{262B33}
+\definecolor{RCPaper}{HTML}{F7F8FA}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=RCBlue,
+  citecolor=RCBlue,
+  urlcolor=RCBlue,
+  pdftitle={Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control},
+  pdfauthor={Josef Chen},
+  pdfsubject={A theory and measurement study of GPU execution for deterministic LLM-agent control},
+  pdfkeywords={LLM agents, GPU systems, batching, deadline scheduling, CUDA graphs}
+}
+\setlist{leftmargin=*,nosep}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0pt}
+\graphicspath{{../../results/figures/}}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newcommand{\system}{\textsc{ReadyCohort}}
+\newcommand{\pstar}{P^\star}
+\newcommand{\claimid}[1]{\ignorespaces}
+\newcommand{\sha}[1]{\texttt{\seqsplit{#1}}}
+\input{generated/results-macros.tex}
+
+\title{\vspace{-1.4em}\textbf{Ready Cohorts:}\\
+Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control}
+\author{Josef Chen\\
+\small Independent Researcher}
+\date{August 2026}
+
+\begin{document}
+\raggedbottom
+\twocolumn[
+  \begin{@twocolumnfalse}
+  \maketitle
+  \vspace{-1.25em}
+  \begin{abstract}
+    \input{sections/00_abstract}
+  \end{abstract}
+  \vspace{0.45em}
+  \end{@twocolumnfalse}
+]
+
+\input{sections/01_introduction}
+\input{sections/02_scope}
+\input{sections/03_model}
+\input{sections/04_exact_packing}
+\input{sections/05_trace_method}
+\input{sections/06_trace_results}
+\input{sections/07_resident_method}
+\input{sections/08_resident_results}
+\input{sections/09_joint_interpretation}
+\input{sections/10_related_work}
+\input{sections/11_limitations}
+\input{sections/12_reproducibility}
+\input{sections/13_conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\clearpage
+\onecolumn
+\appendix
+\input{sections/appendix}
+
+\end{document}

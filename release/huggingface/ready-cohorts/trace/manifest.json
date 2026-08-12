@@ -1,0 +1,77 @@
+{
+  "clock_contract": "release/deadline rounded to nearest integer nanosecond",
+  "configuration": {
+    "active_sessions": [
+      1000,
+      10000,
+      100000
+    ],
+    "deadlines_ms": [
+      10,
+      25,
+      50,
+      100,
+      250
+    ],
+    "groupings": [
+      "pooled",
+      "event_class",
+      "route_key"
+    ],
+    "horizon_s": 60.0,
+    "repetitions": 3,
+    "seed": 20260811,
+    "thresholds": [
+      32,
+      64,
+      128,
+      256
+    ]
+  },
+  "created_at": "2026-08-11T20:54:14.297891+00:00",
+  "hypotheses": {
+    "E1_fixed_le_exact_le_local": true,
+    "E2_compatibility_coarsening_monotone": true,
+    "E3_deadline_monotone": true,
+    "E4_threshold_monotone": true,
+    "E5_closed_bounds_force_exact_equality": true,
+    "E6_primary_exact_strictly_above_fixed": true
+  },
+  "model": "equal relative deadline, zero service, unlimited capacity",
+  "outputs": {
+    "repetitions": {
+      "path": "data/processed/trace-exact-packing-repetitions.csv",
+      "rows": 540,
+      "sha256": "a573e7e5b6e89d01f71a06eae04c265dc7801048bc33b6c85fbbf2db20e27230"
+    },
+    "summary": {
+      "path": "data/processed/trace-exact-packing-summary.csv",
+      "rows": 180,
+      "sha256": "266d749f3f8a4d9ab172ae7eeaec3eb9d3afc9745cf1bda664b7fc39d2476e69"
+    }
+  },
+  "preregistration": "preregistration/trace-replay-003.md",
+  "software": {
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "python": "3.12.3"
+  },
+  "source_files": {
+    "prior_replay": {
+      "path": "data/processed/trace-sliding-local-bound-repetitions.csv",
+      "sha256": "7b32a295f8af8a04638a72f28923b9e9effdd3c4d44c505319b64db4d5b47eb3"
+    },
+    "session_summary": {
+      "path": "data/processed/exgentic-tau2-session-summary.csv",
+      "sha256": "389c4e700aad48f322f7e82560594f402b62f56123c6d39a27b3f18ffe409fc6"
+    },
+    "solver": {
+      "path": "src/gpu_agent_crossover/ready_cohort.py",
+      "sha256": "c49a840cca619f61fb4470d544914abc8cd7fbeb5df214b33ccead4846a692ab"
+    },
+    "span_features": {
+      "path": "data/processed/exgentic-tau2-span-features.parquet",
+      "sha256": "da57b75db69916a4c1036909e453e41e470b7daef304e61bf2f8b2d8720d4dc2"
+    }
+  }
+}

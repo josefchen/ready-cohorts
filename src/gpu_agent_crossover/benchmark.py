@@ -137,6 +137,49 @@ def nvidia_query() -> list[dict[str, str]]:
     return rows
 
 
+def cpu_query() -> dict[str, Any]:
+    processor: dict[str, str] = {}
+    cpuinfo_path = Path("/proc/cpuinfo")
+    if cpuinfo_path.exists():
+        for line in cpuinfo_path.read_text(errors="replace").splitlines():
+            if not line.strip() and processor:
+                break
+            if ":" not in line:
+                continue
+            key, value = (part.strip() for part in line.split(":", 1))
+            if key in {
+                "vendor_id",
+                "model name",
+                "cpu family",
+                "model",
+                "stepping",
+                "microcode",
+            }:
+                processor[key.replace(" ", "_")] = value
+
+    governors: set[str] = set()
+    for governor_path in Path("/sys/devices/system/cpu").glob(
+        "cpu[0-9]*/cpufreq/scaling_governor"
+    ):
+        try:
+            governors.add(governor_path.read_text().strip())
+        except OSError:
+            continue
+    try:
+        affinity = sorted(os.sched_getaffinity(0))
+    except AttributeError:
+        affinity = None
+    return {
+        **processor,
+        "machine": platform.machine(),
+        "logical_cpu_count": os.cpu_count(),
+        "process_affinity_cpus": affinity,
+        "frequency_governors": sorted(governors),
+        "torch_num_threads_at_manifest": torch.get_num_threads(),
+        "torch_num_interop_threads_at_manifest": torch.get_num_interop_threads(),
+    }
+
+
 def hardware_manifest(repo_root: Path, config: dict[str, Any]) -> dict[str, Any]:
     cuda_available = torch.cuda.is_available()
     cuda_devices: list[dict[str, Any]] = []
@@ -160,6 +203,7 @@ def hardware_manifest(repo_root: Path, config: dict[str, Any]) -> dict[str, Any]
         "platform": platform.platform(),
         "python": sys.version,
         "logical_cpu_count": os.cpu_count(),
+        "cpu": cpu_query(),
         "torch_version": torch.__version__,
         "torch_cuda_version": torch.version.cuda,
         "cuda_available": cuda_available,
