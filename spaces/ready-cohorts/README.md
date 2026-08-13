@@ -26,6 +26,16 @@ tags:
 Interactive companion to *Ready Cohorts: Bounding GPU Opportunity and Avoiding
 Host Round Trips in LLM-Agent Control* by Josef Chen, Independent Researcher.
 
+![Ready Cohorts paper overview](assets/ready-cohorts-social-card.png)
+
+## System map
+
+![Architecture of the measured workload gate, measured placement gate, and proposed joined runtime](assets/ready-cohorts-architecture.svg)
+
+The trace and mechanism studies are deliberately shown as separate inputs to a
+future online runtime. The current release does not multiply the trace share by
+the mechanism ratio or present the dashed runtime as measured.
+
 The explorer answers three bounded questions:
 
 1. How does ready-cohort opportunity change with active sessions, launch wait,

@@ -11,7 +11,6 @@ import gradio as gr
 import pandas as pd
 import plotly.graph_objects as go
 
-
 ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data"
 ASSET_DIR = ROOT / "assets"
@@ -24,13 +23,23 @@ TRACE_URL = (
     "https://huggingface.co/datasets/Exgentic/agent-llm-traces/tree/"
     "f7c94012d0bfbf66fe4d6ed627699508bbb555ff"
 )
+ARCHITECTURE_URL = (
+    "https://huggingface.co/spaces/josefchen/ready-cohorts/resolve/main/"
+    "assets/ready-cohorts-architecture.svg"
+)
+SOCIAL_IMAGE_URL = (
+    "https://huggingface.co/spaces/josefchen/ready-cohorts/resolve/main/"
+    "assets/ready-cohorts-social-card.png"
+)
 
-ACCENT = "#3159c7"
-ACCENT_DARK = "#24449a"
-INK = "#20242b"
-MUTED = "#656d7a"
-LINE = "#cbd1db"
-PLOT_BG = "#f7f8fa"
+ACCENT = "#2457a7"
+ACCENT_DARK = "#173c78"
+GOLD = "#a86c12"
+INK = "#17202d"
+MUTED = "#5b6675"
+LINE = "#d9dee6"
+AXIS = "#8c97a7"
+PLOT_BG = "#fbfcfd"
 
 
 @dataclass(frozen=True)
@@ -171,7 +180,7 @@ def load_evidence() -> Evidence:
 try:
     EVIDENCE = load_evidence()
     EVIDENCE_ERROR: str | None = None
-except Exception as exc:  # pragma: no cover - exercised by deployment failures
+except Exception as exc:  # noqa: BLE001  # pragma: no cover - deployment boundary
     EVIDENCE = None
     EVIDENCE_ERROR = f"{type(exc).__name__}: {exc}"
 
@@ -203,29 +212,36 @@ def base_layout(title: str, subtitle: str, height: int = 430) -> dict:
         "height": height,
         "paper_bgcolor": PLOT_BG,
         "plot_bgcolor": PLOT_BG,
-        "font": {"family": "Arial, sans-serif", "size": 13, "color": INK},
+        "font": {
+            "family": "Aptos, Helvetica Neue, Arial, sans-serif",
+            "size": 13,
+            "color": INK,
+        },
         "title": {
             "text": f"{title}<br><sup>{subtitle}</sup>",
             "x": 0,
             "xanchor": "left",
-            "y": 0.95,
+            "y": 0.97,
             "yanchor": "top",
-            "font": {"size": 19, "color": INK},
+            "font": {"size": 20, "color": INK},
         },
-        "margin": {"l": 68, "r": 32, "t": 112, "b": 64},
+        "margin": {"l": 72, "r": 38, "t": 120, "b": 68},
         "hoverlabel": {
             "bgcolor": INK,
             "bordercolor": INK,
-            "font": {"color": "#f7f8fa", "size": 13},
+            "font": {"color": "#fbfcfd", "size": 13},
         },
+        "hovermode": "closest",
         "legend": {
             "orientation": "h",
             "x": 0,
-            "y": 1.01,
+            "y": 1.015,
             "xanchor": "left",
             "yanchor": "bottom",
             "font": {"size": 12},
+            "itemsizing": "constant",
         },
+        "uirevision": "ready-cohorts-v2",
     }
 
 
@@ -259,10 +275,16 @@ def trace_view(
         return empty_figure("No released cell matches these controls."), empty_readout()
 
     repetitions = int(subset["repetitions"].iloc[0])
-    events = int(round(float(subset["event_count_mean"].iloc[0])))
+    events = round(float(subset["event_count_mean"].iloc[0]))
+    row = selected.iloc[0]
+    frozen = float(row["fixed_window_eligible_share_mean"])
+    exact = float(row["exact_optimal_share_mean"])
+    upper = float(row["local_upper_share_mean"])
+    closure = float(row["alignment_gap_closure_mean"])
+    added_points = 100 * (exact - frozen)
     subtitle = (
-        f"C={target_active_sessions:,}; K={threshold_k}; "
-        f"{GROUPING_LABELS[grouping].lower()}; {repetitions} generated swarms"
+        f"Eligible share · C={target_active_sessions:,} · K={threshold_k} · "
+        f"{GROUPING_LABELS[grouping].lower()} · means across {repetitions} generated swarms"
     )
     figure = go.Figure()
     series = [
@@ -289,6 +311,40 @@ def trace_view(
         ),
     ]
     for label, column, color, dash, symbol in series:
+        marker_sizes = [
+            13 if int(deadline) == selected_deadline_ms else 8 for deadline in subset["deadline_ms"]
+        ]
+        error_y = None
+        customdata = None
+        hovertemplate = (
+            "%{fullData.name}<br>Launch wait %{x} ms<br>Eligible share %{y:.2%}<extra></extra>"
+        )
+        if column == "exact_optimal_share_mean":
+            error_y = {
+                "type": "data",
+                "symmetric": False,
+                "array": (subset["exact_optimal_share_max"] - subset["exact_optimal_share_mean"]),
+                "arrayminus": (
+                    subset["exact_optimal_share_mean"] - subset["exact_optimal_share_min"]
+                ),
+                "color": ACCENT,
+                "thickness": 1.2,
+                "width": 4,
+                "visible": True,
+            }
+            customdata = list(
+                zip(
+                    subset["exact_optimal_share_min"],
+                    subset["exact_optimal_share_max"],
+                    strict=True,
+                )
+            )
+            hovertemplate = (
+                "%{fullData.name}<br>Launch wait %{x} ms"
+                "<br>Mean eligible share %{y:.2%}"
+                "<br>Three-swarm range %{customdata[0]:.2%} to %{customdata[1]:.2%}"
+                "<extra></extra>"
+            )
         figure.add_trace(
             go.Scatter(
                 x=subset["deadline_ms"],
@@ -297,27 +353,57 @@ def trace_view(
                 mode="lines+markers",
                 line={"color": color, "width": 3, "dash": dash},
                 marker={
-                    "color": color,
-                    "size": 10,
+                    "color": PLOT_BG if "open" in symbol else color,
+                    "size": marker_sizes,
                     "symbol": symbol,
                     "line": {"color": color, "width": 2},
                 },
-                customdata=subset["deadline_ms"],
-                hovertemplate=(
-                    "%{fullData.name}<br>Deadline %{customdata} ms"
-                    "<br>Eligible share %{y:.2%}<extra></extra>"
-                ),
+                customdata=customdata,
+                error_y=error_y,
+                hovertemplate=hovertemplate,
             )
         )
 
-    figure.add_vline(
-        x=math.log10(selected_deadline_ms),
+    figure.add_shape(
+        type="line",
+        x0=selected_deadline_ms,
+        x1=selected_deadline_ms,
+        xref="x",
+        y0=0,
+        y1=1,
+        yref="paper",
         line={"color": INK, "width": 1.5, "dash": "dashdot"},
-        annotation_text=f"Selected: {selected_deadline_ms} ms",
-        annotation_position="top right",
-        annotation_font={"color": INK, "size": 12},
     )
-    figure.update_layout(**base_layout("Eligible event share by launch deadline", subtitle))
+    figure.add_annotation(
+        x=math.log10(selected_deadline_ms),
+        y=1,
+        xref="x",
+        yref="paper",
+        text=f"Selected: {selected_deadline_ms} ms",
+        showarrow=False,
+        xanchor="left",
+        yanchor="bottom",
+        xshift=6,
+        font={"color": INK, "size": 12},
+    )
+    if added_points > 0.01:
+        figure.add_annotation(
+            x=math.log10(selected_deadline_ms),
+            y=exact,
+            text=f"+{added_points:.2f} pp vs F",
+            showarrow=True,
+            arrowhead=0,
+            arrowwidth=1.2,
+            arrowcolor=GOLD,
+            ax=48,
+            ay=-38,
+            bgcolor=PLOT_BG,
+            borderpad=4,
+            font={"color": GOLD, "size": 12},
+        )
+    figure.update_layout(
+        **base_layout("Exact packing recovers events missed by fixed windows", subtitle)
+    )
     figure.update_xaxes(
         title="Maximum launch wait (ms, log scale)",
         type="log",
@@ -325,9 +411,11 @@ def trace_view(
         tickvals=[10, 25, 50, 100, 250],
         ticktext=["10", "25", "50", "100", "250"],
         showgrid=False,
-        linecolor=INK,
+        linecolor=AXIS,
         linewidth=1,
         mirror=False,
+        ticks="outside",
+        tickcolor=AXIS,
     )
     figure.update_yaxes(
         title="Eligible event share",
@@ -335,17 +423,14 @@ def trace_view(
         tickformat=".0%",
         dtick=0.2,
         gridcolor=LINE,
+        gridwidth=1,
         zeroline=False,
-        linecolor=INK,
+        linecolor=AXIS,
         linewidth=1,
+        ticks="outside",
+        tickcolor=AXIS,
     )
 
-    row = selected.iloc[0]
-    frozen = float(row["fixed_window_eligible_share_mean"])
-    exact = float(row["exact_optimal_share_mean"])
-    upper = float(row["local_upper_share_mean"])
-    closure = float(row["alignment_gap_closure_mean"])
-    added_points = 100 * (exact - frozen)
     closure_text = "Not defined" if math.isnan(closure) else f"{closure:.1%}"
 
     if exact == 0:
@@ -407,9 +492,27 @@ def resident_view(agents: int, epochs: int) -> tuple[go.Figure, str]:
     if len(subset) != 4:
         return empty_figure("No released cell matches these controls."), empty_readout()
 
+    timing_rows = EVIDENCE.resident_cells[
+        (EVIDENCE.resident_cells["agents"] == agents)
+        & (EVIDENCE.resident_cells["epochs"] == epochs)
+        & EVIDENCE.resident_cells["mechanism"].isin(["device_resident", "host_roundtrip"])
+    ]
+    timings = timing_rows.pivot(index="placement_id", columns="mechanism", values="wall_ns_median")
+    subset = subset.join(timings, on="placement_id")
+    if subset[["device_resident", "host_roundtrip"]].isna().any().any():
+        return empty_figure("Released timing cells could not be paired."), empty_readout()
+
     labels = [RESIDENT_LABELS[provider] for provider in subset["provider"]]
     ratios = subset["host_over_resident_ratio_of_medians"].astype(float).tolist()
     figure = go.Figure()
+    figure.add_vrect(
+        x0=1,
+        x1=2.6,
+        fillcolor="#e8eef9",
+        opacity=0.55,
+        line_width=0,
+        layer="below",
+    )
     for label, ratio in zip(labels, ratios, strict=True):
         figure.add_trace(
             go.Scatter(
@@ -426,14 +529,29 @@ def resident_view(agents: int, epochs: int) -> tuple[go.Figure, str]:
             x=ratios,
             y=labels,
             mode="markers+text",
-            marker={"color": ACCENT, "size": 13, "symbol": "circle"},
+            marker={
+                "color": ACCENT,
+                "size": 15,
+                "symbol": "circle",
+                "line": {"color": PLOT_BG, "width": 2},
+            },
             text=[f"{ratio:.2f}×" for ratio in ratios],
             textposition="middle right",
             textfont={"color": INK, "size": 13},
-            customdata=subset["wall_ns_saved_per_invocation"] / 1000,
+            customdata=list(
+                zip(
+                    subset["device_resident"] / 1000,
+                    subset["host_roundtrip"] / 1000,
+                    subset["wall_ns_saved_per_invocation"] / 1000,
+                    strict=True,
+                )
+            ),
             hovertemplate=(
                 "%{y}<br>Host / resident %{x:.3f}×"
-                "<br>Saved %{customdata:.1f} μs per cohort invocation<extra></extra>"
+                "<br>Resident %{customdata[0]:.1f} μs"
+                "<br>Host round trip %{customdata[1]:.1f} μs"
+                "<br>Saved %{customdata[2]:.1f} μs per cohort invocation"
+                "<extra></extra>"
             ),
             showlegend=False,
         )
@@ -446,11 +564,15 @@ def resident_view(agents: int, epochs: int) -> tuple[go.Figure, str]:
         annotation_font={"color": INK, "size": 12},
     )
     subtitle = (
-        f"N={agents:,}; H={epochs}; placement is the outer unit; "
-        "values above 1 favor the resident path"
+        f"N={agents:,} · H={epochs} · placement is the outer unit · "
+        "ratio of within-placement batch-average row medians"
     )
     figure.update_layout(
-        **base_layout("Host round trip / device resident wall-time ratio", subtitle, 390)
+        **base_layout(
+            "Resident control is faster than the matched host-mediated path",
+            subtitle,
+            410,
+        )
     )
     figure.update_layout(
         showlegend=False,
@@ -462,14 +584,16 @@ def resident_view(agents: int, epochs: int) -> tuple[go.Figure, str]:
         dtick=0.25,
         gridcolor=LINE,
         zeroline=False,
-        linecolor=INK,
+        linecolor=AXIS,
         linewidth=1,
+        ticks="outside",
+        tickcolor=AXIS,
     )
     figure.update_yaxes(
         categoryorder="array",
         categoryarray=list(reversed(labels)),
         showgrid=False,
-        linecolor=INK,
+        linecolor=AXIS,
         linewidth=1,
     )
 
@@ -477,10 +601,13 @@ def resident_view(agents: int, epochs: int) -> tuple[go.Figure, str]:
     for (_, row), label in zip(subset.iterrows(), labels, strict=True):
         ratio = float(row["host_over_resident_ratio_of_medians"])
         saved_us = float(row["wall_ns_saved_per_invocation"]) / 1000
+        resident_us = float(row["device_resident"]) / 1000
+        host_us = float(row["host_roundtrip"]) / 1000
         rows.append(
             f"<div><span>{html.escape(label)}</span>"
             f"<strong>{ratio:.2f}×</strong>"
-            f"<small>{saved_us:.1f} μs saved per cohort invocation</small></div>"
+            f"<small>{resident_us:.1f} μs resident · {host_us:.1f} μs host · "
+            f"{saved_us:.1f} μs saved</small></div>"
         )
     readout = f"""
     <div class="placement-readout" aria-label="Selected resident mechanism result">
@@ -522,6 +649,14 @@ def native_view(agents: int, steps: int) -> tuple[go.Figure, str]:
     ratio_column = "cuda_device_graph_over_cuda_host_graph_wall_ratio_of_medians"
     ratios = subset[ratio_column].astype(float).tolist()
     figure = go.Figure()
+    figure.add_vrect(
+        x0=1,
+        x1=2.2,
+        fillcolor="#f7eedc",
+        opacity=0.62,
+        line_width=0,
+        layer="below",
+    )
     for label, ratio in zip(labels, ratios, strict=True):
         figure.add_trace(
             go.Scatter(
@@ -540,14 +675,26 @@ def native_view(agents: int, steps: int) -> tuple[go.Figure, str]:
             mode="markers+text",
             marker={
                 "color": PLOT_BG,
-                "size": 13,
+                "size": 15,
                 "symbol": "diamond",
-                "line": {"color": ACCENT, "width": 3},
+                "line": {"color": GOLD, "width": 3},
             },
             text=[f"{ratio:.2f}×" for ratio in ratios],
             textposition="middle right",
             textfont={"color": INK, "size": 13},
-            hovertemplate=("%{y}<br>Nested / host graph %{x:.3f}×<extra></extra>"),
+            customdata=list(
+                zip(
+                    subset["cuda_device_graph_over_cuda_host_graph_paired_wall_ratio_p95"],
+                    subset["cuda_device_graph_over_cuda_host_graph_paired_wall_ratio_p99"],
+                    strict=True,
+                )
+            ),
+            hovertemplate=(
+                "%{y}<br>Nested / host graph median ratio %{x:.3f}×"
+                "<br>Technical-row paired ratio P95 %{customdata[0]:.3f}×"
+                "<br>Technical-row paired ratio P99 %{customdata[1]:.3f}×"
+                "<extra></extra>"
+            ),
             showlegend=False,
         )
     )
@@ -559,11 +706,15 @@ def native_view(agents: int, steps: int) -> tuple[go.Figure, str]:
         annotation_font={"color": INK, "size": 12},
     )
     subtitle = (
-        f"N={agents:,}; steps={steps}; placement is the outer unit; "
+        f"N={agents:,} · steps={steps} · placement is the outer unit · "
         "values above 1 mean the nested path is slower"
     )
     figure.update_layout(
-        **base_layout("Fixed nested device graph / host graph wall-time ratio", subtitle, 410)
+        **base_layout(
+            "Fixed nested device launch is slower than host replay",
+            subtitle,
+            420,
+        )
     )
     figure.update_layout(
         showlegend=False,
@@ -575,14 +726,16 @@ def native_view(agents: int, steps: int) -> tuple[go.Figure, str]:
         dtick=0.2,
         gridcolor=LINE,
         zeroline=False,
-        linecolor=INK,
+        linecolor=AXIS,
         linewidth=1,
+        ticks="outside",
+        tickcolor=AXIS,
     )
     figure.update_yaxes(
         categoryorder="array",
         categoryarray=list(reversed(labels)),
         showgrid=False,
-        linecolor=INK,
+        linecolor=AXIS,
         linewidth=1,
     )
 
@@ -634,77 +787,108 @@ NAV_HTML = f"""
 <nav class="site-nav" aria-label="Primary">
   <a class="brand" href="#top">Ready Cohorts</a>
   <div class="nav-links">
-    <a class="nav-secondary" href="#explore">Explore</a>
+    <a class="nav-secondary" href="#architecture">System map</a>
+    <a class="nav-secondary" href="#trace">Explore</a>
     <a href="{PAPER_URL}" target="_blank" rel="noopener noreferrer">Read paper</a>
     <a href="{CODE_URL}" target="_blank" rel="noopener noreferrer">View code</a>
-    <a href="{DATA_URL}" target="_blank" rel="noopener noreferrer">Open data</a>
   </div>
 </nav>
 """
 
 HERO_HTML = f"""
 <div class="hero-copy" id="top">
-  <p class="eyebrow">Ready Cohorts</p>
+  <p class="eyebrow">arXiv:2608.12123 · systems research</p>
   <h1>When agent control belongs on GPU</h1>
-  <p class="hero-sub">Explore LLM-agent cohort supply, launch deadlines, and the cost of host observation.</p>
+  <p class="hero-sub">An evidence map for batching deterministic control between model and tool calls.</p>
   <div class="hero-actions">
     <a class="button primary" href="{PAPER_URL}" target="_blank" rel="noopener noreferrer">Read paper</a>
-    <a class="button secondary" href="{DATA_URL}" target="_blank" rel="noopener noreferrer">Open data</a>
+    <a class="button secondary" href="#trace">Explore results</a>
   </div>
 </div>
 """
 
 METRICS_HTML = """
 <div class="metric-strip" aria-label="Released evidence summary">
-  <div><span>Trace surface</span><strong>180</strong><small>summary cells</small></div>
-  <div><span>Trace panel</span><strong>851</strong><small>sessions</small></div>
-  <div><span>Mechanism study</span><strong>4</strong><small>named placements</small></div>
-  <div><span>Negative control</span><strong>5</strong><small>named placements</small></div>
+  <div><span>Primary replay</span><strong>30.19→43.00%</strong><small>fixed F to exact P*</small></div>
+  <div><span>Host / resident</span><strong>1.19 to 2.39×</strong><small>row-median ratio range</small></div>
+  <div><span>Resident direction</span><strong>36 / 36</strong><small>named placement-cells</small></div>
+  <div><span>Negative control</span><strong>60 / 60</strong><small>nested launch slower</small></div>
 </div>
+"""
+
+ARCHITECTURE_SVG = (ASSET_DIR / "ready-cohorts-architecture.svg").read_text(encoding="utf-8")
+
+ARCHITECTURE_HTML = f"""
+<section class="architecture-section" id="architecture">
+  <div class="section-heading architecture-heading">
+    <p class="section-kicker">System map</p>
+    <h2>Two measured gates. One unmeasured join.</h2>
+    <p>The trace study asks whether cohorts exist. The mechanism study asks whether a decision can remain on device. The proposed runtime must satisfy both.</p>
+  </div>
+  <p class="architecture-mobile-hint">Swipe horizontally to inspect the full system map →</p>
+  <figure class="architecture-frame">
+    {ARCHITECTURE_SVG}
+    <figcaption>
+      <span>Computed trace evidence, observed GPU evidence, and the proposed online runtime are visually separated.</span>
+      <a href="{ARCHITECTURE_URL}" target="_blank" rel="noopener noreferrer">Open full-size SVG</a>
+    </figcaption>
+  </figure>
+</section>
 """
 
 GATES_HTML = """
 <section class="gates" id="explore">
   <div class="section-heading">
-    <h2>Two gates determine the opportunity.</h2>
-    <p>The paper measures workload supply and decision placement separately.</p>
+    <p class="section-kicker">How to read the paper</p>
+    <h2>The boundary is the result.</h2>
+    <p>A GPU path is useful only where cohort supply and observation placement both cooperate.</p>
   </div>
   <div class="gate-grid">
     <article class="gate supply">
-      <span>Workload gate</span>
+      <span>01 · workload gate · computed</span>
       <h3>Can enough route-keyed events become ready before the launch deadline?</h3>
       <p>F measures fixed windows. P* is the exact offline optimum. U is a local upper bound.</p>
     </article>
     <article class="gate placement">
-      <span>Runtime gate</span>
+      <span>02 · placement gate · observed</span>
       <h3>Can the computed decision remain on device?</h3>
       <p>The mechanism study removes one bundled host observation and redispatch epoch.</p>
     </article>
   </div>
-  <p class="join-warning"><strong>Not joined yet.</strong> The current artifact does not claim an online service, CPU displacement, or end-to-end agent speedup.</p>
+  <p class="join-warning"><strong>Measured separately.</strong> The current artifact does not multiply these results or claim an online service, CPU displacement, or end-to-end agent speedup.</p>
 </section>
 """
 
 TRACE_HEADING = """
 <section class="section-heading" id="trace">
-  <h2>First, can the workload form a cohort?</h2>
-  <p>Sweep active sessions, threshold K, route conditioning, and launch deadline across the frozen replay surface.</p>
+  <p class="section-kicker">01 · interactive trace surface</p>
+  <h2>Can the workload form a cohort?</h2>
+  <p>Change active sessions, threshold K, route conditioning, and launch deadline. The chart preserves negative regimes instead of hiding them.</p>
 </section>
 """
 
 MECHANISM_HEADING = """
 <section class="section-heading" id="mechanism">
-  <h2>Then, where does the decision live?</h2>
-  <p>Compare the resident decision path with the matched host observation bundle on four named placements.</p>
+  <p class="section-kicker">02 · interactive mechanism study</p>
+  <h2>Where does the decision live?</h2>
+  <p>Compare a device-resident decision with the matched host observation bundle on four named placements.</p>
 </section>
-<div class="path-compare" aria-label="Compared execution paths">
-  <div><span>Device path</span><strong>predicate → selector → route</strong></div>
-  <div><span>Host path</span><strong>predicate → 4 B copy → synchronize → select → route</strong></div>
+<div class="execution-map" aria-label="Compared execution paths">
+  <div class="execution-row resident-row">
+    <span class="path-label">Device resident</span>
+    <div class="path-node">state</div><i>→</i><div class="path-node active">predicate</div><i>→</i><div class="path-node active">selector</div><i>→</i><div class="path-node">route graph</div>
+  </div>
+  <div class="execution-row host-row">
+    <span class="path-label">Host observed</span>
+    <div class="path-node">state</div><i>→</i><div class="path-node">predicate</div><i>→</i><div class="path-node cost">4 B copy</div><i>→</i><div class="path-node cost">sync</div><i>→</i><div class="path-node cost">CPU select</div><i>→</i><div class="path-node">GPU route</div>
+  </div>
+  <p>The treatment is this full observation and redispatch bundle, not the 4-byte copy in isolation.</p>
 </div>
 """
 
 NEGATIVE_HEADING = """
 <section class="section-heading" id="negative">
+  <p class="section-kicker">03 · negative control</p>
   <h2>A device launch is not enough.</h2>
   <p>The rejected fixed nested graph tests device launch without removing the host decision.</p>
 </section>
@@ -713,6 +897,7 @@ NEGATIVE_HEADING = """
 SCOPE_HTML = f"""
 <section class="scope" id="scope">
   <div class="section-heading">
+    <p class="section-kicker">Evidence contract</p>
     <h2>Read the claim at the right strength.</h2>
     <p>The release separates formal results, trace computations, placement observations, and open systems questions.</p>
   </div>
@@ -723,10 +908,10 @@ SCOPE_HTML = f"""
     <div class="open"><dt>Still open</dt><dd>Online achieved share A, CPU core-seconds, raw endpoint P99, end-to-end utility, and shared-inference interference.</dd></div>
   </dl>
   <div class="source-links">
-    <a href="{PAPER_URL}" target="_blank" rel="noopener noreferrer">Read paper</a>
-    <a href="{CODE_URL}" target="_blank" rel="noopener noreferrer">View code</a>
-    <a href="{DATA_URL}" target="_blank" rel="noopener noreferrer">Open data</a>
-    <a href="{TRACE_URL}" target="_blank" rel="noopener noreferrer">Pinned trace</a>
+    <a href="{PAPER_URL}" target="_blank" rel="noopener noreferrer">arXiv paper ↗</a>
+    <a href="{CODE_URL}" target="_blank" rel="noopener noreferrer">GitHub source ↗</a>
+    <a href="{DATA_URL}" target="_blank" rel="noopener noreferrer">Frozen evidence ↗</a>
+    <a href="{TRACE_URL}" target="_blank" rel="noopener noreferrer">Pinned trace ↗</a>
   </div>
 </section>
 """
@@ -738,14 +923,17 @@ FOOTER_HTML = """
 </footer>
 """
 
-HEAD_META = """
+HEAD_META = f"""
 <meta name="description" content="Interactive evidence explorer for Ready Cohorts, a paper on GPU execution of deterministic LLM-agent control.">
 <meta property="og:title" content="Ready Cohorts Explorer">
 <meta property="og:description" content="Explore cohort supply, launch deadlines, and the cost of host observation.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://huggingface.co/datasets/josefchen/ready-cohorts/resolve/ready-cohorts-arxiv-v1/figures/trace-exact-opportunity-frontier.png">
+<meta property="og:url" content="https://huggingface.co/spaces/josefchen/ready-cohorts">
+<meta property="og:image" content="{SOCIAL_IMAGE_URL}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://huggingface.co/datasets/josefchen/ready-cohorts/resolve/ready-cohorts-arxiv-v1/figures/trace-exact-opportunity-frontier.png">
+<meta name="twitter:title" content="Ready Cohorts Explorer">
+<meta name="twitter:description" content="When should deterministic LLM-agent control move to GPU?">
+<meta name="twitter:image" content="{SOCIAL_IMAGE_URL}">
 """
 HEAD = f"<style>{(ROOT / 'styles.css').read_text(encoding='utf-8')}</style>{HEAD_META}"
 
@@ -762,8 +950,8 @@ with gr.Blocks(title="Ready Cohorts Explorer", fill_width=True) as demo:
             gr.HTML(HERO_HTML)
         with gr.Column(scale=7, min_width=360, elem_classes="hero-visual"):
             gr.Image(
-                value=str(ASSET_DIR / "trace-exact-opportunity-frontier.png"),
-                label="Released trace opportunity figure",
+                value=str(ASSET_DIR / "ready-cohorts-social-card.png"),
+                label="Ready Cohorts paper overview",
                 show_label=False,
                 interactive=False,
                 container=False,
@@ -772,6 +960,7 @@ with gr.Blocks(title="Ready Cohorts Explorer", fill_width=True) as demo:
             )
     gr.HTML(METRICS_HTML)
     gr.HTML(integrity_html())
+    gr.HTML(ARCHITECTURE_HTML)
     gr.HTML(GATES_HTML)
 
     gr.HTML(TRACE_HEADING)

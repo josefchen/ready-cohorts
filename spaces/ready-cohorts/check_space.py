@@ -2,10 +2,11 @@ from __future__ import annotations
 
 import itertools
 import re
+import struct
 from pathlib import Path
+from xml.etree import ElementTree
 
 import app
-
 
 ROOT = Path(__file__).resolve().parent
 
@@ -46,6 +47,16 @@ def check_trace_surface() -> None:
             require(len(trace.y) == 5, "Trace plot has an incomplete series")
             require(min(trace.y) >= 0, "Eligible share cannot be negative")
             require(max(trace.y) <= 1, "Eligible share cannot exceed one")
+        exact_trace = figure.data[1]
+        require(
+            exact_trace.error_y.visible is True,
+            "Exact trace must retain its descriptive three-swarm range",
+        )
+        require(len(figure.layout.shapes) == 1, "Trace plot lost its selected-deadline line")
+        require(
+            figure.layout.shapes[0].x0 == deadline,
+            "Selected-deadline line is not in log-axis data coordinates",
+        )
 
 
 def check_mechanism_surfaces() -> None:
@@ -81,6 +92,36 @@ def check_visible_copy() -> None:
     require("josefchen10@gmail.com" not in app.HERO_HTML, "Private contact is visible")
 
 
+def check_public_visuals() -> None:
+    architecture = ROOT / "assets" / "ready-cohorts-architecture.svg"
+    social_svg = ROOT / "assets" / "ready-cohorts-social-card.svg"
+    social_png = ROOT / "assets" / "ready-cohorts-social-card.png"
+    for path in (architecture, social_svg):
+        root = ElementTree.parse(path).getroot()
+        require(root.tag.endswith("svg"), f"{path.name} is not valid SVG")
+        require(root.attrib.get("role") == "img", f"{path.name} lacks an image role")
+        require(
+            "<script" not in path.read_text(encoding="utf-8").lower(),
+            f"{path.name} contains script",
+        )
+
+    with social_png.open("rb") as handle:
+        require(handle.read(8) == b"\x89PNG\r\n\x1a\n", "Social image is not PNG")
+        length = struct.unpack(">I", handle.read(4))[0]
+        require(length == 13 and handle.read(4) == b"IHDR", "Social PNG lacks IHDR")
+        width, height = struct.unpack(">II", handle.read(8))
+    require((width, height) == (1600, 900), "Social image must be 1600 by 900")
+
+    require(
+        "Two measured gates. One unmeasured join." in app.ARCHITECTURE_HTML,
+        "Architecture evidence boundary is missing",
+    )
+    require(
+        "Measured separately." in app.GATES_HTML,
+        "The two study surfaces are no longer separated",
+    )
+
+
 def check_links_and_secrets() -> None:
     require(
         app.PAPER_URL == "https://arxiv.org/abs/2608.12123",
@@ -95,6 +136,15 @@ def check_links_and_secrets() -> None:
         app.TRACE_URL.endswith("f7c94012d0bfbf66fe4d6ed627699508bbb555ff"),
         "Trace link is not commit-pinned",
     )
+    require(
+        app.ARCHITECTURE_URL.endswith("assets/ready-cohorts-architecture.svg"),
+        "Architecture link does not target the public Space asset",
+    )
+    require(
+        app.SOCIAL_IMAGE_URL.endswith("assets/ready-cohorts-social-card.png"),
+        "Social preview does not target the public Space asset",
+    )
+    require(app.SOCIAL_IMAGE_URL in app.HEAD_META, "Social preview metadata is stale")
 
     secret_patterns = [
         re.compile(r"hf_[A-Za-z0-9]{20,}"),
@@ -118,6 +168,7 @@ def main() -> None:
     check_trace_surface()
     check_mechanism_surfaces()
     check_visible_copy()
+    check_public_visuals()
     check_links_and_secrets()
     print("Ready Cohorts Space checks passed")
 

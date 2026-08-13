@@ -39,6 +39,21 @@
       "path": "assets/trace-exact-opportunity-frontier.png",
       "hub_path": "figures/trace-exact-opportunity-frontier.png",
       "sha256": "7d0e55e3ddb3ee360c70fb5b07c32bb415c3b2003b611be1a18ec05847eda5ee"
+    },
+    {
+      "path": "assets/ready-cohorts-architecture.svg",
+      "hub_path": "assets/ready-cohorts-architecture.svg",
+      "sha256": "fc730f8a026a131c7433cdd8df8e6bdf1a20857d26c1ce4f8983fa70d47f2d88"
+    },
+    {
+      "path": "assets/ready-cohorts-social-card.svg",
+      "hub_path": "assets/ready-cohorts-social-card.svg",
+      "sha256": "39b5d43d7288bd8969edbf80cb0d8ded00e6da0a7beaa22a10c36a0cbfd1c066"
+    },
+    {
+      "path": "assets/ready-cohorts-social-card.png",
+      "hub_path": "assets/ready-cohorts-social-card.png",
+      "sha256": "1a46c22956d3e901d50c2208b5ccea3030efe6739ea7b677ff12876d29ec9e90"
     }
   ]
 }

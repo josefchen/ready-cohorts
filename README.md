@@ -12,6 +12,8 @@ Host Round Trips in LLM-Agent Control**.
 - Pinned input trace dataset:
   <https://huggingface.co/datasets/Exgentic/agent-llm-traces/tree/f7c94012d0bfbf66fe4d6ed627699508bbb555ff>
 
+[![Ready Cohorts paper overview](spaces/ready-cohorts/assets/ready-cohorts-social-card.png)](https://huggingface.co/spaces/josefchen/ready-cohorts)
+
 The project asks when deterministic, non-neural agent control work—state
 updates, routing, filtering, bookkeeping, policy checks, and batched tool-result
 transitions—should execute on CPU or as a resident GPU workload. The intended
@@ -23,6 +25,16 @@ boundary:
    divergence;
 3. **residency:** whether state and observations remain on device long enough
    to amortize launch, transfer, and synchronization.
+
+## System map
+
+![Ready Cohorts architecture: computed workload gate, observed placement gate, and proposed joined runtime](spaces/ready-cohorts/assets/ready-cohorts-architecture.svg)
+
+The architecture graphic keeps the evidence types separate. The workload gate
+is computed from the pinned replay, the placement gate is observed on named GPU
+placements, and the dashed online route service is proposed. The current paper
+does not multiply the two measured surfaces or present the joined service as a
+deployment result.
 
 ## Current evidence
 
