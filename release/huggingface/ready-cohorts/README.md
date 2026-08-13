@@ -3,6 +3,7 @@ pretty_name: Ready Cohorts Processed Evidence
 language:
   - en
 tags:
+  - arxiv:2608.12123
   - llm-agents
   - gpu-systems
   - cuda-graphs
@@ -16,7 +17,11 @@ This is the public processed-evidence mirror for *Ready Cohorts: Bounding GPU
 Opportunity and Avoiding Host Round Trips in LLM-Agent Control* by Josef Chen,
 Independent Researcher.
 
-- Code and arXiv source bundle: <https://github.com/josefchen/ready-cohorts>
+- Paper: <https://arxiv.org/abs/2608.12123>
+- Hugging Face Paper page: <https://huggingface.co/papers/2608.12123>
+- Code: <https://github.com/josefchen/ready-cohorts>
+- Frozen v1 source and release bundle:
+  <https://github.com/josefchen/ready-cohorts/releases/tag/ready-cohorts-arxiv-v1>
 - Interactive results explorer: <https://huggingface.co/spaces/josefchen/ready-cohorts>
 - This mirror: <https://huggingface.co/datasets/josefchen/ready-cohorts>
 - Input trace dataset at the pinned conversion commit:
@@ -57,14 +62,16 @@ row-median ratios range from 1.19x to 2.39x.
 ## Citation
 
 ```bibtex
-@misc{chen2026readycohorts,
-  author = {Josef Chen},
-  title = {Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control},
-  year = {2026},
-  howpublished = {arXiv preprint}
+@misc{chen2026readycohortsboundinggpu,
+  title         = {Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control},
+  author        = {Josef Liyanjun Chen},
+  year          = {2026},
+  eprint        = {2608.12123},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.DC},
+  url           = {https://arxiv.org/abs/2608.12123}
 }
 ```
 
-The arXiv identifier will be added after announcement. No additional license is
-asserted by this mirror; upstream source data remain subject to their source
-repository terms.
+No additional license is asserted by this mirror; upstream source data remain
+subject to their source repository terms.

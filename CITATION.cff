@@ -7,12 +7,22 @@ authors:
     given-names: Josef
     affiliation: Independent Researcher
 repository-code: "https://github.com/josefchen/ready-cohorts"
-url: "https://huggingface.co/datasets/josefchen/ready-cohorts"
+url: "https://arxiv.org/abs/2608.12123"
 version: "1.0.0"
-date-released: 2026-08-12
+date-released: "2026-08-12"
 keywords:
   - LLM agents
   - GPU systems
   - batching
   - CUDA Graphs
   - datacenter control
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Chen
+      given-names: Josef Liyanjun
+      affiliation: Independent Researcher
+  title: "Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control"
+  journal: arXiv
+  year: 2026
+  url: "https://arxiv.org/abs/2608.12123"

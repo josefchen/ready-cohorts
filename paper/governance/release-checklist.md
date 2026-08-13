@@ -1,8 +1,7 @@
 # Release checklist
 
-Status: arXiv upload candidate. Scientific and source-package gates pass. The
-remaining arXiv steps require the author's account: choose a license, inspect
-the generated preview, and submit.
+Status: published as arXiv:2608.12123v1 on 12 August 2026. Scientific,
+source-package, upload, and public-linking gates pass.
 
 ## Scientific scope gates
 
@@ -66,15 +65,15 @@ the generated preview, and submit.
 - [x] All 19 source shards match their local, manifest, and commit-resolved
       remote SHA-256 values at Exgentic conversion revision
       `f7c94012d0bfbf66fe4d6ed627699508bbb555ff`.
-- [ ] Add the arXiv identifier to GitHub, Hugging Face, and `CITATION.cff` after
-      announcement.
+- [x] arXiv:2608.12123 is linked from GitHub, the Hugging Face dataset and
+      Space cards, and `CITATION.cff`; the arXiv record links back to the
+      GitHub repository and processed-evidence dataset.
 
 ## Author account actions
 
-- [ ] Choose the arXiv distribution license. This choice is irrevocable and is
-      intentionally not made by the release scripts.
-- [ ] Upload `release/arxiv/ready-cohorts-arxiv-v1.tar.gz`, paste the frozen
-      metadata, inspect every page of arXiv's generated preview, and submit.
+- [x] The author selected CC BY 4.0 in arXiv.
+- [x] The author uploaded `release/arxiv/ready-cohorts-arxiv-v1.tar.gz`, used
+      the frozen metadata, inspected the generated preview, and submitted v1.
 
 ## Follow-up research, not arXiv blockers
 

@@ -3,9 +3,12 @@
 Code and evidence for **Ready Cohorts: Bounding GPU Opportunity and Avoiding
 Host Round Trips in LLM-Agent Control**.
 
-- Paper source and release bundle: <https://github.com/josefchen/ready-cohorts>
+- Paper: <https://arxiv.org/abs/2608.12123>
+- Hugging Face Paper page: <https://huggingface.co/papers/2608.12123>
 - Interactive results explorer: <https://huggingface.co/spaces/josefchen/ready-cohorts>
 - Processed evidence mirror: <https://huggingface.co/datasets/josefchen/ready-cohorts>
+- Frozen v1 source and release bundle:
+  <https://github.com/josefchen/ready-cohorts/releases/tag/ready-cohorts-arxiv-v1>
 - Pinned input trace dataset:
   <https://huggingface.co/datasets/Exgentic/agent-llm-traces/tree/f7c94012d0bfbf66fe4d6ed627699508bbb555ff>
 
@@ -193,3 +196,17 @@ A GPU win is never assumed. Negative crossover regions, strict correctness
 failures, cold compilation, host observation costs, route fragmentation, and
 CPU-preferred regimes are part of the result. No failed row or timing outlier
 is silently deleted.
+
+## Citation
+
+```bibtex
+@misc{chen2026readycohortsboundinggpu,
+  title         = {Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control},
+  author        = {Josef Liyanjun Chen},
+  year          = {2026},
+  eprint        = {2608.12123},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.DC},
+  url           = {https://arxiv.org/abs/2608.12123}
+}
+```
