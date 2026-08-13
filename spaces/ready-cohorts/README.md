@@ -13,6 +13,7 @@ short_description: Explore GPU-ready cohorts for deterministic agent control.
 datasets:
   - josefchen/ready-cohorts
 tags:
+  - arxiv:2608.12123
   - llm-agents
   - gpu-systems
   - cuda-graphs
@@ -38,6 +39,8 @@ release manifest. The app needs no API key and runs on CPU Basic.
 
 ## Canonical links
 
+- [Paper on arXiv](https://arxiv.org/abs/2608.12123)
+- [Hugging Face Paper page](https://huggingface.co/papers/2608.12123)
 - [Paper PDF](https://huggingface.co/datasets/josefchen/ready-cohorts/resolve/ready-cohorts-arxiv-v1/paper/ready-cohorts.pdf)
 - [Space source](https://github.com/josefchen/ready-cohorts/tree/main/spaces/ready-cohorts)
 - [Frozen paper source](https://github.com/josefchen/ready-cohorts/tree/ready-cohorts-arxiv-v1)
@@ -53,3 +56,17 @@ population effect, CPU displacement, endpoint P99 improvement, end-to-end
 agent speedup, or safe shared-inference execution.
 
 The source chart contracts are recorded in [CHARTS.md](CHARTS.md).
+
+## Citation
+
+```bibtex
+@misc{chen2026readycohortsboundinggpu,
+  title         = {Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control},
+  author        = {Josef Liyanjun Chen},
+  year          = {2026},
+  eprint        = {2608.12123},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.DC},
+  url           = {https://arxiv.org/abs/2608.12123}
+}
+```

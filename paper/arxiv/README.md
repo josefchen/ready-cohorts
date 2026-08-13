@@ -1,5 +1,7 @@
 # Ready Cohorts arXiv manuscript
 
+Published paper: <https://arxiv.org/abs/2608.12123>
+
 Public project: <https://github.com/josefchen/ready-cohorts>
 
 Processed evidence: <https://huggingface.co/datasets/josefchen/ready-cohorts>

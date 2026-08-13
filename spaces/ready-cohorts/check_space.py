@@ -83,8 +83,8 @@ def check_visible_copy() -> None:
 
 def check_links_and_secrets() -> None:
     require(
-        app.PAPER_URL.startswith("https://huggingface.co/datasets/josefchen/ready-cohorts/"),
-        "Paper link changed",
+        app.PAPER_URL == "https://arxiv.org/abs/2608.12123",
+        "Paper link is not the canonical arXiv record",
     )
     require(app.DATA_URL.endswith("ready-cohorts-arxiv-v1"), "Dataset link is not release-pinned")
     require(

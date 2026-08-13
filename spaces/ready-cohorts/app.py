@@ -17,10 +17,7 @@ DATA_DIR = ROOT / "data"
 ASSET_DIR = ROOT / "assets"
 MANIFEST_PATH = DATA_DIR / "manifest.json"
 
-PAPER_URL = (
-    "https://huggingface.co/datasets/josefchen/ready-cohorts/resolve/"
-    "ready-cohorts-arxiv-v1/paper/ready-cohorts.pdf"
-)
+PAPER_URL = "https://arxiv.org/abs/2608.12123"
 DATA_URL = "https://huggingface.co/datasets/josefchen/ready-cohorts/tree/ready-cohorts-arxiv-v1"
 CODE_URL = "https://github.com/josefchen/ready-cohorts/tree/main/spaces/ready-cohorts"
 TRACE_URL = (
