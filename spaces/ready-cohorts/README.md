@@ -10,6 +10,7 @@ fullWidth: true
 header: mini
 pinned: false
 short_description: Explore GPU-ready cohorts for deterministic agent control.
+thumbnail: https://huggingface.co/spaces/josefchen/ready-cohorts/resolve/main/assets/ready-cohorts-social-card.png
 datasets:
   - josefchen/ready-cohorts
 tags:
