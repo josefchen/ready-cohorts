@@ -1,8 +1,5 @@
 # Ready Cohorts arXiv release
 
-Published as [arXiv:2608.12123v1](https://arxiv.org/abs/2608.12123v1) on
-12 August 2026 under CC BY 4.0.
-
 Public project: <https://github.com/josefchen/ready-cohorts>
 
 Processed evidence: <https://huggingface.co/datasets/josefchen/ready-cohorts>
@@ -23,5 +20,5 @@ verification report bind the handoff files and record the isolated compile.
 The same archive also compiles in a network-disabled TeX Live 2025 container;
 its 14-page output has exactly the same extracted text as the canonical PDF.
 
-The submitter reviewed arXiv's generated preview and selected the irrevocable
-CC BY 4.0 distribution license in the arXiv form.
+The submitter must still review arXiv's generated preview and choose the
+irrevocable distribution license in the arXiv form.
