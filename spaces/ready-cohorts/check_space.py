@@ -120,6 +120,11 @@ def check_public_visuals() -> None:
         "Measured separately." in app.GATES_HTML,
         "The two study surfaces are no longer separated",
     )
+    space_card = (ROOT / "README.md").read_text(encoding="utf-8")
+    require(
+        f"thumbnail: {app.SOCIAL_IMAGE_URL}" in space_card,
+        "Space metadata does not use the source-backed social card",
+    )
 
 
 def check_links_and_secrets() -> None:
