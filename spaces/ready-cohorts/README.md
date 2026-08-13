@@ -67,6 +67,7 @@ The source chart contracts are recorded in [CHARTS.md](CHARTS.md).
   eprint        = {2608.12123},
   archivePrefix = {arXiv},
   primaryClass  = {cs.DC},
+  doi           = {10.48550/arXiv.2608.12123},
   url           = {https://arxiv.org/abs/2608.12123}
 }
 ```
