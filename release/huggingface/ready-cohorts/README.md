@@ -3,7 +3,6 @@ pretty_name: Ready Cohorts Processed Evidence
 language:
   - en
 tags:
-  - arxiv:2608.12123
   - llm-agents
   - gpu-systems
   - cuda-graphs

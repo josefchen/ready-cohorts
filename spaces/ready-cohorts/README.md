@@ -13,7 +13,6 @@ short_description: Explore GPU-ready cohorts for deterministic agent control.
 datasets:
   - josefchen/ready-cohorts
 tags:
-  - arxiv:2608.12123
   - llm-agents
   - gpu-systems
   - cuda-graphs
