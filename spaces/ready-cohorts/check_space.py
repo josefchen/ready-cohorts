@@ -112,6 +112,19 @@ def check_public_visuals() -> None:
         width, height = struct.unpack(">II", handle.read(8))
     require((width, height) == (1600, 900), "Social image must be 1600 by 900")
 
+    font_dir = ROOT / "assets" / "fonts"
+    font_names = [
+        f"geist-sans-latin-{weight}-normal.woff2"
+        for weight in (400, 500, 600, 700)
+    ] + [
+        f"geist-mono-latin-{weight}-normal.woff2"
+        for weight in (400, 500, 600)
+    ]
+    for name in font_names:
+        with (font_dir / name).open("rb") as handle:
+            require(handle.read(4) == b"wOF2", f"{name} is not a WOFF2 font")
+    require((font_dir / "OFL.txt").is_file(), "Bundled Geist fonts lack their license")
+
     require(
         "Two measured gates. One unmeasured join." in app.ARCHITECTURE_HTML,
         "Architecture evidence boundary is missing",
