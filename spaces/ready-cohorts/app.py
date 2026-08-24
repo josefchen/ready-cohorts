@@ -1043,6 +1043,29 @@ HEAD_META = f"""
 <meta name="twitter:description" content="When should deterministic LLM-agent control move to GPU?">
 <meta name="twitter:image" content="{SOCIAL_IMAGE_URL}">
 """
+HEADER_A11Y_SCRIPT = """
+<script>
+(() => {
+  const labelSpaceHeader = () => {
+    const header = document.getElementById("huggingface-space-header");
+    if (!header) return false;
+    header.setAttribute("role", "navigation");
+    header.setAttribute("aria-label", "Hugging Face Space");
+    const avatar = header.querySelector('img[src*="/api/users/"]');
+    if (avatar && !avatar.getAttribute("alt")) {
+      avatar.setAttribute("alt", "Josef Chen profile");
+    }
+    return true;
+  };
+  if (!labelSpaceHeader()) {
+    const observer = new MutationObserver(() => {
+      if (labelSpaceHeader()) observer.disconnect();
+    });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+  }
+})();
+</script>
+"""
 FONT_DIR = ASSET_DIR / "fonts"
 FONT_FACE_CSS = f"""
 @font-face {{ font-family: "Geist Sans"; src: url("/gradio_api/file={FONT_DIR / 'geist-sans-latin-400-normal.woff2'}") format("woff2"); font-style: normal; font-weight: 400; font-display: swap; }}
@@ -1055,7 +1078,7 @@ FONT_FACE_CSS = f"""
 """
 HEAD = (
     f"<style>{FONT_FACE_CSS}{(ROOT / 'styles.css').read_text(encoding='utf-8')}</style>"
-    f"{HEAD_META}"
+    f"{HEAD_META}{HEADER_A11Y_SCRIPT}"
 )
 
 
